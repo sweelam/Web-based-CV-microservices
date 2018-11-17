@@ -1,0 +1,28 @@
+version: '3'
+services:
+    eureka-service:
+      image: eureka:latest
+      container_name: eureka
+      ports:
+        - 8761:8761
+      hostname: eureka
+      environment:
+        - EUREKA_CLIENT_SERVICEURL_DEFAULTZONE=http://eureka:8761/eureka
+    proxy-service:
+      image: cv-proxy:latest
+      ports:
+        - 8081:8081
+      environment:
+        - EUREKA_CLIENT_SERVICEURL_DEFAULTZONE=http://eureka:8761/eureka
+    auth-service:
+      image: auth-service:latest
+      ports:
+        - 8060:8060
+      environment:
+        - EUREKA_CLIENT_SERVICEURL_DEFAULTZONE=http://eureka:8761/eureka
+    portal-service:
+      image: cv-portal:latest
+      ports:
+        - 9090:9090
+      environment:
+        - EUREKA_CLIENT_SERVICEURL_DEFAULTZONE=http://eureka:8761/eureka
