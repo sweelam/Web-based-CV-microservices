@@ -1,7 +1,7 @@
 version: '3'
 services:
     eureka-service:
-      image: eureka:latest
+      image: eureka-service:latest
       container_name: eureka
       ports:
         - 8761:8761
@@ -9,7 +9,7 @@ services:
       environment:
         - EUREKA_CLIENT_SERVICEURL_DEFAULTZONE=http://eureka:8761/eureka
     proxy-service:
-      image: cv-proxy:latest
+      image: zuul-service:latest
       ports:
         - 8081:8081
       environment:
