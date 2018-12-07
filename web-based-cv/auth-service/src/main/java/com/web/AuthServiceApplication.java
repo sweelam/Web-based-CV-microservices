@@ -4,8 +4,8 @@ import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.cloud.netflix.eureka.EnableEurekaClient;
 
-@SpringBootApplication(scanBasePackages= {"com.web"})
 @EnableEurekaClient
+@SpringBootApplication(scanBasePackages= {"com.web"})
 public class AuthServiceApplication {
 
 	public static void main(String[] args) {

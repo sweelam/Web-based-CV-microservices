@@ -6,11 +6,10 @@
 
 	<parent>
 		<groupId>com.web</groupId>
-		<artifactId>web-based-cv</artifactId>
+		<artifactId>web-cv-spring-boot-starter</artifactId>
 		<version>1.0.0</version>
 	</parent>
 	<artifactId>auth-service</artifactId>
-	<version>0.0.1-SNAPSHOT</version>
 	<packaging>jar</packaging>
 	<name>auth-service</name>
 
@@ -63,6 +62,11 @@
 			<groupId>com.web</groupId>
 			<artifactId>cv-utils</artifactId>
 			<version>0.0.1-SNAPSHOT</version>
+		</dependency>
+		<dependency>
+			<groupId>com.web</groupId>
+			<artifactId>logging-service</artifactId>
+			<version>1.0.0</version>
 		</dependency>
 	</dependencies>
 
