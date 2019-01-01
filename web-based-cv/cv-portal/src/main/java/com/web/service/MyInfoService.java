@@ -4,13 +4,13 @@ import java.util.HashMap;
 import java.util.LinkedList;
 import java.util.List;
 import java.util.Map;
+import java.util.Optional;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import com.web.ApplicationUtil.ApiErrorHandling;
 import com.web.model.entity.MyInfoEntity;
 import com.web.model.entity.MyJobsEntity;
 import com.web.model.repository.MyInfoRepo;
@@ -48,7 +48,8 @@ public class MyInfoService {
 	 * @return
 	 */
 	public List<MyJobsEntity> getJobInfo(Integer id) {
-		return myInfoRepo.findById(id).isPresent() ? myInfoRepo.findById(id).get().getMyJobsList() : null;
+		Optional<MyInfoEntity> myInfo = myInfoRepo.findById(id); 
+		return myInfo.isPresent() ? myInfo.get().getMyJobsList() : null;
 	}
 
 	public void updateJob(int id, String desc) {
@@ -63,18 +64,18 @@ public class MyInfoService {
 	public MyInfoVO getInfoById(Integer id) {
 		MyInfoVO myInfoVO = null;
 
-		MyInfoEntity myInfoEntity = myInfoRepo.findById(id).get();
-		if (null != myInfoEntity) {
+		Optional<MyInfoEntity> myInfoEntity = myInfoRepo.findById(id);
+		if (myInfoEntity.isPresent()) {
+
 			myInfoVO = new MyInfoVO();
-			myInfoVO.setFullName(myInfoEntity.getFullName());
-			myInfoVO.setEmail(myInfoEntity.getEmail());
-			myInfoVO.setMobile(myInfoEntity.getMobile());
+			myInfoVO.setFullName(myInfoEntity.get().getFullName());
+			myInfoVO.setEmail(myInfoEntity.get().getEmail());
+			myInfoVO.setMobile(myInfoEntity.get().getMobile());
 
 			List<MyJobsEntity> myJobsEntity = myJobsService.myJobsRepo.findAll();
-			if (null != myJobsEntity) {
+			if (null != myJobsEntity && myJobsEntity.size() > 0)
 				myInfoVO.setJobList(myJobsEntity);
-			} else
-				throw new ApiErrorHandling();
+
 		}
 
 		return myInfoVO;
@@ -86,18 +87,22 @@ public class MyInfoService {
 	 * @return
 	 */
 	public MyInfoEntity getInfoDetailsById(Integer id) {
-		return myInfoRepo.findById(id).isPresent() ? myInfoRepo.findById(id).get() : null;
+		Optional<MyInfoEntity> userInfo = myInfoRepo.findById(id);
+		
+		return userInfo.isPresent() ? userInfo.get() : null;
 	}
 
+	
+	/**
+	 * 
+	 * @return
+	 */
 	public List<Map<String, Object>> getUserSkills() {
 		List<Map<String, Object>> res = new LinkedList<>();
 
 		this.userSkillsRepo.findAll().stream().forEach(t -> {
 			Map<String, Object> skills = new HashMap<>();
-
-			skills.put("id", t.getId());
-			skills.put("desc", t.getSkills());
-
+			skills.put("userSkills", t);
 			res.add(skills);
 		});
 

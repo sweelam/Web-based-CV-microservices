@@ -1,6 +1,7 @@
 package com.web.controller;
 
 import java.util.List;
+import java.util.Optional;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
@@ -42,8 +43,10 @@ public class HomeController {
 	 */
 	@RequestMapping(value = "/data/getData/{id}", method = RequestMethod.GET, produces = MediaType.APPLICATION_JSON_UTF8_VALUE)
 	public ResponseEntity<TempEntity> findTempById(@PathVariable(value = "id") int id) {
-		return null != tempRepo.findById(id) ? 
-				new ResponseEntity<TempEntity>(tempRepo.findById(id), HttpStatus.OK) : 
+		Optional<TempEntity> tempEntity = tempRepo.findById(id);
+		
+		return tempEntity.isPresent() ? 
+				new ResponseEntity<TempEntity>(tempEntity.get(), HttpStatus.OK) : 
 					new ResponseEntity<TempEntity>(HttpStatus.NOT_FOUND);
 	}
 

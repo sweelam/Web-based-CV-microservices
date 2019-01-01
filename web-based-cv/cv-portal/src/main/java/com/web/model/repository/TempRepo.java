@@ -8,6 +8,6 @@ import com.web.model.entity.TempEntity;
 @Repository
 public interface TempRepo extends JpaRepository<TempEntity , Integer> {
 
-    public TempEntity findById(int id);
+//    public TempEntity findById(int id);
 
 }

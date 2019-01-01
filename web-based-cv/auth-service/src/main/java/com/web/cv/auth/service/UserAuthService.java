@@ -27,26 +27,30 @@ public class UserAuthService {
 
 	public UserDetailsService getUserDetails() {
 
-		UserDetailsService userDetailsService = (name) -> {
+		return (name) -> {
 			Optional<UserEntity> user = this.userRepo.findByUsername(name);
-			return new UserPrincipale(user.get());
+			return user.isPresent() ? new UserPrincipale(user.get()) : null;
 		};
 
-		return userDetailsService;
 	}
 
+	/**
+	 * @author sweelam
+	 * @param userCredentials
+	 * @return
+	 * @throws BusinessException
+	 */
 	public Map<String, Object> isUserExist(UserCredentials userCredentials) throws BusinessException {
 		UserPrincipale userPrincipale = null;
 		Map<String, Object> res = new TreeMap<>();
 
-		try {
+		UserDetailsService userDetails = this.getUserDetails();
 
-			userPrincipale = (UserPrincipale) this.getUserDetails().loadUserByUsername(userCredentials.getUsername());
-
-		} catch (Exception ex) {
-			throw new BusinessException("User not found", "/welcome", 
-					HttpStatus.NOT_FOUND.name(), HttpStatus.NOT_FOUND.value());
-		}
+		if (null != userDetails)
+			userPrincipale = (UserPrincipale) userDetails.loadUserByUsername(userCredentials.getUsername());
+		else
+			throw new BusinessException("User not found", "/welcome", HttpStatus.NOT_FOUND.name(),
+					HttpStatus.NOT_FOUND.value());
 
 		boolean checkpw = BCrypt.checkpw(userCredentials.getPassword(), userPrincipale.getPassword());
 
@@ -54,8 +58,8 @@ public class UserAuthService {
 			res.put("res", "/login");
 			res.put("userId", this.userRepo.findByUsername(userCredentials.getUsername()).get().getUserId());
 		} else
-			throw new BusinessException("Username or password is not correct!", "/welcome",
-					HttpStatus.NOT_FOUND.name(), HttpStatus.NOT_FOUND.value());
+			throw new BusinessException("Username or password is not correct!", "/welcome", HttpStatus.NOT_FOUND.name(),
+					HttpStatus.NOT_FOUND.value());
 
 		return res;
 	}

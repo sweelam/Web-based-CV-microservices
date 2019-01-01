@@ -52,12 +52,12 @@ public class MyInfoController {
     }
 
     @GetMapping(value = "/job/info/{accId}")
-    public List<MyJobsEntity> getJobInfo(@PathVariable(value = "accId", required = true) Integer accId) {
+    public List<MyJobsEntity> getJobInfo(@PathVariable(value = "accId") Integer accId) {
         return myInfoService.getJobInfo(accId);
     }
 
 
-    @RequestMapping(value = "/update/job/{accId}",
+    @RequestMapping(value = "/job/{accId}",
             method = RequestMethod.PUT,
             consumes = MediaType.APPLICATION_JSON_UTF8_VALUE)
     public void updateJob(@PathVariable("accId") int accId, @PathVariable("desc") String jobDesc) {
@@ -73,10 +73,12 @@ public class MyInfoController {
     @GetMapping(value = "/info/skills", produces = MediaType.APPLICATION_JSON_UTF8_VALUE)
     public ResponseEntity<List<Map<String, Object>>> getAllSkills() {
         try {
-            if (null != this.myInfoService.getUserSkills())
-                return new ResponseEntity<List<Map<String, Object>>>(this.myInfoService.getUserSkills(), HttpStatus.OK);
-            else
-                return new ResponseEntity<>(HttpStatus.NOT_FOUND);
+        	List<Map<String, Object>> userSkills = this.myInfoService.getUserSkills();
+        	
+            return (null != userSkills && userSkills .size() > 0) ?
+                new ResponseEntity<List<Map<String, Object>>>(userSkills, HttpStatus.OK) :
+                	new ResponseEntity<>(HttpStatus.NOT_FOUND);
+            
         } catch (Exception e) {
             e.printStackTrace();
             return new ResponseEntity<>(HttpStatus.INTERNAL_SERVER_ERROR);

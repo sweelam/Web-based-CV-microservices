@@ -14,13 +14,8 @@ zuul:
       path: /api/cv/**
       serviceId: cv-service         # Translated as http://localhost:8081/cv-service/api/cv/**
 
-hystrix:
-  command:
-    default:
-      execution:
-        isolation:
-          thread:
-            timeoutInMilliseconds: 20000
+ribbon:
+  ReadTimeout: 120000               # To avoid timeout on server
 
 eureka:
   client:
