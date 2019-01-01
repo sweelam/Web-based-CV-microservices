@@ -1,0 +1,102 @@
+<div class="w3-container w3-card w3-white w3-margin-bottom" style="box-sizing:initial; min-height:950px; height:auto;">
+
+  <div class="setup">
+    <div align="center">
+      <h1>
+        <p> Experience Details Form </p>
+      </h1>
+    </div>
+
+    <form [formGroup]="userForm" (ngSubmit)="onSubmit()">
+      <!-- <div class="container" *ngFor="let no of formNo; let in=index"> -->
+
+
+      <div class="form-group">
+        <label for="fullname">
+          <h4> <b> Full Name </b> </h4>
+        </label>
+        <input type="text" id="fullname" name="fullname" class="form-control" formControlName="fullname" />
+      </div>
+
+      <div class="form-group">
+        <label for="email">
+          <h4> <b> Email </b> </h4>
+        </label>
+        <input type="email" id="email" name="email" class="form-control" style="width:98%" formControlName="email" />
+      </div>
+
+      <div class="form-group">
+        <label for="address">
+          <h4> <b>Mobile</b> </h4>
+        </label>
+        <input type="text" name="mobile" class="form-control" formControlName="mobile" />
+      </div>
+
+      <div class="form-group">
+        <label for="address">
+          <h4>
+            <b>Address</b>
+          </h4>
+        </label>
+        <input type="text" name="address" class="form-control" formControlName="address" />
+      </div>
+
+      <div class="form-group">
+        <label for="titl">
+          <h4>
+            <b>Title</b>
+          </h4>
+        </label>
+        <input type="text" name="title" class="form-control" formControlName="title" />
+      </div>
+
+      <div class="row">
+        <div class="form-group col-lg-1">
+          <label for="dte">
+            <h4>
+              <b>From</b>
+            </h4>
+          </label>
+        </div>
+        <div class="input-group date" data-provide="datepicker">
+          <input type="date" name="from" class="form-control" formControlName="from" />
+        </div>
+      </div>
+     
+      <div class="row">
+        <div class="form-group col-lg-1">
+          <label for="dte">
+            <h4>
+              <b>To</b>
+            </h4>
+          </label>
+        </div>
+        <div class="input-group date" data-provide="datepicker">
+          <input type="date" name="to" class="form-control" formControlName="to" />
+        </div>
+      </div>
+      
+      <div class="input-group"  align="left">
+        <label for="desc">
+          <h4>
+            <b>Addtional Information</b>
+          </h4>
+        </label>
+      </div>
+      <div class="input-group col-lg-11">
+          <textarea  rows="6" name="jobDesc" class="form-control" formControlName="jobDesc"> </textarea>
+      </div>
+    
+      <div align="middle">
+        <button type="submit" class="btn btn-primary btn-lg btn-block"> Submit </button>
+      </div>
+      
+    </form>
+    
+    <!-- <button type="button" class="btn btn-primary"(click)="reset()">Reset Form</button>
+    <button type="button" class="btn btn-primary" (click)="addNewForm()">
+      <i class="w3-margin-center fa fa-plus"></i>
+    </button> -->
+
+  </div>
+</div>

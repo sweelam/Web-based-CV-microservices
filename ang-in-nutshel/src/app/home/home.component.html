@@ -1,0 +1,157 @@
+<!-- The Grid -->
+<div class="w3-row-padding">
+  <!-- Left Column -->
+  <div class="w3-third">
+    <div class="w3-white w3-text-grey w3-card-4">
+      <div class="w3-display-container"> </div>
+      
+      <div class="w3-container">
+        <p>
+          <i class="fa fa-briefcase fa-fw w3-margin-right w3-large w3-text-teal"></i>
+          {{userInfo.userTitle}}
+        </p>
+
+        <p>
+          <i class="fa fa-home fa-fw w3-margin-right w3-large w3-text-teal"></i>
+          {{userInfo.address}}
+        </p>
+
+        <p>
+          <i class="fa fa-envelope fa-fw w3-margin-right w3-large w3-text-teal"></i>
+          {{userInfo.email}}
+        </p>
+
+        <p>
+          <i class="fa fa-phone fa-fw w3-margin-right w3-large w3-text-teal"></i>
+          {{userInfo.mobile}}
+        </p>
+
+        <hr>
+
+        <p class="w3-large">
+          <b>
+            <i class="fa fa-asterisk fa-fw w3-margin-right w3-text-teal"></i>
+            Skills
+          </b>
+        </p>
+
+        <p>{{ userSkills[0]}}</p>
+        <div class="w3-light-grey w3-round-xlarge w3-small">
+          <div class="w3-container w3-center w3-round-xlarge w3-teal" style="width:90%">90%</div>
+        </div>
+
+        <p>{{ userSkills[1] }}</p>
+        <div class="w3-light-grey w3-round-xlarge w3-small">
+          <div class="w3-container w3-center w3-round-xlarge w3-teal" style="width:80%">
+            <div class="w3-center w3-text-white">80%</div>
+          </div>
+        </div>
+
+        <p>{{ userSkills[2] }}</p>
+        <div class="w3-light-grey w3-round-xlarge w3-small">
+          <div class="w3-container w3-center w3-round-xlarge w3-teal" style="width:70%">
+            <div class="w3-center w3-text-white">70%</div>
+          </div>
+        </div>
+
+        <p>{{ userSkills[3] }}</p>
+        <div class="w3-light-grey w3-round-xlarge w3-small">
+          <div class="w3-container w3-center w3-round-xlarge w3-teal" style="width:60%">60%</div>
+        </div>
+        <br>
+
+        <p class="w3-large w3-text-theme">
+          <b>
+            <i class="fa fa-globe fa-fw w3-margin-right w3-text-teal"></i>Languages
+          </b>
+        </p>
+
+        <p>Arabic</p>
+        <div class="w3-light-grey w3-round-xlarge">
+          <div class="w3-container w3-center w3-round-xlarge w3-teal" style="width:100%">100%</div>
+        </div>
+
+        <p>English</p>
+        <div class="w3-light-grey w3-round-xlarge">
+          <div class="w3-container w3-center w3-round-xlarge w3-teal" style="width:95%">95%</div>
+        </div>
+        <br>
+      </div>
+    </div>
+    <br>
+    <div align="middle">
+      <button type="button" class="btn btn-primary btn-lg" (click)="loginService.logout()">Logout</button>
+    </div>
+  </div>
+
+  <!-- Right Column -->
+  <div class="w3-twothird">
+
+    <div class="w3-container w3-card w3-white w3-margin-bottom">
+      <div align='center' class="w3-text-grey w3-padding-16">
+        <h1 [textContent]="fullname"></h1>
+      </div>
+      <h2 class="w3-text-grey w3-padding-16">
+        <i class="fa fa-suitcase fa-fw w3-margin-right w3-xxlarge w3-text-teal"></i>Work Experience</h2>
+
+      <div *ngFor="let job of jobInfo" class="w3-container">
+        <h5 class="w3-opacity">
+          <b [textContent]="job.title"></b> <b> @ </b> <b [textContent]="job.company"></b>
+        </h5>
+        <h6 class="w3-text-teal">
+          <i class="fa fa-calendar fa-fw w3-margin-right"></i>
+          {{job.startDate}} - {{job.endDate }}
+        </h6>
+        <p [textContent]="job.jobDescription"></p>
+        <hr>
+      </div>
+    </div>
+
+    <div class="w3-container w3-card w3-white">
+      <h2 class="w3-text-grey w3-padding-16">
+        <i class="fa fa-certificate fa-fw w3-margin-right w3-xxlarge w3-text-teal"></i>Education</h2>
+      <div class="w3-container">
+        <h5 class="w3-opacity">
+          <b>Helwan University , Egypt</b>
+        </h5>
+        <h6 class="w3-text-teal">
+          <i class="fa fa-calendar fa-fw w3-margin-right"></i>2011 - 2015</h6>
+        <p>Computer Science Specialist</p>
+        <hr>
+      </div>
+
+      <div class="w3-container">
+        <h5 class="w3-opacity">
+          <b>Stanford University</b>
+        </h5>
+        <h6 class="w3-text-teal">
+          <i class="fa fa-calendar fa-fw w3-margin-right"></i>2016 - 2017</h6>
+        <p>Software Architecture Design</p>
+        <hr>
+      </div>
+
+      <div class="w3-container">
+        <h5 class="w3-opacity">
+          <b>Stanford University</b>
+        </h5>
+        <h6 class="w3-text-teal">
+          <i class="fa fa-calendar fa-fw w3-margin-right"></i>2013</h6>
+        <p>Machine Learning Cetified</p>
+        <hr>
+      </div>
+      <div class="w3-container">
+        <h5 class="w3-opacity">
+          <b>Telecomounication Ministry</b>
+        </h5>
+        <h6 class="w3-text-teal">
+          <i class="fa fa-calendar fa-fw w3-margin-right"></i>2015</h6>
+        <p>Project Management Certified</p>
+        <br>
+      </div>
+    </div>
+
+    <!-- End Right Column -->
+  </div>
+
+  <!-- End Grid -->
+</div>

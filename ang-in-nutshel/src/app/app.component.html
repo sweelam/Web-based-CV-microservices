@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+<link rel='stylesheet' href='https://fonts.googleapis.com/css?family=Roboto'>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+<body class="w3-light-grey">
+
+  <!-- Page Container -->
+  <div class="w3-content w3-margin-top" style="max-width:1400px;">
+    <div class="w3-row-padding">
+      <router-outlet></router-outlet>
+    </div>
+  </div>
+
+  <footer class="w3-container w3-teal w3-center w3-margin-top">
+ 
+  <div class="row">
+    <div  class="col-lg-4">
+      <div [hidden]="loginService.hide" align="left">
+        <button type="button" class="btn btn-primary btn-lg" style="background-color:rgb(63, 63, 245)" (click)="back()">back</button>
+      </div>
+    </div>
+    <div class="col-lg-4" >
+      <h3>
+        <p>Find me on social media</p>
+      </h3>
+    </div>
+  </div>
+  
+    <a href="https://www.facebook.com/mohamed.sweelam2">
+      <i class="fa fa-facebook-official w3-hover-opacity"></i>
+    </a>
+    <a href="https://twitter.com/Mohamed_Sweelam">
+      <i class="fa fa-twitter w3-hover-opacity"></i>
+    </a>
+    <a href="https://www.linkedin.com/in/mohamedsweelam/">
+      <i class="fa fa-linkedin w3-hover-opacity"></i>
+    </a>
+    <section>
+      <a [routerLink]="" (click)="onSetupClick()" routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}">
+        <h3>Admin</h3>
+      </a>
+    </section>
+  </footer>
+
+
+</body>

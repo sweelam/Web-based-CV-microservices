@@ -1,0 +1,35 @@
+    <div class="w3-container w3-card w3-white w3-margin-bottom" style="box-sizing:initial;min-height:950px;height:auto;">
+
+    <div class="login">
+        <form #loginForm="ngForm" (ngSubmit)="onSubmit(loginForm.value)">
+            <div class="imgcontainer">
+                <img src="../../assets/img_avatar.png" alt="Avatar" class="avatar">
+            </div>
+            <div class="container">
+                <label for="uname">
+                    <h4>
+                        <b>Username</b>
+                    </h4>
+                </label>
+                <div>
+                    <input type="text" name="username" ngModel/>
+                </div>
+
+                <label for="Password">
+                    <h4>
+                        <b>Password</b>
+                    </h4>
+                </label>
+                <div>
+                    <input type="password" name="password" #password ngModel/>
+                </div>
+            </div>
+
+            <button type="submit"> Submit </button>
+            <br>
+            <label>
+                <input type="checkbox" checked="checked" name="remember"> Remember me
+            </label>
+        </form>
+    </div>
+</div>
