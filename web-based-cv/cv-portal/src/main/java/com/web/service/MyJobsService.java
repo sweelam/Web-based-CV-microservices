@@ -16,7 +16,8 @@ public class MyJobsService {
     MyJobsRepo myJobsRepo;
 
     public String getJobDescription(int id) {
-        return myJobsRepo.findById(id).get().getJobDescription();
+    	Optional<MyJobsEntity> jobEntity = myJobsRepo.findById(id);
+        return jobEntity.isPresent() ? jobEntity.get().getJobDescription() : "";
     }
 
     public String getJobTitle(Integer id) {
