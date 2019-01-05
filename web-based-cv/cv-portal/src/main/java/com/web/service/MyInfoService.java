@@ -117,9 +117,9 @@ public class MyInfoService {
 	public void saveMyInfo(UserInfoVo userInfoVo) throws Exception {
 		MyInfoEntity myInfoEntity = new MyInfoEntity();
 
-		String x = myInfoRepo.count() + 1 + "";
+		Integer infoId = Integer.parseInt(myInfoRepo.count() + 1 + "");
 
-		myInfoEntity.setId(Integer.parseInt(x));
+		myInfoEntity.setId(infoId);
 		myInfoEntity.setFullName(userInfoVo.getFullname());
 		myInfoEntity.setEmail(userInfoVo.getEmail());
 		myInfoEntity.setAddress(userInfoVo.getAddress());
@@ -127,6 +127,6 @@ public class MyInfoService {
 
 		this.myInfoRepo.save(myInfoEntity);
 
-		this.myJobsService.saveJobData(userInfoVo, Integer.parseInt(x));
+		this.myJobsService.saveJobData(userInfoVo, infoId);
 	}
 }
