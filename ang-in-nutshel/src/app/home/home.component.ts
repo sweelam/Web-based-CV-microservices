@@ -57,14 +57,13 @@ export class HomeComponent implements OnInit {
         this.jobInfo = JSON.parse(data);
       });
 
-      this.fetchUserSkills();
+      this.fetchUserSkills(this.paramValue);
 
     });
   }
 
-  fetchUserSkills(): void {
-    debugger
-    this.homeService.getUserSkills().subscribe(data => {
+  fetchUserSkills(accId): void {
+    this.homeService.getUserSkills(accId).subscribe(data => {
       let skills : any[] = data;
       
       skills.forEach(elem => {

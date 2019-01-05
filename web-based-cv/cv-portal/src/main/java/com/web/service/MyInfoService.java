@@ -13,6 +13,7 @@ import org.springframework.stereotype.Service;
 
 import com.web.model.entity.MyInfoEntity;
 import com.web.model.entity.MyJobsEntity;
+import com.web.model.entity.UserSkillsEntity;
 import com.web.model.repository.MyInfoRepo;
 import com.web.model.repository.UserSkillsRepo;
 import com.web.model.vo.MyInfoVO;
@@ -97,14 +98,17 @@ public class MyInfoService {
 	 * 
 	 * @return
 	 */
-	public List<Map<String, Object>> getUserSkills() {
+	public List<Map<String, Object>> getUserSkills(int userId) {
 		List<Map<String, Object>> res = new LinkedList<>();
-
-		this.userSkillsRepo.findAll().stream().forEach(t -> {
-			Map<String, Object> skills = new HashMap<>();
-			skills.put("userSkills", t);
-			res.add(skills);
-		});
+		
+		List<UserSkillsEntity> userSkills = this.userSkillsRepo.findByUserId(userId);
+		
+		if(null != userSkills)
+			userSkills.stream().forEach(t -> {
+				Map<String, Object> skills = new HashMap<>();
+				skills.put("userSkills", t);
+				res.add(skills);
+			});
 
 		return res;
 	}

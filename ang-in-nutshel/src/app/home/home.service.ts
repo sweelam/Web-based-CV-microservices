@@ -33,8 +33,9 @@ export class HomeService {
         return this.http.get( API.ROOT + '/test/response', { responseType: 'json' });
     }
 
-    getUserSkills(): Observable<any> {
-        return this.http.get(this.urlAccount + 'info/skills', { responseType: 'json' });
+    getUserSkills(accId): Observable<any> {
+        debugger
+        return this.http.get(this.urlAccount + 'info/skills/' + accId, { responseType: 'json' });
     }
 
 }

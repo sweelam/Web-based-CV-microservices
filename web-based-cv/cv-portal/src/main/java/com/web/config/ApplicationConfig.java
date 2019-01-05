@@ -15,12 +15,13 @@ import org.springframework.security.config.http.SessionCreationPolicy;
 @EnableWebSecurity
 @EnableAsync
 public class ApplicationConfig extends WebSecurityConfigurerAdapter {
-    // Add required permits for production use
+    
+	// Add required permits for production use
     @Override
     protected void configure(HttpSecurity http) throws Exception {
         http.csrf().disable()
                 .authorizeRequests()
-                .antMatchers("/", "/home", "/index", "/**.js" , "/**.css", "/assets/**").permitAll()
+                .antMatchers("/", "/home", "/index", "/**.js" , "/**.css", "/assets/**", "/swagger-ui").permitAll()
                 .antMatchers("/api-cv/**").permitAll()
                 .and()
                 .sessionManagement().sessionCreationPolicy(SessionCreationPolicy.STATELESS);

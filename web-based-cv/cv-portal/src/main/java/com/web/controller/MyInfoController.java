@@ -28,6 +28,8 @@ import com.web.service.MyInfoService;
 import com.web.utils.common.BusinessException;
 import com.web.utils.common.dto.UserInfoVo;
 
+import io.swagger.annotations.ApiOperation;
+
 @RestController
 @CrossOrigin
 @RequestMapping(value = "/account")
@@ -38,6 +40,7 @@ public class MyInfoController {
 
     @GetMapping(value = "/fullName")
     @Loggable
+    @ApiOperation(value="Account Name", notes="Account Page Title")
     public String getAccountName(@RequestParam(value = "accId", required = true) Integer accId) {
         return myInfoService.getFullName(accId);
     }
@@ -52,6 +55,7 @@ public class MyInfoController {
     }
 
     @GetMapping(value = "/job/info/{accId}")
+    @ApiOperation(value="Job Information", notes="Display available job information")
     public List<MyJobsEntity> getJobInfo(@PathVariable(value = "accId") Integer accId) {
         return myInfoService.getJobInfo(accId);
     }
@@ -60,6 +64,7 @@ public class MyInfoController {
     @RequestMapping(value = "/job/{accId}",
             method = RequestMethod.PUT,
             consumes = MediaType.APPLICATION_JSON_UTF8_VALUE)
+    @ApiOperation(value="Job Updater", notes="Update job description")
     public void updateJob(@PathVariable("accId") int accId, @PathVariable("desc") String jobDesc) {
         myInfoService.updateJob(accId, jobDesc);
     }
@@ -70,10 +75,11 @@ public class MyInfoController {
         return new ResponseEntity<MyInfoEntity>(myInfoService.getInfoDetailsById(accId), HttpStatus.OK);
     }
 
-    @GetMapping(value = "/info/skills", produces = MediaType.APPLICATION_JSON_UTF8_VALUE)
-    public ResponseEntity<List<Map<String, Object>>> getAllSkills() {
+    @GetMapping(value = "/info/skills/{accId}", produces = MediaType.APPLICATION_JSON_UTF8_VALUE)
+    @ApiOperation(value="User Skills", notes="List of user's skills")
+    public ResponseEntity<List<Map<String, Object>>> getAllSkills(@PathVariable("accId") int accId) {
         try {
-        	List<Map<String, Object>> userSkills = this.myInfoService.getUserSkills();
+        	List<Map<String, Object>> userSkills = this.myInfoService.getUserSkills(accId);
         	
             return (null != userSkills && userSkills .size() > 0) ?
                 new ResponseEntity<List<Map<String, Object>>>(userSkills, HttpStatus.OK) :
