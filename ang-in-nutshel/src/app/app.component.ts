@@ -21,8 +21,7 @@ export class AppComponent implements OnInit {
   }
 
   onSetupClick() {
-    debugger
-    this.router.navigate(['/setup', this.loginService.getUserId()]);
+    this.router.navigate(['/setup', this.loginService.getUserId()], {skipLocationChange: true});
   }
 
   back() {

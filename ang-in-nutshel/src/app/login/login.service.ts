@@ -36,13 +36,16 @@ export class LoginService {
     this.http.post(API.ROOT + "/auth-service/api/auth/user/login-form", request)
       .subscribe((data) => {
         this.isLoggedIn = true;
+        this.hide = !this.isLoggedIn;
 
+        
+        const userId = data['userId'];
+        this.setUserId(userId);
+        
+        
         sessionStorage.setItem("logged-in", this.isLoggedIn + '');
+        sessionStorage.setItem("userId", userId);
 
-        this.setUserId(+data['userId']);
-        
-        this.hide = false;
-        
         this.router.navigate(['/home', this.getUserId()]);
       }, (error: ErrorHandler) => {
         

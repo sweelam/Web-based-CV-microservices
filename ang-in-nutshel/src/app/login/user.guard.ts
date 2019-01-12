@@ -11,10 +11,17 @@ export class UserGuard implements CanActivate {
 
   canActivate(next: ActivatedRouteSnapshot, state: RouterStateSnapshot):
     Observable<boolean> | Promise<boolean> | boolean {
-      // if (!this.loginService.isLoggedIn) 
-      if(sessionStorage.getItem("logged-in") != 'true') {
-        this.router.navigate(['login']);
 
+
+    let sameUser = state.url.includes("home/" + sessionStorage.getItem("userId"))
+    if (state.url.includes("home/") && !sameUser) {
+      this.router.navigate(['login']);
+      return false;
+    }
+
+
+    if (sessionStorage.getItem("logged-in") != 'true') {
+      this.router.navigate(['login']);
       return false;
     }
 

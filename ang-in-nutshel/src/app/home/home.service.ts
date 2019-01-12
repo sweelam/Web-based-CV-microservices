@@ -34,7 +34,6 @@ export class HomeService {
     }
 
     getUserSkills(accId): Observable<any> {
-        debugger
         return this.http.get(this.urlAccount + 'info/skills/' + accId, { responseType: 'json' });
     }
 

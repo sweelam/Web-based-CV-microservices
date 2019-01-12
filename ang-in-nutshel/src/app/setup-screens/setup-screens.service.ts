@@ -1,10 +1,8 @@
 import { Injectable } from '@angular/core';
 import { Response } from '@angular/http';
 import { HttpClient, HttpParams } from '@angular/common/http';
-import { catchError, retry } from 'rxjs/operators';
 import 'rxjs/add/operator/map';
 
-import { SetupScreensComponent } from './setup-screens.component';
 import { UserJob } from './user';
 import { API } from '../app-constants/Constants';
 

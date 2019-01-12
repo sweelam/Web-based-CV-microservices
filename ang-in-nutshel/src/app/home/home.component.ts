@@ -22,21 +22,21 @@ export class HomeComponent implements OnInit {
   jobInfo: any[] = [];
   paramValue = '';
 
-  constructor(private homeService: HomeService, 
-              private route: ActivatedRoute, 
-              private loginService: LoginService) {
+  constructor(private homeService: HomeService,
+    private route: ActivatedRoute,
+    private loginService: LoginService) {
     this.userInfo = new UserInfo(null, null, null, null, null, null, null);
   }
 
   ngOnInit() {
     this.fetchUserInfo();
   }
-  
+
   fetchUserInfo(): void {
     // Subscribe URL parameter
     this.route.params.subscribe(params => {
       this.paramValue = params['accId'];
-      
+
       this.fetchUserHome();
 
       this.homeService.getFullName(this.paramValue).subscribe(data => {
@@ -44,7 +44,8 @@ export class HomeComponent implements OnInit {
       });
 
       this.homeService.getInfoDetails(this.paramValue).subscribe(data => {
-        this.userInfo = new UserInfo(data['id'],
+        this.userInfo = new UserInfo(
+          data['id'],
           data['fullname'],
           data['mobile'],
           data['email'],
@@ -58,14 +59,13 @@ export class HomeComponent implements OnInit {
       });
 
       this.fetchUserSkills(this.paramValue);
-
     });
   }
 
   fetchUserSkills(accId): void {
     this.homeService.getUserSkills(accId).subscribe(data => {
-      let skills : any[] = data;
-      
+      let skills: any[] = data;
+
       skills.forEach(elem => {
         this.userSkills.push(elem['userSkills']['skills']);
       });
