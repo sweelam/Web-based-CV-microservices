@@ -54,9 +54,11 @@ public class UserAuthService {
 
 		boolean checkpw = BCrypt.checkpw(userCredentials.getPassword(), userPrincipale.getPassword());
 
+		
 		if (checkpw) {
 			res.put("res", "/login");
-			res.put("userId", this.userRepo.findByUsername(userCredentials.getUsername()).get().getUserId());
+			Optional<UserEntity> user = this.userRepo.findByUsername(userCredentials.getUsername());
+			res.put("userId", user.isPresent() ? user.get().getUserId() : -1);
 		} else
 			throw new BusinessException("Username or password is not correct!", "/welcome", HttpStatus.NOT_FOUND.name(),
 					HttpStatus.NOT_FOUND.value());

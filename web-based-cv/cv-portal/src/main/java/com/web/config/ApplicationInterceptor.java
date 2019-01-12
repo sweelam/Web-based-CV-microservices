@@ -24,8 +24,8 @@ public class ApplicationInterceptor extends HandlerInterceptorAdapter {
         // Add pre request processing like authentication or proxy layer
         this.loggerService.saveRequest(new RequestVo(request.getRequestURI(),
                 request.getMethod(),
-                request.getHeader("token") != null ? request.getHeader("token").toString() : "",
-                request.getHeader("Content-Type") != null ? request.getHeader("Content-Type").toString() : ""));
+                request.getHeader("token") != null ? request.getHeader("token") : "",
+                request.getHeader("Content-Type") != null ? request.getHeader("Content-Type") : ""));
 
         return super.preHandle(request, response, handler);
     }

@@ -8,9 +8,9 @@ import org.springframework.http.HttpStatus;
 import org.springframework.http.MediaType;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.CrossOrigin;
+import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.web.model.entity.TempEntity;
@@ -31,7 +31,7 @@ public class HomeController {
 	 *
 	 * @return
 	 */
-	@RequestMapping(value = "/data", method = RequestMethod.GET, produces = MediaType.APPLICATION_JSON_UTF8_VALUE)
+	@GetMapping(value = "/data", produces = MediaType.APPLICATION_JSON_UTF8_VALUE)
 	public List<TempEntity> findAll() {
 		return tempRepo.findAll();
 	}
@@ -41,7 +41,7 @@ public class HomeController {
 	 * @param id
 	 * @return
 	 */
-	@RequestMapping(value = "/data/getData/{id}", method = RequestMethod.GET, produces = MediaType.APPLICATION_JSON_UTF8_VALUE)
+	@GetMapping(value = "/data/getData/{id}", produces = MediaType.APPLICATION_JSON_UTF8_VALUE)
 	public ResponseEntity<TempEntity> findTempById(@PathVariable(value = "id") int id) {
 		Optional<TempEntity> tempEntity = tempRepo.findById(id);
 		
@@ -54,9 +54,9 @@ public class HomeController {
 	 *
 	 * @return
 	 */
-	@RequestMapping(value = "/all", method = RequestMethod.GET, produces = MediaType.TEXT_PLAIN_VALUE)
+	@GetMapping(value = "/all", produces = MediaType.TEXT_PLAIN_VALUE)
 	public String home() {
 		List<TempEntity> tempList = tempRepo.findAll();
-		return tempList.get(0).getValue();
+		return !tempList.isEmpty() ? tempList.get(0).getValue() : "";
 	}
 }

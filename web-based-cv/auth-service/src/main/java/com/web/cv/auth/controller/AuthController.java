@@ -36,7 +36,7 @@ public class AuthController {
             produces = MediaType.APPLICATION_JSON_UTF8_VALUE,
             consumes = MediaType.APPLICATION_JSON_UTF8_VALUE)
     @Loggable
-    public ResponseEntity<?> login(@RequestBody @Valid UserCredentials body, Errors errors) throws BusinessException {
+    public ResponseEntity<Map<String, Object>> login(@RequestBody @Valid UserCredentials body, Errors errors) throws BusinessException {
 
         if (errors.hasErrors())
             return new ResponseEntity<>(HttpStatus.NOT_ACCEPTABLE);

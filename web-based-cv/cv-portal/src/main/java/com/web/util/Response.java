@@ -1,4 +1,4 @@
-package com.web.ApplicationUtil;
+package com.web.util;
 
 public class Response<T> {
 

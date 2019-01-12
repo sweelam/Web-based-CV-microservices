@@ -11,13 +11,13 @@ import org.springframework.web.bind.annotation.ControllerAdvice;
 import org.springframework.web.bind.annotation.ExceptionHandler;
 import org.springframework.web.servlet.mvc.method.annotation.ResponseEntityExceptionHandler;
 
-import com.web.ApplicationUtil.ApiErrorHandling;
+import com.web.util.ApiErrorHandling;
 
 @ControllerAdvice
 public class MyProfileControllerAdvise extends ResponseEntityExceptionHandler {
 
     @ExceptionHandler(ApiErrorHandling.class)
-    ResponseEntity<?> handleContollerException(HttpServletRequest http) {
+    ResponseEntity<ApiErrorHandling> handleContollerException(HttpServletRequest http) {
         HttpStatus status = getStatus(http);
 
         ApiErrorHandling errorHandling = new ApiErrorHandling();
@@ -25,7 +25,7 @@ public class MyProfileControllerAdvise extends ResponseEntityExceptionHandler {
         errorHandling.setError(Arrays.asList(status.getReasonPhrase()));
         errorHandling.setMessage("No data found");
 
-        return new ResponseEntity<ApiErrorHandling>(errorHandling, HttpStatus.NOT_FOUND);
+        return new ResponseEntity<>(errorHandling, HttpStatus.NOT_FOUND);
     }
 
     private HttpStatus getStatus(HttpServletRequest httpRequest) {

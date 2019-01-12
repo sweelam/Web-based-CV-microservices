@@ -6,8 +6,6 @@ import org.springframework.boot.builder.SpringApplicationBuilder;
 import org.springframework.boot.web.servlet.support.SpringBootServletInitializer;
 import org.springframework.cloud.netflix.eureka.EnableEurekaClient;
 
-import springfox.documentation.swagger2.annotations.EnableSwagger2;
-
 @EnableEurekaClient
 //@PropertySource("application-${spring.profiles.active}.properties")
 @SpringBootApplication(scanBasePackages= {"com.web"})

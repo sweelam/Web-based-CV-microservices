@@ -1,5 +1,6 @@
 package com.web.service;
 
+import java.util.Collections;
 import java.util.HashMap;
 import java.util.LinkedList;
 import java.util.List;
@@ -40,7 +41,8 @@ public class MyInfoService {
 	 * @return
 	 */
 	public String getFullName(Integer id) {
-		return myInfoRepo.findById(id).isPresent() ? myInfoRepo.findById(id).get().getFullName() : null;
+		Optional<MyInfoEntity> info = myInfoRepo.findById(id);
+		return info.isPresent() ? info.get().getFullName() : null;
 	}
 
 	/**
@@ -89,7 +91,6 @@ public class MyInfoService {
 	 */
 	public MyInfoEntity getInfoDetailsById(Integer id) {
 		Optional<MyInfoEntity> userInfo = myInfoRepo.findById(id);
-		
 		return userInfo.isPresent() ? userInfo.get() : null;
 	}
 
@@ -102,15 +103,14 @@ public class MyInfoService {
 		List<Map<String, Object>> res = new LinkedList<>();
 		
 		List<UserSkillsEntity> userSkills = this.userSkillsRepo.findByUserId(userId);
-		
-		if(null != userSkills)
+		if(null != userSkills && userSkills.size() > 0)
 			userSkills.stream().forEach(t -> {
 				Map<String, Object> skills = new HashMap<>();
 				skills.put("userSkills", t);
 				res.add(skills);
 			});
 
-		return res;
+		return !res.isEmpty()? res : Collections.emptyList();
 	}
 
 	/**

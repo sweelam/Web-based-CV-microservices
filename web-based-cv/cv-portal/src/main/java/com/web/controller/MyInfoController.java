@@ -5,6 +5,8 @@ import java.util.Map;
 
 import javax.validation.Valid;
 
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.MediaType;
@@ -13,18 +15,19 @@ import org.springframework.validation.Errors;
 import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
-import com.web.ApplicationUtil.ApiErrorHandling;
 import com.web.cv.logging.Loggable;
 import com.web.model.entity.MyInfoEntity;
 import com.web.model.entity.MyJobsEntity;
 import com.web.model.vo.MyInfoVO;
 import com.web.service.MyInfoService;
+import com.web.util.ApiErrorHandling;
 import com.web.utils.common.BusinessException;
 import com.web.utils.common.dto.UserInfoVo;
 
@@ -34,6 +37,7 @@ import io.swagger.annotations.ApiOperation;
 @CrossOrigin
 @RequestMapping(value = "/account")
 public class MyInfoController {
+	private final Logger LOGGER = LoggerFactory.getLogger(this.getClass());
     @Autowired
     private MyInfoService myInfoService;
 
@@ -72,7 +76,7 @@ public class MyInfoController {
 
     @GetMapping(value = "/info/details/{accId}", produces = MediaType.APPLICATION_JSON_UTF8_VALUE)
     public ResponseEntity<MyInfoEntity> getInfoDetailsByaccId(@PathVariable("accId") Integer accId) {
-        return new ResponseEntity<MyInfoEntity>(myInfoService.getInfoDetailsById(accId), HttpStatus.OK);
+        return new ResponseEntity<>(myInfoService.getInfoDetailsById(accId), HttpStatus.OK);
     }
 
     @GetMapping(value = "/info/skills/{accId}", produces = MediaType.APPLICATION_JSON_UTF8_VALUE)
@@ -82,16 +86,16 @@ public class MyInfoController {
         	List<Map<String, Object>> userSkills = this.myInfoService.getUserSkills(accId);
         	
             return (null != userSkills && userSkills .size() > 0) ?
-                new ResponseEntity<List<Map<String, Object>>>(userSkills, HttpStatus.OK) :
+                new ResponseEntity<>(userSkills, HttpStatus.OK) :
                 	new ResponseEntity<>(HttpStatus.NOT_FOUND);
             
         } catch (Exception e) {
-            e.printStackTrace();
+            LOGGER.error("Error in User skills API : ",  e);
             return new ResponseEntity<>(HttpStatus.INTERNAL_SERVER_ERROR);
         }
     }
 
-    @RequestMapping(value = "/info/data", method = RequestMethod.POST, consumes = MediaType.APPLICATION_JSON_UTF8_VALUE)
+    @PostMapping(value = "/info/data", consumes = MediaType.APPLICATION_JSON_UTF8_VALUE)
     public void saveUserInfo(@RequestBody @Valid UserInfoVo userInfoVo, Errors error) throws Exception {
         if(error.hasErrors())
         	throw new BusinessException("Missing inputs!", "Inputs are not correct", HttpStatus.NOT_ACCEPTABLE.name(), HttpStatus.NOT_ACCEPTABLE.value());
@@ -99,8 +103,8 @@ public class MyInfoController {
     	this.myInfoService.saveMyInfo(userInfoVo);
     }
 
-    @RequestMapping(value = "/info/data/{accId}", method = RequestMethod.GET, produces = MediaType.APPLICATION_JSON_UTF8_VALUE)
+    @GetMapping(value = "/info/data/{accId}", produces = MediaType.APPLICATION_JSON_UTF8_VALUE)
     public ResponseEntity<MyInfoVO> getUserInfo(@PathVariable("accId") Integer accId) {
-        return new ResponseEntity<MyInfoVO>(this.myInfoService.getInfoById(accId), HttpStatus.OK);
+        return new ResponseEntity<>(this.myInfoService.getInfoById(accId), HttpStatus.OK);
     }
 }

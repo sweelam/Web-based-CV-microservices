@@ -3,6 +3,8 @@ package com.web.service;
 import java.sql.Date;
 import java.util.Optional;
 
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -12,6 +14,7 @@ import com.web.utils.common.dto.UserInfoVo;
 
 @Service
 public class MyJobsService {
+	private final Logger LOGGER = LoggerFactory.getLogger(this.getClass());
     @Autowired
     MyJobsRepo myJobsRepo;
 
@@ -36,7 +39,8 @@ public class MyJobsService {
      * @return
      */
     public Date getJobStartDate(Integer id) {
-        return myJobsRepo.findById(id).isPresent() ? myJobsRepo.findById(id).get().getStartDate() : null;
+    	Optional<MyJobsEntity> job = myJobsRepo.findById(id);
+        return job.isPresent() ? job.get().getStartDate() : null;
     }
 
     /**
@@ -45,7 +49,8 @@ public class MyJobsService {
      * @return
      */
     public Date getJobEndDate(Integer id) {
-        return myJobsRepo.findById(id).isPresent() ? myJobsRepo.findById(id).get().getEndDate() : null;
+    	Optional<MyJobsEntity> job = myJobsRepo.findById(id);
+        return job.isPresent() ? job.get().getEndDate() : null;
     }
 
     public void saveJobData(UserInfoVo userInfoVo, int infoRef) {
@@ -73,7 +78,7 @@ public class MyJobsService {
             });
 
         }catch (Exception e) {
-            e.printStackTrace();
+            LOGGER.error("Error while updating job desc : " , e);
         }
     }
 
