@@ -1,0 +1,29 @@
+spring:
+  cloud:
+    config:
+      server:
+        jdbc:
+          sql: SELECT `KEY`, `VALUE` from PROPERTIES where APPLICATION=? and PROFILE=? and LABEL=?
+          order: 1
+  datasource:
+    url: jdbc:mysql://localhost:3306/sweprofile?zeroDateTimeBehavior=convertToNull
+    username: sweelam
+    password: sweelam&roka
+    hikari:
+      maximum-pool-size: 10
+      connection-timeout: 5000
+  profiles:
+    active:
+      - jdbc
+  application:
+    name: configServer
+
+server:
+  port: 8888
+
+eureka:
+  client:
+    service-url:
+      defaultZone: http://localhost:8761/eureka/
+    register-with-eureka: true
+    fetch-registry: true
