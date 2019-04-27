@@ -27,21 +27,12 @@ public class HomeController {
 		this.tempRepo = tempRepo;
 	}
 
-	/**
-	 *
-	 * @return
-	 */
 	@GetMapping(value = "/data", produces = MediaType.APPLICATION_JSON_UTF8_VALUE)
 	public List<TempEntity> findAll() {
 		return tempRepo.findAll();
 	}
 
-	/**
-	 *
-	 * @param id
-	 * @return
-	 */
-	@GetMapping(value = "/data/getData/{id}", produces = MediaType.APPLICATION_JSON_UTF8_VALUE)
+	@GetMapping(value = "/data/{id}", produces = MediaType.APPLICATION_JSON_UTF8_VALUE)
 	public ResponseEntity<TempEntity> findTempById(@PathVariable(value = "id") int id) {
 		Optional<TempEntity> tempEntity = tempRepo.findById(id);
 		
@@ -50,10 +41,6 @@ public class HomeController {
 					new ResponseEntity<TempEntity>(HttpStatus.NOT_FOUND);
 	}
 
-	/**
-	 *
-	 * @return
-	 */
 	@GetMapping(value = "/all", produces = MediaType.TEXT_PLAIN_VALUE)
 	public String home() {
 		List<TempEntity> tempList = tempRepo.findAll();

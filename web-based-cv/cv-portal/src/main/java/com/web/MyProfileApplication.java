@@ -7,7 +7,6 @@ import org.springframework.boot.web.servlet.support.SpringBootServletInitializer
 import org.springframework.cloud.netflix.eureka.EnableEurekaClient;
 
 @EnableEurekaClient
-//@PropertySource("application-${spring.profiles.active}.properties")
 @SpringBootApplication(scanBasePackages= {"com.web"})
 public class MyProfileApplication extends SpringBootServletInitializer {
 

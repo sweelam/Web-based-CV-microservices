@@ -27,7 +27,6 @@ import com.web.model.entity.MyInfoEntity;
 import com.web.model.entity.MyJobsEntity;
 import com.web.model.vo.MyInfoVO;
 import com.web.service.MyInfoService;
-import com.web.util.ApiErrorHandling;
 import com.web.utils.common.BusinessException;
 import com.web.utils.common.dto.UserInfoVo;
 
@@ -51,11 +50,8 @@ public class MyInfoController {
 
     @GetMapping(value = "/fullName/{accId}")
     @Loggable
-    public String getProfileName(@PathVariable(value = "accId") Integer accId) {
-        String name = myInfoService.getFullName(accId);
-        if (null == name)
-            throw new ApiErrorHandling();
-        return name;
+    public String getProfileName(@PathVariable(value = "accId") Integer accId) throws RuntimeException {
+        return myInfoService.getFullName(accId);
     }
 
     @GetMapping(value = "/job/info/{accId}")
@@ -106,5 +102,11 @@ public class MyInfoController {
     @GetMapping(value = "/info/data/{accId}", produces = MediaType.APPLICATION_JSON_UTF8_VALUE)
     public ResponseEntity<MyInfoVO> getUserInfo(@PathVariable("accId") Integer accId) {
         return new ResponseEntity<>(this.myInfoService.getInfoById(accId), HttpStatus.OK);
+    }
+
+    @PostMapping(value = "/info/experience")
+    public ResponseEntity<String> saveExperience(@RequestBody Map<String, Object> userExperience) {
+        this.myInfoService.saveNewExperience(userExperience);
+        return new ResponseEntity<>(HttpStatus.OK);
     }
 }

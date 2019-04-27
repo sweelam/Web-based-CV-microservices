@@ -1,5 +1,6 @@
 package com.web.service;
 
+import lombok.extern.slf4j.Slf4j;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -11,8 +12,8 @@ import com.web.model.repository.AppLoggerRepo;
 import com.web.utils.common.dto.RequestVo;
 
 @Service
+@Slf4j
 public class AppLoggerService {
-	private final Logger LOG = LoggerFactory.getLogger(this.getClass());
     @Autowired
     private AppLoggerRepo appLoggerRepo;
 
@@ -23,7 +24,6 @@ public class AppLoggerService {
     @Async
     public void saveRequest(RequestVo requestVo) {
         try {
-        	LOG.info(new Thread().getName());
             AppLoggerEntity loggerEntity = new AppLoggerEntity();
 
             loggerEntity.setRequestPath(requestVo.getRequestPath());
@@ -33,7 +33,7 @@ public class AppLoggerService {
 
             this.appLoggerRepo.save(loggerEntity);
         } catch(Exception e) {
-            e.printStackTrace();
+            log.error("Error while intercepting ", e);
         }
     }
 }

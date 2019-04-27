@@ -1,14 +1,8 @@
 package com.web.service;
 
-import java.util.Collections;
-import java.util.HashMap;
-import java.util.LinkedList;
-import java.util.List;
-import java.util.Map;
-import java.util.Optional;
 
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
+import com.web.model.repository.MyJobsRepo;
+import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -18,21 +12,28 @@ import com.web.model.entity.UserSkillsEntity;
 import com.web.model.repository.MyInfoRepo;
 import com.web.model.repository.UserSkillsRepo;
 import com.web.model.vo.MyInfoVO;
+import com.web.util.ApiErrorHandling;
 import com.web.utils.common.dto.UserInfoVo;
 
-@Service
-public class MyInfoService {
-	Logger LOG = LoggerFactory.getLogger(this.getClass());
+import java.text.SimpleDateFormat;
+import java.util.*;
+import java.sql.Date;
 
+@Service
+@Slf4j
+public class MyInfoService {
 	private MyInfoRepo myInfoRepo;
 	private MyJobsService myJobsService;
 	private UserSkillsRepo userSkillsRepo;
+	private MyJobsRepo myJobsRepo;
 
 	@Autowired
-	public MyInfoService(MyJobsService myJobsService, MyInfoRepo myInfoRepo, UserSkillsRepo userSkillsRepo) {
+	public MyInfoService(MyJobsService myJobsService, MyInfoRepo myInfoRepo,
+						 UserSkillsRepo userSkillsRepo, MyJobsRepo myJobsRepo) {
 		this.myInfoRepo = myInfoRepo;
 		this.myJobsService = myJobsService;
 		this.userSkillsRepo = userSkillsRepo;
+		this.myJobsRepo = myJobsRepo;
 	}
 
 	/**
@@ -40,9 +41,14 @@ public class MyInfoService {
 	 * @param id
 	 * @return
 	 */
-	public String getFullName(Integer id) {
+	public String getFullName(Integer id) throws RuntimeException{
 		Optional<MyInfoEntity> info = myInfoRepo.findById(id);
-		return info.isPresent() ? info.get().getFullName() : null;
+		
+		if(info.isPresent() && 
+				(null != info.get().getFullName() || !info.get().getFullName().trim().equals("")))
+			return info.get().getFullName();
+		else
+            throw new ApiErrorHandling();
 	}
 
 	/**
@@ -132,5 +138,28 @@ public class MyInfoService {
 		this.myInfoRepo.save(myInfoEntity);
 
 		this.myJobsService.saveJobData(userInfoVo, infoId);
+	}
+
+	public void saveNewExperience(Map<String,Object> userExperience) {
+
+		String jobTItle = (String) userExperience.get("jobTitle");
+		String company = (String) userExperience.get("company");
+		String details = (String) userExperience.get("jobDesc");
+		String from = (String) userExperience.get("from");
+		String to = (String) userExperience.get("to");
+
+
+		try {
+			MyJobsEntity job = new MyJobsEntity();
+			job.setTitle(jobTItle);
+			job.setJobDescription(details);
+			job.setStartDate(new Date(new SimpleDateFormat("yyyy-MM-dd").parse(from).getTime()));
+			job.setEndDate(new Date(new SimpleDateFormat("yyyy-MM-dd").parse(to).getTime()));
+			job.setCompany(company);
+
+			this.myJobsRepo.save(job);
+		}catch (Exception e) {
+			log.error("Error while saving new Experience ", e);
+		}
 	}
 }

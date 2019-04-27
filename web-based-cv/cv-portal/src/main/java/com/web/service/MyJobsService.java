@@ -3,6 +3,7 @@ package com.web.service;
 import java.sql.Date;
 import java.util.Optional;
 
+import lombok.extern.slf4j.Slf4j;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -13,8 +14,8 @@ import com.web.model.repository.MyJobsRepo;
 import com.web.utils.common.dto.UserInfoVo;
 
 @Service
+@Slf4j
 public class MyJobsService {
-	private final Logger LOGGER = LoggerFactory.getLogger(this.getClass());
     @Autowired
     MyJobsRepo myJobsRepo;
 
@@ -78,7 +79,7 @@ public class MyJobsService {
             });
 
         }catch (Exception e) {
-            LOGGER.error("Error while updating job desc : " , e);
+            log.error("Error while updating job desc : " , e);
         }
     }
 

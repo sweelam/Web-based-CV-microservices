@@ -16,6 +16,13 @@
 		<relativePath /> <!-- lookup parent from repository -->
 	</parent>
 
+	<properties>
+		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+		<project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
+		<java.version>1.8</java.version>
+	</properties>
+
+
 	<modules>
 		<module>cv-utils</module>
 		<module>logging-service</module>
@@ -28,6 +35,15 @@
 			<groupId>org.springframework.boot</groupId>
 			<artifactId>spring-boot-starter-web</artifactId>
 		</dependency>
+		<dependency>
+			<groupId>org.springframework.boot</groupId>
+			<artifactId>spring-boot-starter-actuator</artifactId>
+			<version>2.1.4.RELEASE</version>
+		</dependency>
+		<dependency>
+			<groupId>org.springframework.cloud</groupId>
+			<artifactId>spring-cloud-starter-config</artifactId>
+		</dependency>
 	</dependencies>
 
 
@@ -37,6 +53,13 @@
 				<groupId>org.springframework.boot</groupId>
 				<artifactId>spring-boot-dependencies</artifactId>
 				<version>2.0.5.RELEASE</version>
+				<type>pom</type>
+				<scope>import</scope>
+			</dependency>
+			<dependency>
+				<groupId>org.springframework.cloud</groupId>
+				<artifactId>spring-cloud-dependencies</artifactId>
+				<version>Finchley.SR1</version>
 				<type>pom</type>
 				<scope>import</scope>
 			</dependency>
@@ -54,5 +77,4 @@
 			</plugin>
 		</plugins>
 	</build>
-
 </project>
