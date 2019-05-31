@@ -1,6 +1,7 @@
 package com.web.cv.auth.config;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.security.authentication.dao.DaoAuthenticationProvider;
@@ -16,7 +17,7 @@ import com.web.cv.auth.service.UserAuthService;
 @EnableWebSecurity
 public class ApplicationConfig extends WebSecurityConfigurerAdapter {
     @Autowired
-    private UserAuthService userAuthService;
+    @Qualifier("userAuthImpl") private UserAuthService userAuthService;
 
     @Bean
     public DaoAuthenticationProvider authenticationProvider() throws Exception {

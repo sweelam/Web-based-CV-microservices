@@ -10,13 +10,13 @@ spring:
           ddl-auto: none
   application:
     name: auth-service
-  cloud:
-    config:
-      discovery:              # Much more better than hard coded the config server location
+
+    bus:
+      refresh:
         enabled: true
-        service-id: configServer
     profiles:
       active: jdbc
+
 server:
   servlet:
     context-path: /api/auth
@@ -32,4 +32,4 @@ management:
   endpoints:
     web:
       exposure:
-        include: ["health","info","refresh"]
+        include: ["health","info","refresh", "bus-refresh"]

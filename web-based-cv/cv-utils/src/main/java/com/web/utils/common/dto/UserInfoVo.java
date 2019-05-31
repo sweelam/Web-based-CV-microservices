@@ -8,8 +8,7 @@ import lombok.NoArgsConstructor;
 @Data
 @NoArgsConstructor
 public class UserInfoVo {
-	
-    private String fullname;
+    private String fullName;
     private String address;
     private String mobile;
     private String title;
@@ -22,7 +21,7 @@ public class UserInfoVo {
     @Override
     public String toString() {
         return "UserInfoVo{" +
-                "fullname='" + fullname + '\'' +
+                "fullname='" + fullName + '\'' +
                 ", address='" + address + '\'' +
                 ", mobile='" + mobile + '\'' +
                 ", title='" + title + '\'' +

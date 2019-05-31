@@ -5,6 +5,8 @@ import java.util.Map;
 
 import javax.validation.Valid;
 
+import com.web.model.vo.UserExperienceVO;
+import lombok.extern.slf4j.Slf4j;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -35,8 +37,8 @@ import io.swagger.annotations.ApiOperation;
 @RestController
 @CrossOrigin
 @RequestMapping(value = "/account")
+@Slf4j
 public class MyInfoController {
-	private final Logger LOGGER = LoggerFactory.getLogger(this.getClass());
     @Autowired
     private MyInfoService myInfoService;
 
@@ -86,7 +88,7 @@ public class MyInfoController {
                 	new ResponseEntity<>(HttpStatus.NOT_FOUND);
             
         } catch (Exception e) {
-            LOGGER.error("Error in User skills API : ",  e);
+            log.error("Error in User skills API : ",  e);
             return new ResponseEntity<>(HttpStatus.INTERNAL_SERVER_ERROR);
         }
     }
@@ -105,8 +107,8 @@ public class MyInfoController {
     }
 
     @PostMapping(value = "/info/experience")
-    public ResponseEntity<String> saveExperience(@RequestBody Map<String, Object> userExperience) {
+    public ResponseEntity<String> saveExperience(@RequestBody UserExperienceVO userExperience) {
         this.myInfoService.saveNewExperience(userExperience);
-        return new ResponseEntity<>(HttpStatus.OK);
+        return new ResponseEntity(HttpStatus.OK);
     }
 }

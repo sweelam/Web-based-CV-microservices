@@ -4,19 +4,19 @@ import java.util.Map;
 
 import javax.validation.Valid;
 
-import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.cloud.context.config.annotation.RefreshScope;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.MediaType;
 import org.springframework.http.ResponseEntity;
 import org.springframework.validation.Errors;
-import org.springframework.web.bind.annotation.*;
 
 import com.web.cv.auth.model.vo.UserCredentials;
 import com.web.cv.auth.service.UserAuthService;
 import com.web.cv.logging.Loggable;
 import com.web.utils.common.BusinessException;
+import org.springframework.web.bind.annotation.*;
 
 @RestController
 @CrossOrigin
@@ -28,7 +28,7 @@ public class AuthController {
 	@Value("${name}")
 	private String name;
 
-	public AuthController(UserAuthService userAuthService) {
+	public AuthController(@Qualifier("userAuthImpl") UserAuthService userAuthService) {
 		this.userAuthService = userAuthService;
 	}
 

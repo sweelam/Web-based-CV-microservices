@@ -1,4 +1,6 @@
 spring:
+  application:
+    name: configServer
   cloud:
     config:
       server:
@@ -17,10 +19,7 @@ spring:
       maximum-pool-size: 10
       connection-timeout: 5000
   profiles:
-    active:
-      - jdbc
-  application:
-    name: configServer
+    active: jdbc
 
 server:
   port: 8888
@@ -31,3 +30,9 @@ eureka:
       defaultZone: http://localhost:8761/eureka/
     register-with-eureka: true
     fetch-registry: true
+
+management:
+  endpoints:
+    web:
+      exposure:
+        include: ["health","info","refresh", "bus-refresh"]

@@ -1,8 +1,4 @@
 spring:
-  cloud:
-    discovery:              # Much more better than hard coded the config server location
-       enabled: true
-       service-id: configServer
   application:
     name: cv-service
 
