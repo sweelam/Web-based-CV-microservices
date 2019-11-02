@@ -24,7 +24,7 @@ export class HomeComponent implements OnInit {
 
   constructor(private homeService: HomeService,
     private route: ActivatedRoute,
-    private loginService: LoginService) {
+    public loginService: LoginService) {
     this.userInfo = new UserInfo(null, null, null, null, null, null, null);
   }
 
