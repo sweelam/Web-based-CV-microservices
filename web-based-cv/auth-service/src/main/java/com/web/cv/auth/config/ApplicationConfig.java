@@ -17,7 +17,8 @@ import com.web.cv.auth.service.UserAuthService;
 @EnableWebSecurity
 public class ApplicationConfig extends WebSecurityConfigurerAdapter {
     @Autowired
-    @Qualifier("userAuthImpl") private UserAuthService userAuthService;
+    @Qualifier("userAuthImpl")
+    private UserAuthService userAuthService;
 
     @Bean
     public DaoAuthenticationProvider authenticationProvider() throws Exception {

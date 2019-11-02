@@ -20,6 +20,7 @@ spring:
 server:
   servlet:
     context-path: /api/auth
+  port: 0
 
 eureka:
   client:
@@ -27,6 +28,8 @@ eureka:
       defaultZone: http://localhost:8761/eureka/
     register-with-eureka: true
     fetch-registry: true
+  instance:
+    prefer-ip-address: true
 
 management:
   endpoints:

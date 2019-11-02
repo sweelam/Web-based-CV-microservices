@@ -3,17 +3,14 @@ package com.web.util;
 import java.util.Arrays;
 import java.util.List;
 
-public class ApiErrorHandling extends RuntimeException{
-
-    /**
-	 * 
-	 */
-	private static final long serialVersionUID = 1L;
-	private String message;
+public class ApiErrorHandling extends RuntimeException {
+    private static final long serialVersionUID = 1L;
+    private String message;
     private Integer errorCode;
     private List<String> error;
 
-    public ApiErrorHandling() {}
+    public ApiErrorHandling() {
+    }
 
     public ApiErrorHandling(Integer errorCode, String message, List<String> error) {
         this.errorCode = errorCode;
