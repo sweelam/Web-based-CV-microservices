@@ -6,10 +6,8 @@ import java.util.Map;
 import javax.validation.Valid;
 
 import com.web.model.vo.UserExperienceVO;
+import com.web.service.MyJobsService;
 import lombok.extern.slf4j.Slf4j;
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.MediaType;
 import org.springframework.http.ResponseEntity;
@@ -39,27 +37,31 @@ import io.swagger.annotations.ApiOperation;
 @RequestMapping(value = "/account")
 @Slf4j
 public class MyInfoController {
-    @Autowired
-    private MyInfoService myInfoService;
+    private MyInfoService infoService;
+    private MyJobsService jobsService;
 
+    public MyInfoController(MyInfoService infoService, MyJobsService jobsService) {
+        this.infoService = infoService;
+        this.jobsService = jobsService;
+    }
 
     @GetMapping(value = "/fullName")
     @Loggable
     @ApiOperation(value="Account Name", notes="Account Page Title")
     public String getAccountName(@RequestParam(value = "accId", required = true) Integer accId) {
-        return myInfoService.getFullName(accId);
+        return infoService.getFullName(accId);
     }
 
     @GetMapping(value = "/fullName/{accId}")
     @Loggable
     public String getProfileName(@PathVariable(value = "accId") Integer accId) throws RuntimeException {
-        return myInfoService.getFullName(accId);
+        return infoService.getFullName(accId);
     }
 
     @GetMapping(value = "/job/info/{accId}")
     @ApiOperation(value="Job Information", notes="Display available job information")
     public List<MyJobsEntity> getJobInfo(@PathVariable(value = "accId") Integer accId) {
-        return myInfoService.getJobInfo(accId);
+        return jobsService.getJobInfo(accId);
     }
 
 
@@ -68,20 +70,20 @@ public class MyInfoController {
             consumes = MediaType.APPLICATION_JSON_UTF8_VALUE)
     @ApiOperation(value="Job Updater", notes="Update job description")
     public void updateJob(@PathVariable("accId") int accId, @PathVariable("desc") String jobDesc) {
-        myInfoService.updateJob(accId, jobDesc);
+        jobsService.updateJob(accId, jobDesc);
     }
 
 
     @GetMapping(value = "/info/details/{accId}", produces = MediaType.APPLICATION_JSON_UTF8_VALUE)
     public ResponseEntity<MyInfoEntity> getInfoDetailsByaccId(@PathVariable("accId") Integer accId) {
-        return new ResponseEntity<>(myInfoService.getInfoDetailsById(accId), HttpStatus.OK);
+        return new ResponseEntity<>(infoService.getInfoDetailsById(accId), HttpStatus.OK);
     }
 
     @GetMapping(value = "/info/skills/{accId}", produces = MediaType.APPLICATION_JSON_UTF8_VALUE)
     @ApiOperation(value="User Skills", notes="List of user's skills")
     public ResponseEntity<List<Map<String, Object>>> getAllSkills(@PathVariable("accId") int accId) {
         try {
-        	List<Map<String, Object>> userSkills = this.myInfoService.getUserSkills(accId);
+        	List<Map<String, Object>> userSkills = this.infoService.getUserSkills(accId);
         	
             return (null != userSkills && userSkills .size() > 0) ?
                 new ResponseEntity<>(userSkills, HttpStatus.OK) :
@@ -96,19 +98,20 @@ public class MyInfoController {
     @PostMapping(value = "/info/data", consumes = MediaType.APPLICATION_JSON_UTF8_VALUE)
     public void saveUserInfo(@RequestBody @Valid UserInfoVo userInfoVo, Errors error) throws Exception {
         if(error.hasErrors())
-        	throw new BusinessException("Missing inputs!", "Inputs are not correct", HttpStatus.NOT_ACCEPTABLE.name(), HttpStatus.NOT_ACCEPTABLE.value());
+        	throw new BusinessException("Missing inputs!", "Inputs are not correct", HttpStatus.NOT_ACCEPTABLE.name(),
+                    HttpStatus.NOT_ACCEPTABLE.value());
         
-    	this.myInfoService.saveMyInfo(userInfoVo);
+    	this.infoService.saveMyInfo(userInfoVo);
     }
 
     @GetMapping(value = "/info/data/{accId}", produces = MediaType.APPLICATION_JSON_UTF8_VALUE)
     public ResponseEntity<MyInfoVO> getUserInfo(@PathVariable("accId") Integer accId) {
-        return new ResponseEntity<>(this.myInfoService.getInfoById(accId), HttpStatus.OK);
+        return new ResponseEntity<>(this.infoService.getInfoById(accId), HttpStatus.OK);
     }
 
     @PostMapping(value = "/info/experience")
     public ResponseEntity<String> saveExperience(@RequestBody UserExperienceVO userExperience) {
-        this.myInfoService.saveNewExperience(userExperience);
+        this.infoService.saveNewExperience(userExperience);
         return new ResponseEntity(HttpStatus.OK);
     }
 }

@@ -4,6 +4,7 @@ package com.web.service;
 import com.web.model.repository.MyJobsRepo;
 import com.web.model.vo.UserExperienceVO;
 import lombok.extern.slf4j.Slf4j;
+import org.apache.commons.lang3.StringUtils;
 import org.apache.commons.lang3.exception.ExceptionUtils;
 import org.springframework.stereotype.Service;
 
@@ -44,23 +45,10 @@ public class MyInfoService {
         Optional<MyInfoEntity> info = myInfoRepo.findById(id);
 
         if (info.isPresent() &&
-                (null != info.get().getFullName() || !info.get().getFullName().trim().equals("")))
+                (!StringUtils.isEmpty(info.get().getFullName()) || !"".equalsIgnoreCase(info.get().getFullName().trim())))
             return info.get().getFullName();
         else
             throw new ApiErrorHandling();
-    }
-
-    /**
-     * @param id
-     * @return
-     */
-    public List<MyJobsEntity> getJobInfo(Integer id) {
-        Optional<MyInfoEntity> myInfo = myInfoRepo.findById(id);
-        return myInfo.isPresent() ? myInfo.get().getMyJobsList() : null;
-    }
-
-    public void updateJob(int id, String desc) {
-        myJobsService.updateJobDesc(id, desc);
     }
 
     /**
@@ -78,7 +66,7 @@ public class MyInfoService {
             myInfoVO.setEmail(myInfoEntity.get().getEmail());
             myInfoVO.setMobile(myInfoEntity.get().getMobile());
 
-            List<MyJobsEntity> myJobsEntity = myJobsService.myJobsRepo.findAll();
+            List<MyJobsEntity> myJobsEntity = myJobsService.getAllJobs();
             if (null != myJobsEntity && myJobsEntity.size() > 0)
                 myInfoVO.setJobList(myJobsEntity);
 

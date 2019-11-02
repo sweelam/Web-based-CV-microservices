@@ -9,10 +9,12 @@
         <version>2.1.3.RELEASE</version>
         <relativePath/> <!-- lookup parent from repository -->
     </parent>
+
     <groupId>com.web</groupId>
     <artifactId>configServer</artifactId>
     <version>0.0.1-SNAPSHOT</version>
     <name>configServer</name>
+    <packaging>jar</packaging>
     <description>Config server app for web based cv</description>
 
     <properties>
