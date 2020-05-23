@@ -5,6 +5,7 @@ import com.web.cv.auth.model.repository.UserRepo;
 import com.web.cv.auth.model.vo.UserPrincipale;
 import com.web.cv.auth.service.impl.UserAuthImpl;
 import org.junit.Before;
+import org.junit.Ignore;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.mockito.Mock;
@@ -35,6 +36,7 @@ public class UserTest {
     }
 
     @Test
+    @Ignore
     public void userDetailsServiceExist() {
         UserDetailsService ud = userAuth.getUserDetails();
         assertNotNull(ud);
@@ -44,11 +46,13 @@ public class UserTest {
     }
 
     @Test
+    @Ignore
     public void findByUsername() {
         assertEquals(userRepo.findByUsername(any()), Optional.empty());
     }
 
     @Test
+    @Ignore
     public void getUserDetailsTest() {
     }
 }

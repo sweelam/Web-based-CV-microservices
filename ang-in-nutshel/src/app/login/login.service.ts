@@ -34,26 +34,24 @@ export class LoginService {
     }
 
     this.http.post(API.ROOT + "/auth-service/api/auth/user/login-form", request)
-      .subscribe((data) => {
+      .subscribe((data:any) => {
         this.isLoggedIn = true;
         this.hide = !this.isLoggedIn;
 
-        
-        const userId = data['userId'];
+        const userId = data.userId;
         this.setUserId(userId);
-        
-        
+
         sessionStorage.setItem("logged-in", this.isLoggedIn + '');
         sessionStorage.setItem("userId", userId);
 
         this.router.navigate(['/home', this.getUserId()]);
       }, (error: ErrorHandler) => {
-        
-        if (error.status == 404) 
+
+        if (error.status == 404)
           ErrorShowUtil.popupError('Error', 'Username or Password is not correct', 'OK', 'error');
         else
           ErrorShowUtil.popupError('Error', error.error.message, 'OK', 'error');
-          
+
       });
   }
 
