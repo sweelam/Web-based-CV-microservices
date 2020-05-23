@@ -90,7 +90,6 @@ public class MyInfoController {
                 	new ResponseEntity<>(HttpStatus.NOT_FOUND);
             
         } catch (Exception e) {
-            log.error("Error in User skills API : ",  e);
             return new ResponseEntity<>(HttpStatus.INTERNAL_SERVER_ERROR);
         }
     }
