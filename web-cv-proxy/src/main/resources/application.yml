@@ -1,5 +1,11 @@
 server:
   port: 8081
+  ssl:
+    enabled: true
+    key-store-type: PKCS12
+    key-store: classpath:keystore.p12
+    key-alias: sweelam-cv
+    key-store-password: sweelam_2014
 
 spring:
   application:

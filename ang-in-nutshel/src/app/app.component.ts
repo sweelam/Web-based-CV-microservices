@@ -13,11 +13,11 @@ export class AppComponent implements OnInit {
   title = 'app';
   accId: number;
   constructor(private route: ActivatedRoute,
-    private router: Router, private loginService: LoginService,
+    private router: Router, public loginService: LoginService,
     private location: Location) { }
 
   ngOnInit() {
-  
+
   }
 
   onSetupClick() {

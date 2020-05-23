@@ -11,29 +11,25 @@ import { Location } from '@angular/common';
   templateUrl: './login.component.html',
   styleUrls: ['./login.component.css']
 })
-export class LoginComponent implements OnInit, AfterContentInit {
+export class LoginComponent implements OnInit {
   errorMessage: string;
   error: string;
 
   @ViewChild('password') password: ElementRef;
 
-  constructor(private login: LoginService, private router: Router, private renderer: Renderer2, private location: Location) { }
+  constructor(public loginService: LoginService, private router: Router, private renderer: Renderer2, private location: Location) { }
 
   ngOnInit() {
     if (sessionStorage.length > 0)
       sessionStorage.clear();
 
     if (this.location.isCurrentPathEqualTo('/login'))
-      this.login.hide = true
-  }
-
-  ngAfterContentInit() {
-
+      this.loginService.hide = true
   }
 
   onSubmit(loginForm) {
     if (loginForm.username !== '' && loginForm.password !== '') {
-      this.login.authLogin(loginForm.username, loginForm.password);
+      this.loginService.authLogin(loginForm.username, loginForm.password);
     } else {
       ErrorShowUtil.popupError('Error', 'Username and Password are required', 'OK', 'error');
     }

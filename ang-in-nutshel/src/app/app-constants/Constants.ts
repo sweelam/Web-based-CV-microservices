@@ -1,4 +1,4 @@
 export class API {
-    static ROOT: string = 'http://localhost:8081';
+    static ROOT: string = 'https://localhost:8081';
     constructor() {}
 }
