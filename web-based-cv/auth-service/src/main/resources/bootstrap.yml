@@ -1,8 +1,8 @@
 spring:
   datasource:
-    username: sweelam
-    password: sweelam&roka
-    url: jdbc:mysql://localhost:3306/sweprofile?zeroDateTimeBehavior=convertToNull
+#    username: sweelam
+#    password: sweelam&roka
+#    url: jdbc:mysql://localhost:3306/sweprofile?zeroDateTimeBehavior=convertToNull
     jpa:
       properties:
         hibernate:
@@ -20,7 +20,7 @@ spring:
 server:
   servlet:
     context-path: /api/auth
-  port: 0
+  port: 9094
 
 eureka:
   client:

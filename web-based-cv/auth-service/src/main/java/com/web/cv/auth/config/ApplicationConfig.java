@@ -1,5 +1,7 @@
 package com.web.cv.auth.config;
 
+import com.web.common.encoders.CustomPasswordEncoder;
+import com.web.cv.auth.service.UserAuthService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.context.annotation.Bean;
@@ -11,8 +13,6 @@ import org.springframework.security.config.annotation.web.configuration.EnableWe
 import org.springframework.security.config.annotation.web.configuration.WebSecurityConfigurerAdapter;
 import org.springframework.security.config.http.SessionCreationPolicy;
 
-import com.web.cv.auth.service.UserAuthService;
-
 @Configuration
 @EnableWebSecurity
 public class ApplicationConfig extends WebSecurityConfigurerAdapter {
@@ -21,7 +21,7 @@ public class ApplicationConfig extends WebSecurityConfigurerAdapter {
     private UserAuthService userAuthService;
 
     @Bean
-    public DaoAuthenticationProvider authenticationProvider() throws Exception {
+    public DaoAuthenticationProvider authenticationProvider() {
         DaoAuthenticationProvider provider = new DaoAuthenticationProvider();
         provider.setUserDetailsService(userAuthService.getUserDetails());
         provider.setPasswordEncoder(new CustomPasswordEncoder());
@@ -29,7 +29,7 @@ public class ApplicationConfig extends WebSecurityConfigurerAdapter {
     }
 
     @Override
-    public void configure(AuthenticationManagerBuilder auth) throws Exception {
+    public void configure(AuthenticationManagerBuilder auth) {
         auth.authenticationProvider(authenticationProvider());
     }
 

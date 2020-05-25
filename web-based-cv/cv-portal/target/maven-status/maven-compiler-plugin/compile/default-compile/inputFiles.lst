@@ -1,4 +1,3 @@
-/home/sweelam/work/work-code/Web-based-CV-microservices/web-based-cv/cv-portal/src/main/java/com/web/config/GlobalExceptionHandler.java
 /home/sweelam/work/work-code/Web-based-CV-microservices/web-based-cv/cv-portal/src/main/java/com/web/model/repository/MyJobsRepo.java
 /home/sweelam/work/work-code/Web-based-CV-microservices/web-based-cv/cv-portal/src/main/java/com/web/service/MyJobsService.java
 /home/sweelam/work/work-code/Web-based-CV-microservices/web-based-cv/cv-portal/src/main/java/com/web/model/vo/MyInfoVO.java
@@ -26,4 +25,5 @@
 /home/sweelam/work/work-code/Web-based-CV-microservices/web-based-cv/cv-portal/src/main/java/com/web/model/repository/TempRepo.java
 /home/sweelam/work/work-code/Web-based-CV-microservices/web-based-cv/cv-portal/src/main/java/com/web/model/entity/MyInfoEntity.java
 /home/sweelam/work/work-code/Web-based-CV-microservices/web-based-cv/cv-portal/src/main/java/com/web/MyProfileApplication.java
+/home/sweelam/work/work-code/Web-based-CV-microservices/web-based-cv/cv-portal/src/main/java/com/web/config/dbConfig.java
 /home/sweelam/work/work-code/Web-based-CV-microservices/web-based-cv/cv-portal/src/main/java/com/web/model/entity/TempEntity.java

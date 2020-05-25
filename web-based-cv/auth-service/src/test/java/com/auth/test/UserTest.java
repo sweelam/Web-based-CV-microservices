@@ -9,8 +9,6 @@ import org.junit.Ignore;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.mockito.Mock;
-import org.mockito.junit.MockitoJUnitRunner;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.security.core.userdetails.UserDetailsService;
 import org.springframework.test.context.ContextConfiguration;
@@ -46,13 +44,11 @@ public class UserTest {
     }
 
     @Test
-    @Ignore
     public void findByUsername() {
         assertEquals(userRepo.findByUsername(any()), Optional.empty());
     }
 
     @Test
-    @Ignore
     public void getUserDetailsTest() {
     }
 }

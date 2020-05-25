@@ -4,6 +4,7 @@ com/web/model/entity/UserMobileEntity.class
 com/web/service/MyInfoService.class
 com/web/model/vo/MyInfoVO.class
 com/web/service/AppLoggerService.class
+com/web/config/dbConfig.class
 com/web/util/Options.class
 com/web/service/MyJobsService.class
 com/web/model/vo/UserExperienceVO.class
@@ -11,7 +12,6 @@ com/web/controller/MyProfileControllerAdvise.class
 com/web/model/entity/MyJobsEntity.class
 com/web/util/ApiErrorHandling.class
 com/web/controller/IndexController.class
-com/web/config/GlobalExceptionHandler.class
 com/web/model/repository/TempRepo.class
 com/web/config/ApplicationInterceptor.class
 com/web/model/repository/MyJobsRepo.class

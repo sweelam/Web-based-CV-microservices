@@ -1,6 +1,5 @@
 package com.web.cv.auth.controller;
 
-import com.web.cv.auth.model.entity.UserEntity;
 import com.web.cv.auth.model.vo.UserCredentials;
 import com.web.cv.auth.service.UserAuthService;
 import com.web.cv.logging.Loggable;
@@ -16,7 +15,6 @@ import org.springframework.web.bind.annotation.*;
 import javax.validation.Valid;
 import java.util.HashMap;
 import java.util.Map;
-import java.util.Optional;
 
 @RestController
 @CrossOrigin
@@ -29,7 +27,7 @@ public class AuthController {
         this.userAuthService = userAuthService;
     }
 
-    @PostMapping(value = "/login-form", produces = MediaType.APPLICATION_JSON_UTF8_VALUE, consumes = MediaType.APPLICATION_JSON_UTF8_VALUE)
+    @PostMapping(value = "/login-form", produces = MediaType.APPLICATION_JSON_VALUE, consumes = MediaType.APPLICATION_JSON_UTF8_VALUE)
     @Loggable
     public ResponseEntity<Map<String, Object>> login(@RequestBody @Valid UserCredentials body, Errors errors)
             throws BusinessException {
