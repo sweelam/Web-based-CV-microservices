@@ -7,6 +7,7 @@ import javax.validation.Valid;
 
 import com.web.model.vo.UserExperienceVO;
 import com.web.service.MyJobsService;
+import com.web.util.Response;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.MediaType;
@@ -65,21 +66,19 @@ public class MyInfoController {
     }
 
 
-    @RequestMapping(value = "/job/{accId}",
-            method = RequestMethod.PUT,
-            consumes = MediaType.APPLICATION_JSON_UTF8_VALUE)
+    @RequestMapping(value = "/job/{accId}", method = RequestMethod.PUT)
     @ApiOperation(value="Job Updater", notes="Update job description")
     public void updateJob(@PathVariable("accId") int accId, @PathVariable("desc") String jobDesc) {
         jobsService.updateJob(accId, jobDesc);
     }
 
 
-    @GetMapping(value = "/info/details/{accId}", produces = MediaType.APPLICATION_JSON_UTF8_VALUE)
+    @GetMapping(value = "/info/details/{accId}")
     public ResponseEntity<MyInfoEntity> getInfoDetailsByaccId(@PathVariable("accId") Integer accId) {
         return new ResponseEntity<>(infoService.getInfoDetailsById(accId), HttpStatus.OK);
     }
 
-    @GetMapping(value = "/info/skills/{accId}", produces = MediaType.APPLICATION_JSON_UTF8_VALUE)
+    @GetMapping(value = "/info/skills/{accId}")
     @ApiOperation(value="User Skills", notes="List of user's skills")
     public ResponseEntity<List<Map<String, Object>>> getAllSkills(@PathVariable("accId") int accId) {
         try {
@@ -94,16 +93,17 @@ public class MyInfoController {
         }
     }
 
-    @PostMapping(value = "/info/data", consumes = MediaType.APPLICATION_JSON_UTF8_VALUE)
-    public void saveUserInfo(@RequestBody @Valid UserInfoVo userInfoVo, Errors error) throws Exception {
+    @PostMapping(value = "/info/data")
+    public ResponseEntity saveUserInfo(@RequestBody @Valid UserInfoVo userInfoVo, Errors error) throws Exception {
         if(error.hasErrors())
         	throw new BusinessException("Missing inputs!", "Inputs are not correct", HttpStatus.NOT_ACCEPTABLE.name(),
                     HttpStatus.NOT_ACCEPTABLE.value());
         
-    	this.infoService.saveMyInfo(userInfoVo);
+    	boolean savedSuccessfully = this.infoService.saveMyInfo(userInfoVo);
+    	return savedSuccessfully ? ResponseEntity.status(HttpStatus.CREATED).build() : ResponseEntity.status(HttpStatus.NOT_MODIFIED).build();
     }
 
-    @GetMapping(value = "/info/data/{accId}", produces = MediaType.APPLICATION_JSON_UTF8_VALUE)
+    @GetMapping(value = "/info/data/{accId}")
     public ResponseEntity<MyInfoVO> getUserInfo(@PathVariable("accId") Integer accId) {
         return new ResponseEntity<>(this.infoService.getInfoById(accId), HttpStatus.OK);
     }

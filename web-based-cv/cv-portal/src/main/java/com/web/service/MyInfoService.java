@@ -37,10 +37,6 @@ public class MyInfoService {
         this.myJobsRepo = myJobsRepo;
     }
 
-    /**
-     * @param id
-     * @return
-     */
     public String getFullName(Integer id) throws RuntimeException {
         Optional<MyInfoEntity> info = myInfoRepo.findById(id);
 
@@ -51,10 +47,6 @@ public class MyInfoService {
             throw new ApiErrorHandling();
     }
 
-    /**
-     * @param id
-     * @return
-     */
     public MyInfoVO getInfoById(Integer id) {
         MyInfoVO myInfoVO = null;
 
@@ -75,19 +67,12 @@ public class MyInfoService {
         return myInfoVO;
     }
 
-    /**
-     * @param id
-     * @return
-     */
+
     public MyInfoEntity getInfoDetailsById(Integer id) {
         Optional<MyInfoEntity> userInfo = myInfoRepo.findById(id);
         return userInfo.isPresent() ? userInfo.get() : null;
     }
 
-
-    /**
-     * @return
-     */
     public List<Map<String, Object>> getUserSkills(int userId) {
         List<Map<String, Object>> res = new LinkedList<>();
 
@@ -102,24 +87,17 @@ public class MyInfoService {
         return !res.isEmpty() ? res : Collections.emptyList();
     }
 
-    /**
-     * @param userInfoVo
-     * @throws Exception
-     */
-    public void saveMyInfo(UserInfoVo userInfoVo) throws Exception {
+    public boolean saveMyInfo(UserInfoVo userInfoVo) throws Exception {
+        Integer infoId = Long.valueOf(myInfoRepo.count() + 1).intValue();
         MyInfoEntity myInfoEntity = new MyInfoEntity();
-
-        Integer infoId = Integer.parseInt(myInfoRepo.count() + 1 + "");
-
         myInfoEntity.setId(infoId);
         myInfoEntity.setFullName(userInfoVo.getFullName());
         myInfoEntity.setEmail(userInfoVo.getEmail());
         myInfoEntity.setAddress(userInfoVo.getAddress());
         myInfoEntity.setMobile(userInfoVo.getMobile());
-
         this.myInfoRepo.save(myInfoEntity);
-
         this.myJobsService.saveJobData(userInfoVo, infoId);
+        return myInfoEntity.getId() != 0;
     }
 
     public void saveNewExperience(UserExperienceVO userExperience) {
@@ -142,7 +120,7 @@ public class MyInfoService {
 
             this.myJobsRepo.save(job);
         } catch (Exception e) {
-            log.error("Error while saving new Experience ", ExceptionUtils.getStackTrace(e));
+            log.error("Error while saving new Experience {}", ExceptionUtils.getStackTrace(e));
         }
     }
 }
