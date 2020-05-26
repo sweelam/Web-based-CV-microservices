@@ -38,8 +38,9 @@
     <a href="https://www.linkedin.com/in/mohamedsweelam/">
       <i class="fa fa-linkedin w3-hover-opacity"></i>
     </a>
-    <section>
-      <a [routerLink]="" (click)="onSetupClick()" routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}">
+    <section [hidden]="!loginService?.userId">
+      <a [routerLink]="['/setup', loginService.userId]"  routerLinkActive="active" 
+      [routerLinkActiveOptions]="{exact: true}">
         <h3>Admin</h3>
       </a>
     </section>

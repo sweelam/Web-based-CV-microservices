@@ -1,5 +1,5 @@
 export interface UserJob {
-     fullname : string;
+     fullName : string;
      email: string ;
      address: string;
      mobile : string;

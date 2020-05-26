@@ -1,7 +1,7 @@
 import { Component, OnInit, AfterContentInit, Renderer2, ViewChild, ElementRef } from '@angular/core';
 import { Router } from '@angular/router';
 
-import { ErrorShowUtil } from '../error-handler/error-show-util';
+import { SwalShowUtil } from '../error-handler/error-show-util';
 import { ErrorHandler } from '../error-handler/error-handler';
 import { LoginService } from './login.service';
 import { Location } from '@angular/common';
@@ -17,7 +17,7 @@ export class LoginComponent implements OnInit {
 
   @ViewChild('password') password: ElementRef;
 
-  constructor(public loginService: LoginService, private router: Router, private renderer: Renderer2, private location: Location) { }
+  constructor(public loginService: LoginService, private location: Location) { }
 
   ngOnInit() {
     if (sessionStorage.length > 0)
@@ -31,7 +31,7 @@ export class LoginComponent implements OnInit {
     if (loginForm.username !== '' && loginForm.password !== '') {
       this.loginService.authLogin(loginForm.username, loginForm.password);
     } else {
-      ErrorShowUtil.popupError('Error', 'Username and Password are required', 'OK', 'error');
+      SwalShowUtil.popupError('Error', 'Username and Password are required', 'OK', 'error');
     }
   }
 

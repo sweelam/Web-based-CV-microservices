@@ -1,6 +1,6 @@
 import swal, { SweetAlertType } from 'sweetalert2';
 
-export class ErrorShowUtil {
+export class SwalShowUtil {
     public static popupError(title: string, text: string, confirmButtonText: string, type : SweetAlertType): Promise<any> {
         return swal({
             title: title,

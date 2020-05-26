@@ -8,14 +8,11 @@
     </div>
 
     <form [formGroup]="userForm" (ngSubmit)="onSubmit()">
-      <!-- <div class="container" *ngFor="let no of formNo; let in=index"> -->
-
-
       <div class="form-group">
         <label for="fullname">
           <h4> <b> Full Name </b> </h4>
         </label>
-        <input type="text" id="fullname" name="fullname" class="form-control" formControlName="fullname" />
+        <input type="text" id="fullname" name="fullname" class="form-control" formControlName="fullName" />
       </div>
 
       <div class="form-group">

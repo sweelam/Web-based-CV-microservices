@@ -5,7 +5,7 @@ import 'rxjs/add/operator/map';
 
 import { API } from '../app-constants/Constants';
 import { Router } from '@angular/router';
-import { ErrorShowUtil } from '../error-handler/error-show-util';
+import { SwalShowUtil } from '../error-handler/error-show-util';
 import { ErrorHandler } from '../error-handler/error-handler';
 
 @Injectable()
@@ -48,9 +48,9 @@ export class LoginService {
       }, (error: ErrorHandler) => {
 
         if (error.status == 404)
-          ErrorShowUtil.popupError('Error', 'Username or Password is not correct', 'OK', 'error');
+          SwalShowUtil.popupError('Error', 'Username or Password is not correct', 'OK', 'error');
         else
-          ErrorShowUtil.popupError('Error', error.error.message, 'OK', 'error');
+          SwalShowUtil.popupError('Error', error.error.message, 'OK', 'error');
 
       });
   }
@@ -58,6 +58,7 @@ export class LoginService {
 
   logout() {
     sessionStorage.clear();
+    location.reload();
     this.router.navigate(['/login']);
   }
 
