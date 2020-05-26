@@ -20,12 +20,12 @@ public class HomeController {
 		this.tempRepo = tempRepo;
 	}
 
-	@GetMapping(value = "/data", produces = MediaType.APPLICATION_JSON_UTF8_VALUE)
+	@GetMapping(value = "/data")
 	public List<TempEntity> findAll() {
 		return tempRepo.findAll();
 	}
 
-	@GetMapping(value = "/data/{id}", produces = MediaType.APPLICATION_JSON_UTF8_VALUE)
+	@GetMapping(value = "/data/{id}")
 	public ResponseEntity<TempEntity> findTempById(@PathVariable(value = "id") int id) {
 		Optional<TempEntity> tempEntity = tempRepo.findById(id);
 		

@@ -5,14 +5,14 @@ spring:
     config:
       server:
         jdbc:
-          sql: SELECT `KEY`, `VALUE` from PROPERTIES where APPLICATION=? and PROFILE=? and LABEL=?
+          sql: SELECT `KEY`, `VALUE` from `properties` where APPLICATION=? and PROFILE=? and LABEL=?
           order: 1
     stream:
       kafka:
         binder:
           brokers: localhost:9092
   datasource:
-    url: jdbc:mysql://localhost:3306/sweprofile?zeroDateTimeBehavior=convertToNull
+    url: jdbc:mysql://127.0.0.1:3306/sweprofile?zeroDateTimeBehavior=convertToNull
     username: sweelam
     password: sweelam&roka
     hikari:

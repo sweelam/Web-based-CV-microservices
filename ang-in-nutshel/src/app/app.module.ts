@@ -12,6 +12,7 @@ import { WelcomeComponent } from './welcome/welcome.component';
 import { LoginComponent } from './login/login.component';
 import { HTTP_INTERCEPTORS } from '@angular/common/http';
 import { AppInterceptorService } from './interceptors/app-interceptor.service';
+import { WorkExperienceComponent } from './work-experience/work-experience.component';
 
 @NgModule({
   declarations: [
@@ -19,7 +20,8 @@ import { AppInterceptorService } from './interceptors/app-interceptor.service';
     HomeComponent,
     SetupScreensComponent,
     WelcomeComponent,
-    LoginComponent
+    LoginComponent,
+    WorkExperienceComponent
   ],
   imports: [
     SweetAlert2Module.forRoot(),

@@ -3,20 +3,22 @@
   <component name="ChangeListManager">
     <list default="true" id="e0441b21-0baf-49cb-b6f4-87bebf6833a1" name="Default" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ang-in-nutshel/src/app/app-constants/Constants.ts" beforeDir="false" afterPath="$PROJECT_DIR$/ang-in-nutshel/src/app/app-constants/Constants.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ang-in-nutshel/src/app/app.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/ang-in-nutshel/src/app/app.component.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ang-in-nutshel/src/app/home/home.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/ang-in-nutshel/src/app/home/home.component.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ang-in-nutshel/src/app/login/login.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/ang-in-nutshel/src/app/login/login.component.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ang-in-nutshel/src/app/login/login.service.ts" beforeDir="false" afterPath="$PROJECT_DIR$/ang-in-nutshel/src/app/login/login.service.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/web-cv-proxy/src/main/resources/application.yml" beforeDir="false" afterPath="$PROJECT_DIR$/web-cv-proxy/src/main/resources/application.yml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ang-in-nutshel/src/app/app.module.ts" beforeDir="false" afterPath="$PROJECT_DIR$/ang-in-nutshel/src/app/app.module.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ang-in-nutshel/src/app/home/home.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/ang-in-nutshel/src/app/home/home.component.html" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
+  <component name="CodeStyleSettingsInfer">
+    <option name="done" value="true" />
+  </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="ProjectCodeStyleSettingsMigration">
+    <option name="version" value="1" />
   </component>
   <component name="ProjectId" id="1a1qPZxwuraXYXw5zYqRoH0QQuj" />
   <component name="ProjectViewState">
@@ -26,9 +28,11 @@
     <option name="showLibraryContents" value="true" />
   </component>
   <component name="PropertiesComponent">
+    <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
+    <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/web-based-cv/pom.xml" />
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
     <property name="nodejs_npm_path_reset_for_default_project" value="true" />
     <property name="project.structure.last.edited" value="Modules" />
@@ -49,7 +53,7 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration default="true" type="JetRunConfigurationType" factoryName="Kotlin">
+    <configuration default="true" type="JetRunConfigurationType">
       <module name="web-cv-microservice" />
       <option name="VM_PARAMETERS" />
       <option name="PROGRAM_PARAMETERS" />
@@ -62,7 +66,7 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration default="true" type="KotlinStandaloneScriptRunConfigurationType" factoryName="Kotlin script">
+    <configuration default="true" type="KotlinStandaloneScriptRunConfigurationType">
       <module name="web-cv-microservice" />
       <option name="filePath" />
       <option name="vmParameters" />
@@ -106,18 +110,6 @@
       </method>
     </configuration>
   </component>
-  <component name="ServiceViewManager">
-    <option name="viewStates">
-      <list>
-        <serviceView>
-          <treeState>
-            <expand />
-            <select />
-          </treeState>
-        </serviceView>
-      </list>
-    </option>
-  </component>
   <component name="SvnConfiguration">
     <configuration />
   </component>
@@ -132,18 +124,18 @@
       <workItem from="1548415786254" duration="53000" />
       <workItem from="1550924538112" duration="59000" />
       <workItem from="1585913426070" duration="698000" />
+      <workItem from="1590513413693" duration="177000" />
     </task>
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
-    <option name="version" value="1" />
-    <option name="exactExcludedFiles">
-      <list>
-        <option value="$PROJECT_DIR$/ang-in-nutshel/node_modules/karma/config.tpl.js" />
-      </list>
-    </option>
+    <option name="version" value="2" />
   </component>
   <component name="WindowStateProjectService">
+    <state x="832" y="347" width="424" height="482" key="FileChooserDialogImpl" timestamp="1590513586932">
+      <screen x="51" y="27" width="1997" height="1125" />
+    </state>
+    <state x="832" y="347" width="424" height="482" key="FileChooserDialogImpl/51.27.1997.1125@51.27.1997.1125" timestamp="1590513586932" />
     <state x="416" y="102" key="SettingsEditor" timestamp="1585914029258">
       <screen x="0" y="0" width="1920" height="1050" />
     </state>

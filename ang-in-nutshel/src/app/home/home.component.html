@@ -87,25 +87,7 @@
   <!-- Right Column -->
   <div class="w3-twothird">
 
-    <div class="w3-container w3-card w3-white w3-margin-bottom">
-      <div align='center' class="w3-text-grey w3-padding-16">
-        <h1 [textContent]="fullname"></h1>
-      </div>
-      <h2 class="w3-text-grey w3-padding-16">
-        <i class="fa fa-suitcase fa-fw w3-margin-right w3-xxlarge w3-text-teal"></i>Work Experience</h2>
-
-      <div *ngFor="let job of jobInfo" class="w3-container">
-        <h5 class="w3-opacity">
-          <b [textContent]="job.title"></b> <b> @ </b> <b [textContent]="job.company"></b>
-        </h5>
-        <h6 class="w3-text-teal">
-          <i class="fa fa-calendar fa-fw w3-margin-right"></i>
-          {{job.startDate}} - {{job.endDate }}
-        </h6>
-        <p [textContent]="job.jobDescription"></p>
-        <hr>
-      </div>
-    </div>
+    <app-work-experience [jobInfo]="jobInfo"></app-work-experience>
 
     <div class="w3-container w3-card w3-white">
       <h2 class="w3-text-grey w3-padding-16">
