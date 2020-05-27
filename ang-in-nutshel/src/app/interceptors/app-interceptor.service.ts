@@ -14,8 +14,6 @@ export class AppInterceptorService implements HttpInterceptor {
   constructor() { }
 
   intercept(req: HttpRequest<any>, next: HttpHandler): Observable<HttpEvent<any>> {
-    console.log("intercepted request ... ");
-
     //send the newly created request
     return next.handle(req)
       .catch((error: ErrorHandler, caught) => {

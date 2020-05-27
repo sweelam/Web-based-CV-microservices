@@ -90,14 +90,19 @@ public class MyInfoService {
     public boolean saveMyInfo(UserInfoVo userInfoVo) throws Exception {
         Integer infoId = Long.valueOf(myInfoRepo.count() + 1).intValue();
         MyInfoEntity myInfoEntity = new MyInfoEntity();
-        myInfoEntity.setId(infoId);
-        myInfoEntity.setFullName(userInfoVo.getFullName());
-        myInfoEntity.setEmail(userInfoVo.getEmail());
-        myInfoEntity.setAddress(userInfoVo.getAddress());
-        myInfoEntity.setMobile(userInfoVo.getMobile());
-        this.myInfoRepo.save(myInfoEntity);
-        this.myJobsService.saveJobData(userInfoVo, infoId);
-        return myInfoEntity.getId() != 0;
+        try {
+            myInfoEntity.setId(infoId);
+            myInfoEntity.setFullName(userInfoVo.getFullName());
+            myInfoEntity.setEmail(userInfoVo.getEmail());
+            myInfoEntity.setAddress(userInfoVo.getAddress());
+            myInfoEntity.setMobile(userInfoVo.getMobile());
+            this.myInfoRepo.save(myInfoEntity);
+            this.myJobsService.saveJobData(userInfoVo, infoId);
+            return true;
+        } catch (Exception e) {
+            log.error("Cannot save info {}", ExceptionUtils.getMessage(e));
+            return false;
+        }
     }
 
     public void saveNewExperience(UserExperienceVO userExperience) {

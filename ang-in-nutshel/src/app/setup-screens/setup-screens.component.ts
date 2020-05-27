@@ -5,6 +5,7 @@ import { SetupScreensService } from './setup-screens.service'
 import { UserJob } from './user';
 import { ErrorHandler } from '../error-handler/error-handler';
 import { SwalShowUtil } from '../error-handler/error-show-util';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-setup-screens',
@@ -19,7 +20,7 @@ export class SetupScreensComponent implements OnInit {
   userId: number;
 
   constructor(private setupService: SetupScreensService,
-    private formBuilder: FormBuilder) {
+    private formBuilder: FormBuilder, private route: Router) {
   }
 
   ngOnInit() {
@@ -61,17 +62,19 @@ export class SetupScreensComponent implements OnInit {
 
   onSubmit() {
     // Convert object into text
-    debugger;
     var userInfoText = this.userForm.value as UserJob;
     this.setupService.saveJobDesc(userInfoText)
-    .subscribe((data:any) => {
-      if (data.status = 201)
-        SwalShowUtil.popupError('Success', 'Your information is submitted correctly', 'OK', 'success');
-      else 
-      SwalShowUtil.popupError('Warning', 'Your information is not submitted correctly', 'OK', 'warning');
-    }, (error: ErrorHandler) => {
-      SwalShowUtil.popupError('Error', 'error.error.message', 'OK', 'error');
-    });
+      .subscribe((data: any) => {
+        if (data.status == 201) {
+          SwalShowUtil.popupError('Success', 'Your information is submitted correctly', 'OK', 'success');
+          this.route.navigate(['/home', this.userId])
+        }
+      }, (error: ErrorHandler) => {
+        if (error.status == 304)
+          SwalShowUtil.popupError('Warning', 'Your information is not submitted correctly', 'OK', 'warning');
+        else
+          SwalShowUtil.popupError('Error', 'error.error.message', 'OK', 'error');
+      });
   }
 
   addNewForm() {

@@ -1,6 +1,5 @@
 import { Injectable } from '@angular/core';
-import { Response } from '@angular/http';
-import { HttpClient, HttpParams } from '@angular/common/http';
+import { HttpClient } from '@angular/common/http';
 import 'rxjs/add/operator/map';
 
 import { UserJob } from './user';
@@ -19,7 +18,7 @@ export class SetupScreensService {
     }
 
     saveJobDesc(formx : UserJob) {
-        return this.http.post(this.urlAccount + "info/data", formx);
+        return this.http.post(this.urlAccount + "info/data", formx, {observe : "response"});
     }
 
     getInfoById(accId) {

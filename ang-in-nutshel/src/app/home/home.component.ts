@@ -20,33 +20,28 @@ export class HomeComponent implements OnInit {
   userInfo: UserInfo;
   userSkills: UserSkills[] = [];
   jobInfo: any[] = [];
-  paramValue = '';
+  userId: number;
 
-  constructor(private homeService: HomeService,
-    private route: ActivatedRoute,
-    public loginService: LoginService) {
+  constructor(private homeService: HomeService, private loginService: LoginService) {
     this.userInfo = new UserInfo(null, null, null, null, null, null, null);
   }
 
   ngOnInit() {
-    this.fetchUserInfo();
+    this.userId = +sessionStorage.getItem("userId");
+    this.fetchUserInfo(this.userId);
   }
 
-  fetchUserInfo(): void {
-    // Subscribe URL parameter
-    this.route.params.subscribe(params => {
-      this.paramValue = params['accId'];
+  fetchUserInfo(userId: number): void {
+    this.fetchUserHome();
 
-      this.fetchUserHome();
-
-      this.homeService.getFullName(this.paramValue).subscribe(data => {
+      this.homeService.getFullName(userId).subscribe(data => {
         this.fullname = data;
       });
 
-      this.homeService.getInfoDetails(this.paramValue).subscribe(data => {
+      this.homeService.getInfoDetails(userId).subscribe(data => {
         this.userInfo = new UserInfo(
           data['id'],
-          data['fullname'],
+          data['fullName'],
           data['mobile'],
           data['email'],
           data['dateOfBirth'],
@@ -54,12 +49,11 @@ export class HomeComponent implements OnInit {
           data['userTitle']);
       });
 
-      this.homeService.getJobInfo(this.paramValue).subscribe(data => {
+      this.homeService.getJobInfo(userId).subscribe(data => {
         this.jobInfo = JSON.parse(data);
       });
 
-      this.fetchUserSkills(this.paramValue);
-    });
+      this.fetchUserSkills(userId);
   }
 
   fetchUserSkills(accId): void {
@@ -76,5 +70,9 @@ export class HomeComponent implements OnInit {
     this.homeService.home().subscribe(data => {
       this.profile = data;
     });
+  }
+
+  logout() {
+    this.loginService.logout();
   }
 }

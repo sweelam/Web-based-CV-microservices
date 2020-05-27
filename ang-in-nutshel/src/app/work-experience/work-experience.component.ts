@@ -8,6 +8,7 @@ import { Component, OnInit, Input } from '@angular/core';
 export class WorkExperienceComponent implements OnInit {
 
   @Input() jobInfo: any[];
+  @Input() fullname: string;
   constructor() { }
 
   ngOnInit() {
