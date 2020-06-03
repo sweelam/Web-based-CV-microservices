@@ -87,7 +87,7 @@ public class MyInfoService {
         return !res.isEmpty() ? res : Collections.emptyList();
     }
 
-    public boolean saveMyInfo(UserInfoVo userInfoVo) throws Exception {
+    public boolean saveMyInfo(UserInfoVo userInfoVo) {
         Integer infoId = Long.valueOf(myInfoRepo.count() + 1).intValue();
         MyInfoEntity myInfoEntity = new MyInfoEntity();
         try {

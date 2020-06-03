@@ -20,7 +20,7 @@ spring:
 server:
   servlet:
     context-path: /api/auth
-  port: 9094
+  port: 8060
 
 eureka:
   client:
