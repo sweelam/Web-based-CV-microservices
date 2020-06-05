@@ -1,6 +1,9 @@
 version: '3'
 services:
     eureka-service:
+      build: 
+        context: ./eureka
+        dockerfile: Dockerfile
       image: eureka-service:latest
       container_name: eureka
       ports:
@@ -9,12 +12,18 @@ services:
       environment:
         - EUREKA_CLIENT_SERVICEURL_DEFAULTZONE=http://eureka:8761/eureka
     config-service:
+      build: 
+        context: ./configServer
+        dockerfile: Dockerfile
       image: configServer:latest
       ports:
         - 8888:8888
       environment:
         - EUREKA_CLIENT_SERVICEURL_DEFAULTZONE=http://eureka:8761/eureka    
     proxy-service:
+      build: 
+        context: ./web-cv-proxy
+        dockerfile: Dockerfile
       image: zuul-service:latest
       ports:
         - 8081:8081
@@ -23,6 +32,9 @@ services:
       depends_on: 
         - config-service
     auth-service:
+      build: 
+        context: ./web-based-cv/auth-service
+        dockerfile: Dockerfile
       image: auth-service:latest
       ports:
         - 8060:8060
@@ -31,6 +43,9 @@ services:
       depends_on: 
         - config-service
     portal-service:
+      build: 
+        context: ./web-based-cv/cv-portal
+        dockerfile: Dockerfile
       image: cv-portal:latest
       ports:
         - 9090:9090
