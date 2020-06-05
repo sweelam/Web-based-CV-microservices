@@ -20,18 +20,21 @@ services:
         - 8081:8081
       environment:
         - EUREKA_CLIENT_SERVICEURL_DEFAULTZONE=http://eureka:8761/eureka
-      depends_on: config-service
+      depends_on: 
+        - config-service
     auth-service:
       image: auth-service:latest
       ports:
         - 8060:8060
       environment:
         - EUREKA_CLIENT_SERVICEURL_DEFAULTZONE=http://eureka:8761/eureka
-      depends_on: config-service
+      depends_on: 
+        - config-service
     portal-service:
       image: cv-portal:latest
       ports:
         - 9090:9090
       environment:
         - EUREKA_CLIENT_SERVICEURL_DEFAULTZONE=http://eureka:8761/eureka
-      depends_on: config-service
+      depends_on: 
+        - config-service
