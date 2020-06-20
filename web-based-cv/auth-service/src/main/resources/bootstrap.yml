@@ -1,8 +1,5 @@
 spring:
   datasource:
-#    username: sweelam
-#    password: sweelam&roka
-#    url: jdbc:mysql://localhost:3306/sweprofile?zeroDateTimeBehavior=convertToNull
     jpa:
       properties:
         hibernate:
@@ -10,12 +7,17 @@ spring:
           ddl-auto: none
   application:
     name: auth-service
-
     bus:
       refresh:
         enabled: true
     profiles:
       active: jdbc
+  cloud:
+    retry:
+      initial-interval: 1500
+      multiplier: 1.5
+      max-attempts: 10000
+      max-interval: 1000
 
 server:
   servlet:

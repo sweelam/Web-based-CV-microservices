@@ -1,7 +1,12 @@
 spring:
   application:
     name: cv-service
-
+  cloud:
+    retry:
+      initial-interval: 1500
+      multiplier: 1.5
+      max-attempts: 10000
+      max-interval: 1000
 eureka:
   client:
     service-url:

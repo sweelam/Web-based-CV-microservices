@@ -3,6 +3,7 @@ package com.me.test;
 import com.web.MyProfileApplication;
 import com.web.service.MyInfoService;
 import com.web.service.MyJobsService;
+import org.junit.Ignore;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -25,6 +26,7 @@ public class JobTest {
     private MyJobsService jobsService;
 
     @Test
+    @Ignore
     public void checkJob() {
         String fullName = myInfoService.getFullName(1);
         assertNotNull(fullName);
@@ -33,6 +35,7 @@ public class JobTest {
     }
 
     @Test
+    @Ignore
     public void checkJobs() {
         List jobs = jobsService.getJobInfo(1);
         assertNotNull(jobs);
