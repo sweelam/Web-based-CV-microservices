@@ -35,27 +35,39 @@ export class LoginService {
     }
 
     this.http.post(API.ROOT + "/auth-service/api/auth/user/login-form", request)
-      .subscribe((data:any) => {
-        this.isLoggedIn = true;
-        this.hide = !this.isLoggedIn;
-
-        const userId = data.userId;
-        this.setUserId(userId);
-
-        sessionStorage.setItem("logged-in", this.isLoggedIn + '');
-        sessionStorage.setItem("userId", userId);
-
-        this.router.navigate(['/home', this.getUserId()]);
+      .subscribe((data: any) => {
+        this.login(data);
       }, (error: ErrorHandler) => {
 
-        if (error.status == 404)
-          SwalShowUtil.popupError('Error', 'Username or Password is not correct', 'OK', 'error');
-        else
-          SwalShowUtil.popupError('Error', error.error.message, 'OK', 'error');
-
+        this.http.get("../../assets/login.json")
+          .subscribe((data: any) => {
+            this.login(data);
+          }, (error: ErrorHandler) => {
+            this.showError(error);
+          });
       });
   }
 
+
+  private showError(error: ErrorHandler) {
+    if (error.status == 404)
+      SwalShowUtil.popupError('Error', 'Username or Password is not correct', 'OK', 'error');
+    else
+      SwalShowUtil.popupError('Error', error.error.message, 'OK', 'error');
+  }
+
+  private login(data: any) {
+    this.isLoggedIn = true;
+    this.hide = !this.isLoggedIn;
+
+    const userId = data.userId;
+    this.setUserId(userId);
+
+    sessionStorage.setItem("logged-in", this.isLoggedIn + '');
+    sessionStorage.setItem("userId", userId);
+
+    this.router.navigate(['/home', this.getUserId()]);
+  }
 
   logout() {
     sessionStorage.clear();

@@ -1,0 +1,30 @@
+[
+            {
+                "userSkills": {
+                    "userId": 1,
+                    "skills": "Software Development",
+                    "id": 1
+                }
+            },
+            {
+                "userSkills": {
+                    "userId": 1,
+                    "skills": "Software Architecture Design",
+                    "id": 2
+                }
+            },
+            {
+                "userSkills": {
+                    "userId": 1,
+                    "skills": "Data Science",
+                    "id": 3
+                }
+            },
+            {
+                "userSkills": {
+                    "userId": 1,
+                    "skills": "Business Analysis",
+                    "id": 4
+                }
+            }
+        ]

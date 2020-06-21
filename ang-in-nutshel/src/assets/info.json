@@ -1,0 +1,48 @@
+{
+   
+    "id": 1,
+    "fullName": "Mohamed Sweelam",
+    "mobile": "+20 012 71459 665",
+    "email": "MohamedSweelam@fci.helwan.edu.eg",
+    "dateOfBirth": "26, Feb 1993 ",
+    "address": "Cairo- Egypt",
+    "userTitle": "Software Engineer",
+    "myJobsList": [
+        {
+            "id": 1,
+            "title": "Software Engineer",
+            "startDate": "2015-07-01",
+            "endDate": "2016-06-01",
+            "company": "Buducloud",
+            "jobDescription": "Working as junior in building ERP system, Developing a smart meter system,Contributing in the Business Analysis and System Design phases, Handling support with customers for production technical issues",
+            "infoRef": 1
+        },
+        {
+            "id": 2,
+            "title": "Java Senior Developer",
+            "startDate": "2016-06-01",
+            "endDate": "2017-12-01",
+            "company": "Turkey Remote",
+            "jobDescription": "Working as a Senior Java Back-end developer, Contributing in the Business\nAnalysis and System Design phases, Designing and Developing Web App",
+            "infoRef": 1
+        },
+        {
+            "id": 3,
+            "title": "Java Senior Consultant ",
+            "startDate": "2016-06-01",
+            "endDate": null,
+            "company": "egabi",
+            "jobDescription": "Working as a Team Leader leading the Development Team, Handling Support\nand Technical Issues reported from customer-side, Integrating developed\nwork with the on-site development team, Handling Data Migration & Integration\nwith 3rd party tools.",
+            "infoRef": 1
+        },
+        {
+            "id": 4,
+            "title": "Software Engineer Consultant @Etisalat",
+            "startDate": "2018-02-06",
+            "endDate": "2020-05-26",
+            "company": null,
+            "jobDescription": "For testing purpose",
+            "infoRef": 1
+        }
+    ]
+}
