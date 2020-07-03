@@ -1,4 +1,46 @@
-.active{
-    font-weight: bold;
-    color: yellow
+.active {
+  font-weight: bold;
+  color: yellow;
+}
+
+footer {
+  padding-top: 20px;
+  padding-bottom: 20px;
+}
+
+footer .social-links {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+footer .social-links a {
+  color: #fff;
+  opacity: 1;
+  margin-right: 20px;
+  transition: 0.5s;
+  -webkit-transition: 0.5s;
+  -moz-transition: 0.5s;
+  -ms-transition: 0.5s;
+  -o-transition: 0.5s;
+  font-size: 20px;
+}
+
+footer .social-links a:last-child {
+  margin-right: 0;
+}
+
+footer .social-links a:hover {
+  text-decoration: none;
+  opacity: 1;
+  color: #fff;
+  transform: scale(1.4);
+  -webkit-transform: scale(1.4);
+  -moz-transform: scale(1.4);
+  -ms-transform: scale(1.4);
+  -o-transform: scale(1.4);
+}
+
+footer .social-links a i:hover {
+  opacity: 1;
 }

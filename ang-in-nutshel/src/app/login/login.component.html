@@ -1,35 +1,54 @@
-    <div class="w3-container w3-card w3-white w3-margin-bottom" style="box-sizing:initial;min-height:950px;height:auto;">
-
-    <div class="login">
-        <form #loginForm="ngForm" (ngSubmit)="onSubmit(loginForm.value)">
-            <div class="imgcontainer">
-                <img src="../../assets/img_avatar.png" alt="Avatar" class="avatar">
-            </div>
-            <div class="container">
-                <label for="uname">
-                    <h4>
-                        <b>Username</b>
-                    </h4>
-                </label>
-                <div>
-                    <input type="text" name="username" ngModel/>
-                </div>
-
-                <label for="Password">
-                    <h4>
-                        <b>Password</b>
-                    </h4>
-                </label>
-                <div>
-                    <input type="password" name="password" #password ngModel/>
-                </div>
+<div class="login">
+  <div class="overlay"></div>
+  <div class="w3-card loginForm">
+    <div class="container">
+      <div class="imgcontainer">
+        <img src="../../assets/img_avatar.png" alt="Avatar" class="avatar" />
+      </div>
+      <form #loginForm="ngForm" (ngSubmit)="onSubmit(loginForm.value)">
+        <div class="form-inputs">
+          <div class="row">
+            <div class="col-12 formInput">
+              <label for="uname">
+                <h4>
+                  <b>Username</b>
+                </h4>
+              </label>
+              <div class="input">
+                <input type="text" name="username" ngModel />
+                <span></span>
+              </div>
             </div>
 
-            <button type="submit"> Submit </button>
-            <br>
-            <label>
-                <input type="checkbox" checked="checked" name="remember"> Remember me
-            </label>
-        </form>
+            <div class="col-12 formInput">
+              <label for="Password">
+                <h4>
+                  <b>Password</b>
+                </h4>
+              </label>
+              <div class="input">
+                <input type="password" name="password" #password ngModel />
+                <span></span>
+              </div>
+            </div>
+
+            <div class="col-12">
+              <div class="button">
+                <button type="submit">
+                  <span>Submit</span>
+                </button>
+              </div>
+            </div>
+
+            <div class="col-12">
+              <label>
+                <input type="checkbox" checked="checked" name="remember" />
+                Remember me
+              </label>
+            </div>
+          </div>
+        </div>
+      </form>
     </div>
+  </div>
 </div>

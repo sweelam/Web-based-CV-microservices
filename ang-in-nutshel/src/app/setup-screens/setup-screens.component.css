@@ -1,1 +1,139 @@
+.experience-details {
+  padding: 30px;
+}
 
+.experience-details .setup {
+  padding: 30px 0;
+}
+
+.experience-details .middle {
+  display: flex;
+}
+
+.formInput {
+  margin-bottom: 20px;
+}
+
+.formInput label,
+.formInput h4 {
+  margin-bottom: 0;
+}
+
+.formInput h4 {
+  font-size: 16px;
+}
+
+.formInput .input {
+  position: relative;
+}
+
+.formInput .input input {
+  background-color: transparent;
+  border: 0;
+  border-radius: 0;
+  border-bottom: 1px solid #aaa;
+}
+
+.formInput .input input + span {
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  height: 1px;
+  width: 0;
+  transition: 0.5s;
+  -webkit-transition: 0.5s;
+  -moz-transition: 0.5s;
+  -ms-transition: 0.5s;
+  -o-transition: 0.5s;
+}
+
+.formInput .input input:focus + span {
+  width: 100%;
+  background-color: #00f;
+}
+
+.formInput .input input:focus {
+  outline: 0 none;
+  box-shadow: none;
+}
+
+.input-group textarea {
+  resize: none;
+}
+
+.input-group textarea:focus {
+  outline: 0 none;
+  box-shadow: none;
+}
+
+.form-buttons {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.form-buttons .btn {
+  width: auto;
+}
+
+.form-buttons .back-btn {
+  margin-right: 30px;
+}
+
+.form-buttons .btn {
+  position: relative;
+  border-radius: 0;
+  -webkit-border-radius: 0;
+  -moz-border-radius: 0;
+  -ms-border-radius: 0;
+  -o-border-radius: 0;
+  outline: 0 none !important;
+  box-shadow: none !important;
+  background-color: #0069d9 !important;
+}
+
+.form-buttons .btn:focus {
+  outline: 0 none !important;
+  box-shadow: none !important;
+}
+
+.form-buttons .btn::before {
+  content: "";
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  -webkit-transform: translate(-50%, -50%);
+  -moz-transform: translate(-50%, -50%);
+  -ms-transform: translate(-50%, -50%);
+  -o-transform: translate(-50%, -50%);
+  width: 0;
+  height: 0;
+  background-color: #fff;
+  transition: 0.5s;
+  -webkit-transition: 0.5s;
+  -moz-transition: 0.5s;
+  -ms-transition: 0.5s;
+  -o-transition: 0.5s;
+}
+
+.form-buttons .btn:hover::before {
+  width: 100%;
+  height: 100%;
+}
+
+.form-buttons .btn span {
+  position: relative;
+  color: #fff;
+}
+
+.form-buttons .btn:hover span {
+  color: #0069d9;
+}
+
+@media (max-width: 525px) {
+  .experience-details .setup h1 {
+    font-size: 20px;
+    font-weight: bold;
+  }
+}
