@@ -37,15 +37,7 @@ export class LoginService {
     this.http.post(API.ROOT + "/auth-service/api/auth/user/login-form", request)
       .subscribe((data: any) => {
         this.login(data);
-      }, (error: ErrorHandler) => {
-
-        this.http.get("../../assets/login.json")
-          .subscribe((data: any) => {
-            this.login(data);
-          }, (error: ErrorHandler) => {
-            this.showError(error);
-          });
-      });
+      }, (error: ErrorHandler) => this.showError(error));
   }
 
 

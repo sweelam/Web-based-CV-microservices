@@ -8,7 +8,6 @@ import 'rxjs/add/operator/map';
 @Injectable()
 export class HomeService {
     urlAccount: string;
-    file: string = "../../assets/";
 
     constructor(private http: HttpClient) {
         this.urlAccount = API.ROOT + '/cv-service/api-cv/account/';
@@ -19,28 +18,23 @@ export class HomeService {
     }
 
     getFullName(accId) {
-        // return this.http.get(this.urlAccount + 'fullName/' + accId, { responseType: 'text' });
-        return Observable.of("Mohamed Sweelam");
+        return this.http.get(this.urlAccount + 'fullName/' + accId, { responseType: 'text' });
     }
 
     getInfoDetails(accId) {
-        // return this.http.get(this.urlAccount + 'info/details/' + accId , { responseType: 'json' });
-        return this.http.get(this.file + "info.json" , { responseType: 'text' });
+        return this.http.get(this.urlAccount + 'info/details/' + accId , { responseType: 'json' });
     }
 
     getJobInfo(accId) {
-        // return this.http.get(this.urlAccount + 'job/info/' + accId , { responseType: 'text' });
-        return this.http.get(this.file + "job.json" , { responseType: 'text' });
+        return this.http.get(this.urlAccount + 'job/info/' + accId , { responseType: 'text' });
     }
 
     getUserData(): Observable<any> {
-        // return this.http.get( API.ROOT + '/test/response', { responseType: 'json' });
-        return this.http.get(this.file + "fullname.json" , { responseType: 'text' });
+        return this.http.get( API.ROOT + '/test/response', { responseType: 'json' });
     }
 
     getUserSkills(accId): Observable<any> {
-        // return this.http.get(this.urlAccount + 'info/skills/' + accId, { responseType: 'json' });
-        return this.http.get(this.file + "skills.json" , { responseType: 'text' });
+        return this.http.get(this.urlAccount + 'info/skills/' + accId, { responseType: 'json' });
     }
 
 }
