@@ -1,144 +1,286 @@
-body {font-family: Arial, Helvetica, sans-serif;}
-
 /* Full-width input fields */
-input[type=text], input[type=password] {
-    width: 100%;
-    padding: 12px 20px;
-    margin: 8px 0;
-    display: inline-block;
-    border: 1px solid #ccc;
-    box-sizing: border-box;
+input[type="text"],
+input[type="password"] {
+  width: 100%;
+  padding: 10px;
+  display: inline-block;
+  border: 0;
+  border-bottom: 1px solid #ccc;
+  box-sizing: border-box;
+  outline: 0 none;
+  box-shadow: none;
+}
+
+input:focus {
+  outline: 0 none;
+  box-shadow: none;
 }
 
 /* Set a style for all buttons */
 button {
-    background-color: #4CAF50;
-    color: white;
-    padding: 14px 20px;
-    margin: 8px 0;
-    border: none;
-    cursor: pointer;
-    width: 96%;
+  background-color: #4caf50;
+  color: white;
+  padding: 14px 20px;
+  margin: 8px 0;
+  border: none;
+  cursor: pointer;
+  width: 100%;
 }
-
 
 .date {
-    float: left;
-    height: 52px;
-    width: 150px;
-    margin-right: 10px;
-    padding-top: 0px;
-    line-height: normal;
+  padding-top: 0px;
+  line-height: normal;
 }
 
-a.active{
-    color:red;
-}
-
-button:hover {
-    opacity: 0.8;
+a.active {
+  color: red;
 }
 
 /* Extra styles for the cancel button */
 .cancelbtn {
-    width: auto;
-    padding: 10px 18px;
-    background-color: #f44336;
+  width: auto;
+  padding: 10px 18px;
+  background-color: #f44336;
 }
 
 .btn {
-    background-color: rgb(14, 67, 241); /* Green */
-    border: none;
-    color: white;
-    padding: 15px 20px;
-    text-align: center;
-    text-decoration: none;
-    display: inline-block;
-    font-size: 15px;
-    border-radius: 8px;
-    width: 10%;
+  background-color: rgb(14, 67, 241); /* Green */
+  border: none;
+  color: white;
+  padding: 15px 20px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 15px;
+  border-radius: 8px;
+  width: 10%;
 }
 
 /* Center the image and position the close button */
+span.psw {
+  float: right;
+  padding-top: 16px;
+}
+
+.login {
+  height: 100vh; /* Full height */
+  position: relative;
+  background-image: url(../../assets/desktop-software-development.png);
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center center;
+  background-attachment: fixed;
+}
+
+.login .overlay {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.3);
+}
+
+.login .loginForm {
+  width: 100%;
+  max-width: 50%;
+  height: auto;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  -webkit-transform: translate(-50%, -50%);
+  -moz-transform: translate(-50%, -50%);
+  -ms-transform: translate(-50%, -50%);
+  -o-transform: translate(-50%, -50%);
+  background-color: rgba(255, 255, 255, 0.9);
+  z-index: 1;
+  padding: 20px 0;
+}
+
 .imgcontainer {
-    text-align: center;
-    margin: 24px 0 12px 0;
-    position: relative;
+  width: 200px;
+  height: 200px;
+  overflow: hidden;
+  margin: 0 auto 20px;
 }
 
 img.avatar {
-    width: 35%;
-    border-radius: 50%;
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 100%;
+  -webkit-border-radius: 100%;
+  -moz-border-radius: 100%;
+  -ms-border-radius: 100%;
+  -o-border-radius: 100%;
 }
 
-.container {
-    padding: 16px;
+.form-inputs {
+  padding: 0 50px;
 }
 
-span.psw {
-    float: right;
-    padding-top: 16px;
+.formInput {
+  margin-bottom: 20px;
 }
 
+.formInput label,
+.formInput h4 {
+  margin-bottom: 0;
+}
 
-.login {
-    z-index: 1; /* Sit on top */
-    left: 0;
-    top: 0;
-    width: 100%; /* Full width */
-    height: 100%; /* Full height */
-    padding-top: 50px;
-    border: #000;
-    border-bottom-width: 1pt
+.formInput h4 {
+  font-size: 16px;
+}
+
+.formInput .input {
+  position: relative;
+}
+
+.formInput .input input {
+  background-color: transparent;
+  border-bottom: 1px solid #aaa;
+}
+
+.formInput .input input + span {
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  height: 1px;
+  width: 0;
+  transition: 0.5s;
+  -webkit-transition: 0.5s;
+  -moz-transition: 0.5s;
+  -ms-transition: 0.5s;
+  -o-transition: 0.5s;
+}
+
+.formInput .input input:focus + span {
+  width: 100%;
+  background-color: #00f;
+}
+
+.form-inputs .button button {
+  margin: 0;
+  cursor: pointer;
+  outline: 0 none;
+  box-shadow: none;
+}
+
+.form-inputs .button {
+  margin: 0 0 10px;
+  position: relative;
+  cursor: pointer;
+}
+
+.form-inputs .button::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 0;
+  transition: 0.5s;
+  -webkit-transition: 0.5s;
+  -moz-transition: 0.5s;
+  -ms-transition: 0.5s;
+  -o-transition: 0.5s;
+}
+
+.form-inputs .button:hover::before {
+  width: 100%;
+  background-color: rgba(0, 0, 0, 0.3);
+}
+
+.form-inputs .button span {
+  position: relative;
 }
 
 /* Modal Content/Box */
 .modal-content {
-    background-color: #fefefe;
-    margin: 5% auto 15% auto; /* 5% from the top, 15% from the bottom and centered */
-    border: 1px solid #888;
-    width: 80%; /* Could be more or less, depending on screen size */
+  background-color: #fefefe;
+  margin: 5% auto 15% auto; /* 5% from the top, 15% from the bottom and centered */
+  border: 1px solid #888;
+  width: 80%; /* Could be more or less, depending on screen size */
 }
 
 /* The Close Button (x) */
 .close {
-    position: absolute;
-    right: 25px;
-    top: 0;
-    color: #000;
-    font-size: 35px;
-    font-weight: bold;
+  position: absolute;
+  right: 25px;
+  top: 0;
+  color: #000;
+  font-size: 35px;
+  font-weight: bold;
 }
 
 .close:hover,
 .close:focus {
-    color: red;
-    cursor: pointer;
+  color: red;
+  cursor: pointer;
 }
 
 /* Add Zoom Animation */
 .animate {
-    -webkit-animation: animatezoom 0.6s;
-    animation: animatezoom 0.6s
+  -webkit-animation: animatezoom 0.6s;
+  animation: animatezoom 0.6s;
 }
 
 @-webkit-keyframes animatezoom {
-    from {-webkit-transform: scale(0)} 
-    to {-webkit-transform: scale(1)}
+  from {
+    -webkit-transform: scale(0);
+  }
+  to {
+    -webkit-transform: scale(1);
+  }
 }
-    
+
 @keyframes animatezoom {
-    from {transform: scale(0)} 
-    to {transform: scale(1)}
+  from {
+    transform: scale(0);
+  }
+  to {
+    transform: scale(1);
+  }
 }
 
 /* Change styles for span and cancel button on extra small screens */
 @media screen and (max-width: 300px) {
-    span.psw {
-       display: block;
-       float: none;
-    }
-    .cancelbtn {
-       width: 100%;
-    }
+  span.psw {
+    display: block;
+    float: none;
+  }
+  .cancelbtn {
+    width: 100%;
+  }
+}
+
+@media (max-width: 1024px) {
+  .login .loginForm {
+    max-width: 70%;
+  }
+}
+
+@media (max-width: 768px) {
+  .login .loginForm {
+    max-width: 80%;
+  }
+}
+
+@media (max-width: 525px) {
+  .login .loginForm {
+    max-width: 90%;
+  }
+
+  .imgcontainer {
+    width: 155px;
+    height: 155px;
+  }
+
+  .form-inputs {
+    padding: 0 10px;
+  }
+
+  .formInput {
+    margin-bottom: 15px;
+  }
 }
