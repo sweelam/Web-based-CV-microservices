@@ -4,6 +4,7 @@ import { HomeService } from './home.service';
 import { ActivatedRoute, Router } from '@angular/router';
 import { UserInfo } from './user';
 import { LoginService } from '../login/login.service';
+import { AppService } from '../app-common-service';
 
 class UserSkills {
   constructor(public id: number, public desc: string) { }
@@ -22,7 +23,8 @@ export class HomeComponent implements OnInit {
   jobInfo: any[] = [];
   userId: number;
 
-  constructor(private homeService: HomeService, private loginService: LoginService) {
+  constructor(private homeService: HomeService, private loginService: LoginService,
+    public appService: AppService) {
     this.userInfo = new UserInfo(null, null, null, null, null, null, null);
   }
 

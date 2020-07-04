@@ -144,16 +144,6 @@
             </div>
           </div>
           <div align="middle" class="logoutBtn">
-            <div [hidden]="!loginService.userId" class="back-btn">
-              <button
-                type="button"
-                class="btn btn-primary btn-lg"
-                style="background-color: rgb(63, 63, 245);"
-                (click)="back()"
-              >
-                <span>back</span>
-              </button>
-            </div>
             <div [hidden]="!loginService.userId">
               <a
                 class="btn btn-lg"

@@ -6,6 +6,8 @@ import { UserJob } from "./user";
 import { ErrorHandler } from "../error-handler/error-handler";
 import { SwalShowUtil } from "../error-handler/error-show-util";
 import { Router } from "@angular/router";
+import { AppService } from "../app-common-service";
+import { LoginService } from "../login/login.service";
 
 @Component({
   selector: "app-setup-screens",
@@ -21,7 +23,9 @@ export class SetupScreensComponent implements OnInit {
   constructor(
     private setupService: SetupScreensService,
     private formBuilder: FormBuilder,
-    private route: Router
+    private route: Router,
+    public loginService: LoginService,
+    public appService: AppService
   ) {}
 
   ngOnInit() {

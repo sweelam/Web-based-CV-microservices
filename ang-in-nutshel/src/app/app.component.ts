@@ -1,6 +1,5 @@
 import { Component, OnInit } from '@angular/core';
 import { LoginService } from './login/login.service';
-import { Location } from '@angular/common';
 
 @Component({
   selector: 'app-root',
@@ -10,14 +9,9 @@ import { Location } from '@angular/common';
 export class AppComponent implements OnInit {
   title = 'app';
   accId: number;
-  constructor(public loginService: LoginService,
-    private location: Location) {
+  constructor(public loginService: LoginService) {
   }
 
   ngOnInit() {
-  }
-
-  back() {
-    this.location.back();
   }
 }
