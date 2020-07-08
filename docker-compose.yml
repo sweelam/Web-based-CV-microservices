@@ -1,4 +1,4 @@
-version: '3'
+version: '3.8'
 services:
     eureka-service:
       build: 
@@ -10,37 +10,49 @@ services:
       hostname: eureka
       environment:
         - EUREKA_CLIENT_SERVICEURL_DEFAULTZONE=http://eureka:8761/eureka
+      # networks: 
+      #   - mynetwork
     config-service:
       build: 
         context: ./configServer
       image: config-server:latest
       ports:
-        - 8888:8888
+        - 8888:8888 
       environment:
-        - EUREKA_CLIENT_SERVICEURL_DEFAULTZONE=http://eureka:8761/eureka    
-      # networks: 
-      #   - mynetwork
+        - EUREKA_CLIENT_SERVICEURL_DEFAULTZONE=http://eureka:8761/eureka
+      depends_on: 
+        - eureka-service
+      network_mode: host
     proxy-service:
       build: 
         context: ./web-cv-proxy
       image: zuul-service:latest
       ports:
         - 8081:8081
+      depends_on: 
+        - config-service
       environment:
         - EUREKA_CLIENT_SERVICEURL_DEFAULTZONE=http://eureka:8761/eureka
-      depends_on: 
-        - "config-service"
+      # networks: 
+      #   - mynetwork
     auth-service:
       build: 
         context: ./web-based-cv/auth-service
       image: auth-service:latest
       ports:
         - 8060:8060
+      deploy:
+        restart_policy:
+          condition: on-failure
+          delay: 5s
+          max_attempts: 3
       environment:
         - EUREKA_CLIENT_SERVICEURL_DEFAULTZONE=http://eureka:8761/eureka
       depends_on: 
-        - "config-service"
+        - config-service
+        - eureka-service
       restart: on-failure
+      network_mode: host
       # networks: 
       #   - mynetwork
     portal-service:
@@ -49,13 +61,20 @@ services:
       image: cv-portal:latest
       ports:
         - 9090:9090
+      deploy:
+        restart_policy:
+          condition: on-failure
+          delay: 5s
+          max_attempts: 3
+      depends_on: 
+        - config-service
+        - eureka-service
+      restart: on-failure
       environment:
         - EUREKA_CLIENT_SERVICEURL_DEFAULTZONE=http://eureka:8761/eureka
-      depends_on: 
-        - "config-service"
-      restart: on-failure
-      # networks: 
-      #   - mynetwork
+      network_mode: host
+#       networks: 
+#         - mynetwork
 # networks: 
 #   mynetwork:
 #     driver: bridge     

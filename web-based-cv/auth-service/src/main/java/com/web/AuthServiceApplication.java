@@ -9,7 +9,6 @@ import org.springframework.retry.annotation.EnableRetry;
 @EnableEurekaClient
 @SpringBootApplication(scanBasePackages= {"com.web"})
 @RefreshScope
-@EnableRetry
 public class AuthServiceApplication {
 
 	public static void main(String[] args) throws InterruptedException {
