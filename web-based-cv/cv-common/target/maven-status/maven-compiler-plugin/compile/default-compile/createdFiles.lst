@@ -2,4 +2,5 @@ com/web/common/config/GlobalExceptionHandler.class
 com/web/common/CommonApp.class
 com/web/common/config/DatabaseConfig.class
 com/web/common/config/RetryConfig.class
+com/web/common/config/RedisConfig.class
 com/web/common/encoders/CustomPasswordEncoder.class

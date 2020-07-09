@@ -89,6 +89,7 @@ public class MyInfoController {
                 	new ResponseEntity<>(HttpStatus.NOT_FOUND);
             
         } catch (Exception e) {
+            log.error(e.getMessage());
             return new ResponseEntity<>(HttpStatus.INTERNAL_SERVER_ERROR);
         }
     }
