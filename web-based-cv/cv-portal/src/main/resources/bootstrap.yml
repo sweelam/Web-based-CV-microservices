@@ -12,6 +12,13 @@ spring:
         enabled: true
         service-id: configServer
 
+eureka:
+  client:
+    fetchRegistry: true
+    registry-fetch-interval-seconds: 3
+  healthcheck:
+    enabled: true
+
 management:
   endpoints:
     web:

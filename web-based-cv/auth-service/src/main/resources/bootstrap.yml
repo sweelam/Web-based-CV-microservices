@@ -28,8 +28,18 @@ server:
     context-path: /api/auth
   port: 8060
 
+
+
+eureka:
+  client:
+    fetchRegistry: true
+    registry-fetch-interval-seconds: 3
+  healthcheck:
+    enabled: true
+
 management:
   endpoints:
     web:
       exposure:
         include: ["health","info","refresh", "bus-refresh"]
+
