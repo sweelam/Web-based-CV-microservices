@@ -11,7 +11,7 @@ import org.springframework.retry.annotation.EnableRetry;
 @RefreshScope
 public class AuthServiceApplication {
 
-	public static void main(String[] args) throws InterruptedException {
+	public static void main(String[] args) {
 		SpringApplication.run(AuthServiceApplication.class, args);
 	}
 }

@@ -27,7 +27,7 @@ ribbon:
 eureka:
   client:
     fetch-registry: true
-    register-with-eureka: false
+    register-with-eureka: true
   instance:
     prefer-ip-address: true
     registry-fetch-interval-seconds: 3

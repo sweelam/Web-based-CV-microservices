@@ -12,8 +12,24 @@ spring:
         enabled: true
         service-id: configServer
 
+eureka:
+  client:
+    fetchRegistry: true
+    register-with-eureka: true
+    registryFetchIntervalSeconds: 5
+  instance:
+    leaseRenewalIntervalInSeconds: 10
+    prefer-ip-address: true
+    registry-fetch-interval-seconds: 3
+    metadata-map:
+      management:
+        context-path: "/api-cv/actuator"
+
 management:
   endpoints:
     web:
       exposure:
-        include: ["health","info","refresh"]
+        include: "*"
+  endpoint:
+    health:
+      show-details: ALWAYS
