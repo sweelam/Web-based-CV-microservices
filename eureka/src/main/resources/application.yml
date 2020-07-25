@@ -9,4 +9,6 @@ eureka:
   client:
     register-with-eureka: false
     fetch-registry: false
+  server:
+    response-cache-update-interval-ms: 3
 

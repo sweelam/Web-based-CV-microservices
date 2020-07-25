@@ -80,6 +80,7 @@ public class MyInfoController {
 
     @GetMapping(value = "/info/skills/{accId}")
     @ApiOperation(value="User Skills", notes="List of user's skills")
+    @Loggable
     public ResponseEntity<List<Map<String, Object>>> getAllSkills(@PathVariable("accId") int accId) {
         try {
         	List<Map<String, Object>> userSkills = this.infoService.getUserSkills(accId);
@@ -89,6 +90,7 @@ public class MyInfoController {
                 	new ResponseEntity<>(HttpStatus.NOT_FOUND);
             
         } catch (Exception e) {
+            log.error(e.getMessage());
             return new ResponseEntity<>(HttpStatus.INTERNAL_SERVER_ERROR);
         }
     }

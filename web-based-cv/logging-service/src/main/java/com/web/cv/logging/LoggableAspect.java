@@ -26,9 +26,9 @@ public class LoggableAspect {
 		long startTime = System.currentTimeMillis();
 		Object returnValue = proceedingJoinPoint.proceed();
 		long totalTime = System.currentTimeMillis() - startTime;
-		StringBuilder message = new StringBuilder("Method: ");
+		StringBuilder message = new StringBuilder(" \t Method: ");
 		message.append(proceedingJoinPoint.getSignature().getName());
-		message.append(" | ");
+		message.append(" \t| ");
 		message.append(totalTime).append("ms");
 		LOGGER.info(message.toString());
 		return returnValue;
@@ -37,15 +37,16 @@ public class LoggableAspect {
 	
 	@Before("executeTiming()")
 	public void logMethodCall(JoinPoint joinPoint) {
-		StringBuilder logger = new StringBuilder("Method : ");
-		logger.append(" name : " + joinPoint.getSignature().getName());
-		LOGGER.info(logger.toString());
+		// TODO this type of aspect is not for logging
+		StringBuilder logger = new StringBuilder(" \t Method: ");
+		logger.append(joinPoint.getSignature().getName());
+//		LOGGER.info(logger.toString());
 	}
 	
 	@After("executeTiming()")
 	public void logAfterMethodCall(JoinPoint joinPoint) {
-		StringBuilder logger = new StringBuilder("Method : ");
-		logger.append(" name : " + joinPoint.getSignature().getName() + "| ");
+		StringBuilder logger = new StringBuilder(" \t Method: ");
+		logger.append(joinPoint.getSignature().getName() + " \t| ");
 		logger.append(joinPoint.getKind());
 		LOGGER.info(logger.toString());
 	}

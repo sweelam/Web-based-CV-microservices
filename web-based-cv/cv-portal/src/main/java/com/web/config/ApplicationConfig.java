@@ -22,7 +22,7 @@ public class ApplicationConfig extends WebSecurityConfigurerAdapter {
         http.csrf().disable()
                 .authorizeRequests()
                 .antMatchers("/", "/home", "/index", "/**.js" , "/**.css", "/assets/**", "/swagger-ui").permitAll()
-                .antMatchers("/api-cv/**").permitAll()
+                .antMatchers("/api-cv/**", "/actuator/**").permitAll()
                 .and()
                 .sessionManagement().sessionCreationPolicy(SessionCreationPolicy.STATELESS);
     }
