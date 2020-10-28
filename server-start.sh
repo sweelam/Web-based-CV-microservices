@@ -1,4 +1,4 @@
-#@/bin/bash
+#!/bin/bash
 
 echo 'build eureka server'
 mvn clean install -f ./eureka/pom.xml
