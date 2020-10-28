@@ -31,6 +31,7 @@ services:
         - 8081:8081
       depends_on: 
         - config-service
+        - eureka-service
       environment:
         - EUREKA_CLIENT_SERVICEURL_DEFAULTZONE=http://eureka:8761/eureka
       # networks: 
@@ -51,6 +52,7 @@ services:
       depends_on: 
         - config-service
         - eureka-service
+        - proxy-service
       restart: on-failure
       network_mode: host
       # networks: 
@@ -69,6 +71,7 @@ services:
       depends_on: 
         - config-service
         - eureka-service
+        - proxy-service
       restart: on-failure
       environment:
         - EUREKA_CLIENT_SERVICEURL_DEFAULTZONE=http://eureka:8761/eureka
