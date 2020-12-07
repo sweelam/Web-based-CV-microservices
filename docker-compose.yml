@@ -10,14 +10,23 @@ services:
       hostname: eureka
       environment:
         - EUREKA_CLIENT_SERVICEURL_DEFAULTZONE=http://eureka:8761/eureka
-      # networks: 
-      #   - mynetwork
     config-service:
       build: 
         context: ./configServer
       image: config-server:latest
       ports:
         - 8888:8888 
+      environment:
+        - EUREKA_CLIENT_SERVICEURL_DEFAULTZONE=http://eureka:8761/eureka
+      depends_on: 
+        - eureka-service
+      network_mode: host
+    admin-server:
+      build: 
+        context: ./admin-server
+      image: admin-server:latest
+      ports:
+        - 9988:9988 
       environment:
         - EUREKA_CLIENT_SERVICEURL_DEFAULTZONE=http://eureka:8761/eureka
       depends_on: 
@@ -34,8 +43,7 @@ services:
         - eureka-service
       environment:
         - EUREKA_CLIENT_SERVICEURL_DEFAULTZONE=http://eureka:8761/eureka
-      # networks: 
-      #   - mynetwork
+      network_mode: host
     auth-service:
       build: 
         context: ./web-based-cv/auth-service
@@ -45,7 +53,6 @@ services:
       deploy:
         restart_policy:
           condition: on-failure
-          delay: 5s
           max_attempts: 3
       environment:
         - EUREKA_CLIENT_SERVICEURL_DEFAULTZONE=http://eureka:8761/eureka
@@ -54,9 +61,7 @@ services:
         - eureka-service
         - proxy-service
       restart: on-failure
-      network_mode: host
-      # networks: 
-      #   - mynetwork
+      network_mode: host        
     portal-service:
       build: 
         context: ./web-based-cv/cv-portal
@@ -66,7 +71,6 @@ services:
       deploy:
         restart_policy:
           condition: on-failure
-          delay: 5s
           max_attempts: 3
       depends_on: 
         - config-service
@@ -75,9 +79,4 @@ services:
       restart: on-failure
       environment:
         - EUREKA_CLIENT_SERVICEURL_DEFAULTZONE=http://eureka:8761/eureka
-      network_mode: host
-#       networks: 
-#         - mynetwork
-# networks: 
-#   mynetwork:
-#     driver: bridge     
+      network_mode: host 

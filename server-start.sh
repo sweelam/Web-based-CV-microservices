@@ -16,11 +16,13 @@ echo 'build cv-stack'
 mvn clean install -f ./web-based-cv/pom.xml 
 
 echo 'Starting redis'
-/home/msweelam/Work/Programs/redis-6.0.8/src/redis-server &
+docker rm std-redis 
+sleep 2s
+docker run --name std-redis -d redis -p 6379:6379 &
 
 echo 'build stack using compose'
 docker-compose build
 
 echo 'Start stack'
-docker-compose up
+docker-compose --compatibility up
 
