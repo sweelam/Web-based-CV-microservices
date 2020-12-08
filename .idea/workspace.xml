@@ -1,36 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="SELECTIVE" />
+  </component>
   <component name="ChangeListManager">
     <list default="true" id="e0441b21-0baf-49cb-b6f4-87bebf6833a1" name="Default" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/configServer/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/configServer/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/docker-compose.yml" beforeDir="false" afterPath="$PROJECT_DIR$/docker-compose.yml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/web-based-cv/auth-service/Dockerfile" beforeDir="false" afterPath="$PROJECT_DIR$/web-based-cv/auth-service/Dockerfile" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/web-based-cv/auth-service/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/web-based-cv/auth-service/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/web-based-cv/auth-service/src/main/java/com/web/cv/auth/config/dbConfig.java" beforeDir="false" afterPath="$PROJECT_DIR$/web-based-cv/auth-service/src/main/java/com/web/cv/auth/config/dbConfig.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/web-based-cv/auth-service/src/main/resources/bootstrap.yml" beforeDir="false" afterPath="$PROJECT_DIR$/web-based-cv/auth-service/src/main/resources/bootstrap.yml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/web-based-cv/auth-service/src/test/java/com/auth/test/UserTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/web-based-cv/auth-service/src/test/java/com/auth/test/UserTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/web-based-cv/cv-common/target/cv-common-1.0.0-exec.jar" beforeDir="false" afterPath="$PROJECT_DIR$/web-based-cv/cv-common/target/cv-common-1.0.0-exec.jar" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/web-based-cv/cv-common/target/cv-common-1.0.0.jar" beforeDir="false" afterPath="$PROJECT_DIR$/web-based-cv/cv-common/target/cv-common-1.0.0.jar" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/web-based-cv/cv-portal/Dockerfile" beforeDir="false" afterPath="$PROJECT_DIR$/web-based-cv/cv-portal/Dockerfile" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/web-based-cv/cv-portal/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/web-based-cv/cv-portal/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/web-based-cv/cv-portal/src/main/java/com/web/config/dbConfig.java" beforeDir="false" afterPath="$PROJECT_DIR$/web-based-cv/cv-portal/src/main/java/com/web/config/dbConfig.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/web-based-cv/cv-portal/src/main/resources/bootstrap.yml" beforeDir="false" afterPath="$PROJECT_DIR$/web-based-cv/cv-portal/src/main/resources/bootstrap.yml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/web-based-cv/cv-portal/src/test/java/com/me/test/JobTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/web-based-cv/cv-portal/src/test/java/com/me/test/JobTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/web-based-cv/cv-portal/src/test/java/com/web/service/AppLoggerServiceTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/web-based-cv/cv-portal/src/test/java/com/web/service/AppLoggerServiceTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/web-based-cv/cv-portal/target/classes/META-INF/cv-portal.kotlin_module" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/web-based-cv/cv-portal/target/classes/bootstrap.yml" beforeDir="false" afterPath="$PROJECT_DIR$/web-based-cv/cv-portal/target/classes/bootstrap.yml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/web-based-cv/cv-portal/target/classes/com/web/config/dbConfig.class" beforeDir="false" afterPath="$PROJECT_DIR$/web-based-cv/cv-portal/target/classes/com/web/config/dbConfig.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/web-based-cv/cv-portal/target/cv-portal-1.0.0-exec.jar" beforeDir="false" afterPath="$PROJECT_DIR$/web-based-cv/cv-portal/target/cv-portal-1.0.0-exec.jar" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/web-based-cv/cv-portal/target/cv-portal-1.0.0.jar" beforeDir="false" afterPath="$PROJECT_DIR$/web-based-cv/cv-portal/target/cv-portal-1.0.0.jar" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/web-based-cv/cv-portal/target/surefire-reports/TEST-com.me.test.JobTest.xml" beforeDir="false" afterPath="$PROJECT_DIR$/web-based-cv/cv-portal/target/surefire-reports/TEST-com.me.test.JobTest.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/web-based-cv/cv-portal/target/surefire-reports/TEST-com.web.service.AppLoggerServiceTest.xml" beforeDir="false" afterPath="$PROJECT_DIR$/web-based-cv/cv-portal/target/surefire-reports/TEST-com.web.service.AppLoggerServiceTest.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/web-based-cv/cv-portal/target/surefire-reports/com.me.test.JobTest.txt" beforeDir="false" afterPath="$PROJECT_DIR$/web-based-cv/cv-portal/target/surefire-reports/com.me.test.JobTest.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/web-based-cv/cv-portal/target/surefire-reports/com.web.service.AppLoggerServiceTest.txt" beforeDir="false" afterPath="$PROJECT_DIR$/web-based-cv/cv-portal/target/surefire-reports/com.web.service.AppLoggerServiceTest.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/web-based-cv/cv-portal/target/test-classes/com/me/test/JobTest.class" beforeDir="false" afterPath="$PROJECT_DIR$/web-based-cv/cv-portal/target/test-classes/com/me/test/JobTest.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/web-based-cv/cv-portal/target/test-classes/com/web/service/AppLoggerServiceTest.class" beforeDir="false" afterPath="$PROJECT_DIR$/web-based-cv/cv-portal/target/test-classes/com/web/service/AppLoggerServiceTest.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/web-based-cv/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/web-based-cv/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/web-cv-proxy/Dockerfile" beforeDir="false" afterPath="$PROJECT_DIR$/web-cv-proxy/Dockerfile" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/server-start.sh" beforeDir="false" afterPath="$PROJECT_DIR$/server-start.sh" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/web-cv-proxy/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/web-cv-proxy/pom.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -82,6 +58,7 @@
     <option name="configurationTypes">
       <set>
         <option value="Application" />
+        <option value="SpringBootApplicationConfigurationType" />
       </set>
     </option>
   </component>
@@ -146,6 +123,13 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
+    <configuration name="AdminServerApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot">
+      <module name="admin-server" />
+      <option name="SPRING_BOOT_MAIN_CLASS" value="com.web.cv.adminserver.AdminServerApplication" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <configuration name="AuthServiceApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot">
       <module name="auth-service" />
       <option name="SPRING_BOOT_MAIN_CLASS" value="com.web.AuthServiceApplication" />
@@ -205,6 +189,7 @@
       </method>
     </configuration>
   </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="SvnConfiguration">
     <configuration />
   </component>
@@ -225,58 +210,13 @@
       <workItem from="1592147294286" duration="18000" />
       <workItem from="1592604845450" duration="32000" />
       <workItem from="1592604898069" duration="1027000" />
+      <workItem from="1605377290465" duration="54000" />
+      <workItem from="1607370721509" duration="1984000" />
+      <workItem from="1607454547856" duration="1510000" />
     </task>
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
-    <option name="version" value="2" />
-  </component>
-  <component name="WindowStateProjectService">
-    <state x="832" y="298" width="374" height="581" key="#com.intellij.ide.util.MemberChooser" timestamp="1592605419100">
-      <screen x="0" y="27" width="2048" height="1125" />
-    </state>
-    <state x="832" y="298" width="374" height="581" key="#com.intellij.ide.util.MemberChooser/0.27.2048.1125@0.27.2048.1125" timestamp="1592605419100" />
-    <state x="801" y="347" width="498" height="612" key="FileChooserDialogImpl" timestamp="1592605931555">
-      <screen x="0" y="27" width="2048" height="1125" />
-    </state>
-    <state x="801" y="347" width="498" height="612" key="FileChooserDialogImpl/0.27.2048.1125@0.27.2048.1125" timestamp="1592605931555" />
-    <state x="832" y="347" width="424" height="482" key="FileChooserDialogImpl/51.27.1997.1125@51.27.1997.1125" timestamp="1590513586932" />
-    <state width="2006" height="303" key="GridCell.Tab.0.bottom" timestamp="1592605933934">
-      <screen x="0" y="27" width="2048" height="1125" />
-    </state>
-    <state width="2006" height="303" key="GridCell.Tab.0.bottom/0.27.2048.1125@0.27.2048.1125" timestamp="1592605933934" />
-    <state width="2006" height="303" key="GridCell.Tab.0.center" timestamp="1592605933934">
-      <screen x="0" y="27" width="2048" height="1125" />
-    </state>
-    <state width="2006" height="303" key="GridCell.Tab.0.center/0.27.2048.1125@0.27.2048.1125" timestamp="1592605933934" />
-    <state width="2006" height="303" key="GridCell.Tab.0.left" timestamp="1592605933934">
-      <screen x="0" y="27" width="2048" height="1125" />
-    </state>
-    <state width="2006" height="303" key="GridCell.Tab.0.left/0.27.2048.1125@0.27.2048.1125" timestamp="1592605933934" />
-    <state width="2006" height="303" key="GridCell.Tab.0.right" timestamp="1592605933934">
-      <screen x="0" y="27" width="2048" height="1125" />
-    </state>
-    <state width="2006" height="303" key="GridCell.Tab.0.right/0.27.2048.1125@0.27.2048.1125" timestamp="1592605933934" />
-    <state width="2006" height="303" key="GridCell.Tab.1.bottom" timestamp="1592605933934">
-      <screen x="0" y="27" width="2048" height="1125" />
-    </state>
-    <state width="2006" height="303" key="GridCell.Tab.1.bottom/0.27.2048.1125@0.27.2048.1125" timestamp="1592605933934" />
-    <state width="2006" height="303" key="GridCell.Tab.1.center" timestamp="1592605933934">
-      <screen x="0" y="27" width="2048" height="1125" />
-    </state>
-    <state width="2006" height="303" key="GridCell.Tab.1.center/0.27.2048.1125@0.27.2048.1125" timestamp="1592605933934" />
-    <state width="2006" height="303" key="GridCell.Tab.1.left" timestamp="1592605933934">
-      <screen x="0" y="27" width="2048" height="1125" />
-    </state>
-    <state width="2006" height="303" key="GridCell.Tab.1.left/0.27.2048.1125@0.27.2048.1125" timestamp="1592605933934" />
-    <state width="2006" height="303" key="GridCell.Tab.1.right" timestamp="1592605933934">
-      <screen x="0" y="27" width="2048" height="1125" />
-    </state>
-    <state width="2006" height="303" key="GridCell.Tab.1.right/0.27.2048.1125@0.27.2048.1125" timestamp="1592605933934" />
-    <state x="444" y="136" width="1024" height="843" key="SettingsEditor" timestamp="1592605895617">
-      <screen x="0" y="27" width="2048" height="1125" />
-    </state>
-    <state x="416" y="102" key="SettingsEditor/0.0.1920.1050@0.0.1920.1050" timestamp="1585914029258" />
-    <state x="444" y="136" width="1024" height="843" key="SettingsEditor/0.27.2048.1125@0.27.2048.1125" timestamp="1592605895617" />
+    <option name="version" value="3" />
   </component>
 </project>

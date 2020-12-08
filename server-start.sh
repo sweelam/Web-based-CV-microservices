@@ -16,9 +16,9 @@ echo 'build cv-stack'
 mvn clean install -f ./web-based-cv/pom.xml 
 
 echo 'Starting redis'
+docker kill std-redis 
 docker rm std-redis 
-sleep 2s
-docker run --name std-redis -d redis -p 6379:6379 &
+docker run -p 6379:6379 --name std-redis -d redis --protected-mode no &
 
 echo 'build stack using compose'
 docker-compose build
