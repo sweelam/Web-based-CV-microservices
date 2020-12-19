@@ -1,5 +1,16 @@
 version: '3.8'
 services:
+    redis-dkr:
+      image: "redis"
+      ports:
+        - 6379:6379
+      command: --protected-mode no
+      network_mode: host
+    openzipkn:
+      image: "openzipkin/zipkin"
+      ports:
+        - 9411:9411
+      network_mode: host
     eureka-service:
       build: 
         context: ./eureka
@@ -41,6 +52,7 @@ services:
       depends_on: 
         - config-service
         - eureka-service
+        - openzipkn
       environment:
         - EUREKA_CLIENT_SERVICEURL_DEFAULTZONE=http://eureka:8761/eureka
       network_mode: host
@@ -73,10 +85,11 @@ services:
           condition: on-failure
           max_attempts: 3
       depends_on: 
+        - redis-dkr
         - config-service
         - eureka-service
         - proxy-service
       restart: on-failure
       environment:
         - EUREKA_CLIENT_SERVICEURL_DEFAULTZONE=http://eureka:8761/eureka
-      network_mode: host 
+      network_mode: host

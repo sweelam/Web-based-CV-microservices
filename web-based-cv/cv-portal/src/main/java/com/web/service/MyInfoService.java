@@ -19,6 +19,7 @@ import com.web.model.repository.UserSkillsRepo;
 import com.web.model.vo.MyInfoVO;
 import com.web.util.ApiErrorHandling;
 import com.web.utils.common.dto.UserInfoVo;
+import org.springframework.util.CollectionUtils;
 import springfox.documentation.spring.web.json.Json;
 
 import java.text.SimpleDateFormat;
@@ -34,7 +35,9 @@ public class MyInfoService {
     private final MyJobsRepo myJobsRepo;
     private final RedisTemplate redisTemplate;
 
-    public MyInfoService(MyInfoRepo myInfoRepo, MyJobsService myJobsService, UserSkillsRepo userSkillsRepo, MyJobsRepo myJobsRepo, RedisTemplate redisTemplate) {
+    public MyInfoService(MyInfoRepo myInfoRepo, MyJobsService myJobsService,
+                         UserSkillsRepo userSkillsRepo, MyJobsRepo myJobsRepo,
+                         RedisTemplate redisTemplate) {
         this.myInfoRepo = myInfoRepo;
         this.myJobsService = myJobsService;
         this.userSkillsRepo = userSkillsRepo;
@@ -45,37 +48,33 @@ public class MyInfoService {
     public String getFullName(Integer id) throws RuntimeException {
         Optional<MyInfoEntity> info = myInfoRepo.findById(id);
 
-        if (info.isPresent() &&
-                (!StringUtils.isEmpty(info.get().getFullName()) || !"".equalsIgnoreCase(info.get().getFullName().trim())))
+        if (info.isPresent() && !StringUtils.isEmpty(info.get().getFullName()))
             return info.get().getFullName();
         else
             throw new ApiErrorHandling();
     }
 
     public MyInfoVO getInfoById(Integer id) {
-        MyInfoVO myInfoVO = null;
-
+        MyInfoVO myInfoVO = new MyInfoVO();
         Optional<MyInfoEntity> myInfoEntity = myInfoRepo.findById(id);
-        if (myInfoEntity.isPresent()) {
+        myInfoEntity.ifPresent(k -> buildInfoVo(k, myInfoVO));
+        return myInfoVO;
+    }
 
-            myInfoVO = new MyInfoVO();
-            myInfoVO.setFullName(myInfoEntity.get().getFullName());
-            myInfoVO.setEmail(myInfoEntity.get().getEmail());
-            myInfoVO.setMobile(myInfoEntity.get().getMobile());
-
-            List<MyJobsEntity> myJobsEntity = myJobsService.getAllJobs();
-            if (null != myJobsEntity && myJobsEntity.size() > 0)
-                myInfoVO.setJobList(myJobsEntity);
-
-        }
-
+    private MyInfoVO buildInfoVo(MyInfoEntity myInfoEntity, MyInfoVO myInfoVO) {
+        myInfoVO.setFullName(myInfoEntity.getFullName());
+        myInfoVO.setEmail(myInfoEntity.getEmail());
+        myInfoVO.setMobile(myInfoEntity.getMobile());
+        List<MyJobsEntity> myJobsEntityList = myJobsService.getAllJobs();
+        if (!CollectionUtils.isEmpty(myJobsEntityList))
+            myInfoVO.setJobList(myJobsEntityList);
         return myInfoVO;
     }
 
 
     public MyInfoEntity getInfoDetailsById(Integer id) {
         Optional<MyInfoEntity> userInfo = myInfoRepo.findById(id);
-        return userInfo.isPresent() ? userInfo.get() : null;
+        return userInfo.orElse(null);
     }
 
     public List<Map<String, Object>> getUserSkills(int userId) {
