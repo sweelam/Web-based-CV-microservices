@@ -1,6 +1,0 @@
-/home/msweelam/work/code-projects/Web-based-CV-microservices/web-based-cv/cv-common/src/main/java/com/web/common/CommonApp.java
-/home/msweelam/work/code-projects/Web-based-CV-microservices/web-based-cv/cv-common/src/main/java/com/web/common/encoders/CustomPasswordEncoder.java
-/home/msweelam/work/code-projects/Web-based-CV-microservices/web-based-cv/cv-common/src/main/java/com/web/common/config/RedisConfig.java
-/home/msweelam/work/code-projects/Web-based-CV-microservices/web-based-cv/cv-common/src/main/java/com/web/common/config/DatabaseConfig.java
-/home/msweelam/work/code-projects/Web-based-CV-microservices/web-based-cv/cv-common/src/main/java/com/web/common/config/RetryConfig.java
-/home/msweelam/work/code-projects/Web-based-CV-microservices/web-based-cv/cv-common/src/main/java/com/web/common/config/GlobalExceptionHandler.java
