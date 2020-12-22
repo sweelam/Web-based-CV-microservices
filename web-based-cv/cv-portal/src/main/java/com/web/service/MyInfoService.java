@@ -1,30 +1,27 @@
 package com.web.service;
 
 
-import com.google.gson.JsonObject;
+import com.web.model.entity.MyInfoEntity;
+import com.web.model.entity.MyJobsEntity;
+import com.web.model.entity.UserSkillsEntity;
+import com.web.model.repository.MyInfoRepo;
 import com.web.model.repository.MyJobsRepo;
+import com.web.model.repository.UserSkillsRepo;
+import com.web.model.vo.MyInfoVO;
 import com.web.model.vo.UserExperienceVO;
+import com.web.util.ApiErrorHandling;
 import com.web.utils.common.JsonUtils;
+import com.web.utils.common.dto.UserInfoVo;
 import lombok.extern.slf4j.Slf4j;
 import org.apache.commons.lang3.StringUtils;
 import org.apache.commons.lang3.exception.ExceptionUtils;
 import org.springframework.data.redis.core.RedisTemplate;
 import org.springframework.stereotype.Service;
-
-import com.web.model.entity.MyInfoEntity;
-import com.web.model.entity.MyJobsEntity;
-import com.web.model.entity.UserSkillsEntity;
-import com.web.model.repository.MyInfoRepo;
-import com.web.model.repository.UserSkillsRepo;
-import com.web.model.vo.MyInfoVO;
-import com.web.util.ApiErrorHandling;
-import com.web.utils.common.dto.UserInfoVo;
 import org.springframework.util.CollectionUtils;
-import springfox.documentation.spring.web.json.Json;
 
+import java.sql.Date;
 import java.text.SimpleDateFormat;
 import java.util.*;
-import java.sql.Date;
 
 @Service
 @Slf4j
@@ -79,10 +76,10 @@ public class MyInfoService {
 
     public List<Map<String, Object>> getUserSkills(int userId) {
         final String SKILL_KEY = "user-skills-" + userId;
-        if (redisTemplate.hasKey(SKILL_KEY)) {
-            String response = (String) redisTemplate.opsForValue().get(SKILL_KEY);
+        String response = getFromRedis(SKILL_KEY);
+        if (!StringUtils.isEmpty(response))
             return JsonUtils.toObject(JsonUtils.parse(response), List.class);
-        }
+
         List<Map<String, Object>> res = new LinkedList<>();
         List<UserSkillsEntity> userSkills = this.userSkillsRepo.findByUserId(userId);
         if (null != userSkills && userSkills.size() > 0)
@@ -91,8 +88,19 @@ public class MyInfoService {
                 skills.put("userSkills", t);
                 res.add(skills);
             });
-        redisTemplate.opsForValue().set(SKILL_KEY, JsonUtils.toJson(res).getAsJsonArray().toString());
+        addToRedis(SKILL_KEY, JsonUtils.toJson(res).getAsJsonArray().toString());
         return !res.isEmpty() ? res : Collections.emptyList();
+    }
+
+    private String getFromRedis(final String key) {
+        if (redisTemplate.hasKey(key)) {
+            return  (String) redisTemplate.opsForValue().get(key);
+        }
+        return "";
+    }
+
+    private void addToRedis(String key, String value) {
+        new Thread(() -> redisTemplate.opsForValue().set(key, value)).start();
     }
 
     public boolean saveMyInfo(UserInfoVo userInfoVo) {
