@@ -14,6 +14,5 @@
    5. If you need to change databse credentials, you can update <strong>properties</strong> table details 
  
 # Running Steps
-  To start the application through docker you need to do the following:
-    1. start server shell file <br>
-      ./server-start.sh
+  To start the application through docker you need to start server shell file using <strong>./server-start.sh</strong>
+      
