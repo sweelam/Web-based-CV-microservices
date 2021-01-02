@@ -10,7 +10,7 @@
       create database sweprofile;
    3. GRANT USER ACCESS <br>
       GRANT ALL ON `sweprofile`.* TO 'sweelam'@'localhost';
-   4. Execute db-dump.sql file in database 
+   4. Execute <strong>db-dump.sql</strong> file in database 
    5. If you need to change databse credentials, you can update <strong>properties</strong> table details 
  
 # Running Steps
