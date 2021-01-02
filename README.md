@@ -1,5 +1,6 @@
 # Web-based-CV
- A demo for building web-based cv in microservices architecture, in Java 8 using Spring boot framework and Angular 6
+ A demo for building web-based cv in microservices architecture, in Java 8 using Spring boot framework and Angular 6+
+ Application may contains third party tools like redis and docker platform
  
 # Setup
  To run the system locally using the same database, you need to do the following:
