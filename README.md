@@ -27,4 +27,5 @@ The UI (Angular code) is only as Proof of Concept (POC) for the implemented back
  
 # Running Steps
   To start the application through docker you need to start server shell file using <strong>./server-start.sh</strong>
+  To Login in frontend use username/password : Sweelam/sweelam
       
