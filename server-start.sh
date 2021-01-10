@@ -1,5 +1,8 @@
 #!/bin/bash
 
+echo 'Start frontend'
+npm start --prefix ang-in-nutshel/ &    
+
 echo 'build eureka server'
 mvn clean install -f ./eureka/pom.xml -DskipTests
 
