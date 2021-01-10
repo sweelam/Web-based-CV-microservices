@@ -7,7 +7,7 @@
   4. Angular 6+
 
 # System Architecture Diagram 
- The source code for the demo is following the recommened architecture from Spring cloud project, and include most of the components shown in this diagram
+ The source code for the demo is following the recommened architecture from Spring cloud project, and include most of the components shown in this diagram, plus some other needful stores like <strong>Redis</strong>
  ![](https://spring.io/images/diagram-microservices-88e01c7d34c688cb49556435c130d352.svg)
  
 # Snapshot for the Demo 
