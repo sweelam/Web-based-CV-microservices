@@ -5,6 +5,10 @@
   2. Spring Boot
   3. Spring Cloud
   4. Angular 6+
+
+# Snapshot for the Demo 
+![](images/app-snapshot.png)
+
 # Setup
  To run the system locally using the same database, you need to do the following:
    1. CREATE USER in MySql <br>
