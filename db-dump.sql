@@ -19,16 +19,6 @@
 -- Table structure for table `app_logger`
 --
 
--- Create and grand user
-CREATE USER 'sweelam'@'localhost' IDENTIFIED BY 'sweelam_224466';
-GRANT ALL ON `sweprofile`.* TO 'sweelam'@'localhost';
-
-
--- Database cradentials
-INSERT INTO properties VALUES ('application', 'default', 'master', 'cv.ds.url', 'jdbc:mysql://127.0.0.1:3306/sweprofile?zeroDateTimeBehavior=convertToNull');
-INSERT INTO properties VALUES ('application', 'default', 'master', 'cv.ds.username', 'sweelam');
-INSERT INTO properties VALUES ('application', 'default', 'master', 'cv.ds.password', 'sweelam_224466');
-
 DROP TABLE IF EXISTS `app_logger`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
 /*!50503 SET character_set_client = utf8mb4 */;
@@ -158,7 +148,10 @@ CREATE TABLE `properties` (
 
 LOCK TABLES `properties` WRITE;
 /*!40000 ALTER TABLE `properties` DISABLE KEYS */;
-INSERT INTO `properties` VALUES ('application','default','master','name','test-auth2'),('application','default','master','testValue','test7');
+-- Database cradentials
+INSERT INTO properties VALUES ('application', 'default', 'master', 'cv.ds.url', 'jdbc:mysql://127.0.0.1:3306/sweprofile?zeroDateTimeBehavior=convertToNull');
+INSERT INTO properties VALUES ('application', 'default', 'master', 'cv.ds.username', 'sweelam');
+INSERT INTO properties VALUES ('application', 'default', 'master', 'cv.ds.password', 'sweelam_224466');
 /*!40000 ALTER TABLE `properties` ENABLE KEYS */;
 UNLOCK TABLES;
 
