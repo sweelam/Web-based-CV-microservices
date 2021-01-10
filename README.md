@@ -6,7 +6,12 @@
   3. Spring Cloud
   4. Angular 6+
 
+# System Architecture Diagram 
+ The source code for the demo is following the recommened architecture from Spring cloud project, and include most of the components shown in this diagram
+ ![](https://spring.io/images/diagram-microservices-88e01c7d34c688cb49556435c130d352.svg)
+ 
 # Snapshot for the Demo 
+The UI (Angular code) is only as Proof of Concept (POC) for the implemented backend.
 ![](images/app-snapshot.png)
 
 # Setup
