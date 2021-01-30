@@ -27,6 +27,9 @@ The UI (Angular code) is only as Proof of Concept (POC) for the implemented back
    5. If you need to change databse credentials, you can update <strong>properties</strong> table details 
  ```
 # Running Steps
-  To start the application through docker you need to start server shell file using <strong>./server-start.sh</strong> <br>
+  To start the application through docker you need to start server shell file using 
+  ``` shell-script
+  ./server-start.sh
+ ```
   To Login in frontend use username/password : Sweelam/sweelam
       
