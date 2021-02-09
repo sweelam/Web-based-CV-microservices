@@ -6,6 +6,7 @@ import java.util.Map;
 import javax.validation.Valid;
 
 import com.web.model.vo.UserExperienceVO;
+import com.web.proxy.AssetProxy;
 import com.web.service.MyJobsService;
 import com.web.util.Response;
 import lombok.extern.slf4j.Slf4j;
@@ -40,10 +41,12 @@ import io.swagger.annotations.ApiOperation;
 public class MyInfoController {
     private MyInfoService infoService;
     private MyJobsService jobsService;
+    private AssetProxy assetProxy;
 
-    public MyInfoController(MyInfoService infoService, MyJobsService jobsService) {
+    public MyInfoController(MyInfoService infoService, MyJobsService jobsService, AssetProxy assetProxy) {
         this.infoService = infoService;
         this.jobsService = jobsService;
+        this.assetProxy = assetProxy;
     }
 
     @GetMapping(value = "/fullName")
@@ -114,5 +117,10 @@ public class MyInfoController {
     public ResponseEntity<String> saveExperience(@RequestBody UserExperienceVO userExperience) {
         this.infoService.saveNewExperience(userExperience);
         return new ResponseEntity(HttpStatus.OK);
+    }
+
+    @GetMapping("/kl")
+    public String get() {
+        return assetProxy.getSysLogos();
     }
 }
