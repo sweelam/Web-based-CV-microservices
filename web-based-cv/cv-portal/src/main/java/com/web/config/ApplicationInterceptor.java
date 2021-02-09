@@ -13,7 +13,7 @@ import com.web.service.AppLoggerService;
 import com.web.utils.common.dto.RequestVo;
 
 
-@Configuration
+//@Configuration
 public class ApplicationInterceptor extends HandlerInterceptorAdapter {
 
     @Autowired
@@ -25,7 +25,7 @@ public class ApplicationInterceptor extends HandlerInterceptorAdapter {
         this.loggerService.saveRequest(new RequestVo(request.getRequestURI(),
                 request.getMethod(),
                 request.getHeader("token") != null ? request.getHeader("token") : "",
-                request.getHeader("Content-Type") != null ? request.getHeader("Content-Type") : ""));
+                request.getHeader("Accept") != null ? request.getHeader("Accept") : ""));
 
         return super.preHandle(request, response, handler);
     }

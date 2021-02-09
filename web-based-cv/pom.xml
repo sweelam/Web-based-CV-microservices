@@ -27,6 +27,7 @@
         <module>cv-utils</module>
         <module>logging-service</module>
         <module>cv-common</module>
+        <module>auth-server</module>
         <module>auth-service</module>
         <module>cv-portal</module>
     </modules>
@@ -84,6 +85,11 @@
             <groupId>org.springframework.retry</groupId>
             <artifactId>spring-retry</artifactId>
             <version>1.2.5.RELEASE</version>
+        </dependency>
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-configuration-processor</artifactId>
+            <optional>true</optional>
         </dependency>
     </dependencies>
 

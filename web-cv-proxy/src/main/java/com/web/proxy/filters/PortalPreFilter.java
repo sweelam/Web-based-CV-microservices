@@ -32,7 +32,6 @@ public class PortalPreFilter extends ZuulFilter {
 
         String URI = req.getRequestURI().toString();
         String methodType = req.getMethod();
-
         LOG.info("{} Method to {}", methodType, URI);
         return null;
     }

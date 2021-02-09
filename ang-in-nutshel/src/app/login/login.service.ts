@@ -29,12 +29,12 @@ export class LoginService {
 
   authLogin(username: string, password: string) {
 
-    let request = {
-      "username": username,
-      "password": password
-    }
+    const request = {
+      'username': username,
+      'password': password
+    };
 
-    this.http.post(API.ROOT + "/auth-service/api/auth/user/login-form", request)
+    this.http.post(API.ROOT + '/auth-service/api/auth/user/login-form', request)
       .subscribe((data: any) => {
         this.login(data);
       }, (error: ErrorHandler) => this.showError(error));
@@ -42,6 +42,7 @@ export class LoginService {
 
 
   private showError(error: ErrorHandler) {
+    // tslint:disable-next-line:triple-equals
     if (error.status == 404)
       SwalShowUtil.popupError('Error', 'Username or Password is not correct', 'OK', 'error');
     else
@@ -55,8 +56,8 @@ export class LoginService {
     const userId = data.userId;
     this.setUserId(userId);
 
-    sessionStorage.setItem("logged-in", this.isLoggedIn + '');
-    sessionStorage.setItem("userId", userId);
+    sessionStorage.setItem('logged-in', this.isLoggedIn + '');
+    sessionStorage.setItem('userId', userId);
 
     this.router.navigate(['/home', this.getUserId()]);
   }

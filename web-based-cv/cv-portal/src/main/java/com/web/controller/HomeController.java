@@ -2,6 +2,7 @@ package com.web.controller;
 
 import com.web.model.entity.TempEntity;
 import com.web.model.repository.TempRepo;
+import com.web.util.Response;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.MediaType;
 import org.springframework.http.ResponseEntity;
@@ -35,8 +36,8 @@ public class HomeController {
 	}
 
 	@GetMapping(value = "/all", produces = MediaType.TEXT_PLAIN_VALUE)
-	public String home() {
+	public ResponseEntity<String> home() {
 		List<TempEntity> tempList = tempRepo.findAll();
-		return !tempList.isEmpty() ? tempList.get(0).getValue() : "";
+		return ResponseEntity.ok(!tempList.isEmpty() ? tempList.get(0).getValue() : "");
 	}
 }

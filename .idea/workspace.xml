@@ -5,9 +5,33 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="e0441b21-0baf-49cb-b6f4-87bebf6833a1" name="Default" comment="">
+      <change afterPath="$PROJECT_DIR$/web-based-cv/auth-server/.gitignore" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web-based-cv/auth-server/.mvn/wrapper/MavenWrapperDownloader.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web-based-cv/auth-server/.mvn/wrapper/maven-wrapper.jar" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web-based-cv/auth-server/.mvn/wrapper/maven-wrapper.properties" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web-based-cv/auth-server/pom.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web-based-cv/auth-server/src/main/java/com/web/AuthServerApplication.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web-based-cv/auth-server/src/main/java/com/web/configuration/AuthServerConfig.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web-based-cv/auth-server/src/main/java/com/web/configuration/WebSecurityConfig.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web-based-cv/auth-server/src/main/java/com/web/configuration/dbConfig.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web-based-cv/auth-server/src/main/java/com/web/model/UserCredentials.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web-based-cv/auth-server/src/main/java/com/web/model/UserEntity.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web-based-cv/auth-server/src/main/java/com/web/model/UserPrincipale.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web-based-cv/auth-server/src/main/java/com/web/repositories/UserRepo.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web-based-cv/auth-server/src/main/java/com/web/service/UserAuthService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web-based-cv/auth-server/src/main/resources/application.properties" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web-based-cv/auth-server/src/main/resources/bootstrap.yml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web-based-cv/auth-server/src/test/java/com/web/AuthApplicationTests.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/server-start.sh" beforeDir="false" afterPath="$PROJECT_DIR$/server-start.sh" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/web-cv-proxy/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/web-cv-proxy/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ang-in-nutshel/src/app/login/login.service.ts" beforeDir="false" afterPath="$PROJECT_DIR$/ang-in-nutshel/src/app/login/login.service.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/web-based-cv/cv-portal/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/web-based-cv/cv-portal/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/web-based-cv/cv-portal/src/main/java/com/web/MyProfileApplication.java" beforeDir="false" afterPath="$PROJECT_DIR$/web-based-cv/cv-portal/src/main/java/com/web/MyProfileApplication.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/web-based-cv/cv-portal/src/main/java/com/web/config/ApplicationInterceptor.java" beforeDir="false" afterPath="$PROJECT_DIR$/web-based-cv/cv-portal/src/main/java/com/web/config/ApplicationInterceptor.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/web-based-cv/cv-portal/src/main/java/com/web/config/WebConfig.java" beforeDir="false" afterPath="$PROJECT_DIR$/web-based-cv/cv-portal/src/main/java/com/web/config/WebConfig.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/web-based-cv/cv-portal/src/main/java/com/web/controller/HomeController.java" beforeDir="false" afterPath="$PROJECT_DIR$/web-based-cv/cv-portal/src/main/java/com/web/controller/HomeController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/web-based-cv/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/web-based-cv/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/web-cv-proxy/src/main/java/com/web/proxy/filters/PortalPreFilter.java" beforeDir="false" afterPath="$PROJECT_DIR$/web-cv-proxy/src/main/java/com/web/proxy/filters/PortalPreFilter.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/web-cv-proxy/src/main/resources/application.yml" beforeDir="false" afterPath="$PROJECT_DIR$/web-cv-proxy/src/main/resources/application.yml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -27,10 +51,19 @@
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
+  <component name="KubernetesApiPersistence">
+    <option name="context" value="minishift" />
+  </component>
+  <component name="MacroExpansionManager">
+    <option name="directoryName" value="slsijoge" />
+  </component>
   <component name="ProjectCodeStyleSettingsMigration">
     <option name="version" value="1" />
   </component>
   <component name="ProjectId" id="1a1qPZxwuraXYXw5zYqRoH0QQuj" />
+  <component name="ProjectLevelVcsManager">
+    <ConfirmationsSetting value="1" id="Add" />
+  </component>
   <component name="ProjectViewState">
     <option name="autoscrollFromSource" value="true" />
     <option name="autoscrollToSource" value="true" />
@@ -46,13 +79,25 @@
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/web-based-cv/pom.xml" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/web-based-cv/auth-server/src/main/resources" />
+    <property name="node.js.detected.package.tslint" value="true" />
+    <property name="node.js.path.for.package.tslint" value="project" />
+    <property name="node.js.selected.package.tslint" value="(autodetect)" />
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
     <property name="nodejs_npm_path_reset_for_default_project" value="true" />
     <property name="project.structure.last.edited" value="Modules" />
     <property name="project.structure.proportion" value="0.15" />
     <property name="project.structure.side.proportion" value="0.2281668" />
-    <property name="settings.editor.selected.configurable" value="editor.preferences.fonts.default" />
+    <property name="settings.editor.selected.configurable" value="preferences.lookFeel" />
+    <property name="ts.external.directory.path" value="$PROJECT_DIR$/ang-in-nutshel/node_modules/typescript/lib" />
+  </component>
+  <component name="ReactorSettings">
+    <option name="notificationShown" value="true" />
+  </component>
+  <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/web-based-cv/auth-server/src/main/resources" />
+    </key>
   </component>
   <component name="RunDashboard">
     <option name="configurationTypes">
@@ -62,9 +107,20 @@
       </set>
     </option>
   </component>
-  <component name="RunManager" selected="Spring Boot.ConfigServerApplication">
+  <component name="RunManager" selected="Spring Boot.AuthApplication">
     <configuration default="true" type="Application" factoryName="Application">
       <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration default="true" type="ArquillianJUnit" factoryName="" nameIsGenerated="true">
+      <option name="arquillianRunConfiguration">
+        <value>
+          <option name="containerStateName" value="" />
+        </value>
+      </option>
+      <option name="TEST_OBJECT" value="class" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
@@ -126,6 +182,13 @@
     <configuration name="AdminServerApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot">
       <module name="admin-server" />
       <option name="SPRING_BOOT_MAIN_CLASS" value="com.web.cv.adminserver.AdminServerApplication" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="AuthApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot">
+      <module name="auth-server" />
+      <option name="SPRING_BOOT_MAIN_CLASS" value="com.web.AuthServerApplication" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
@@ -218,5 +281,34 @@
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="3" />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
+    <option name="oldMeFiltersMigrated" value="true" />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/web-based-cv/auth-server/src/main/java/com/web/service/UserAuthService.java</url>
+          <line>23</line>
+          <option name="timeStamp" value="2" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
+    <pin-to-top-manager>
+      <pinned-members>
+        <PinnedItemInfo parentTag="com.sun.proxy.$Proxy129" memberName="h" />
+        <PinnedItemInfo parentTag="org.apache.tomcat.util.http.NamesEnumerator" memberName="headers" />
+      </pinned-members>
+    </pin-to-top-manager>
   </component>
 </project>
