@@ -6,7 +6,9 @@ spring:
     name: zuul-proxy
 
 zuul:
-  sensitiveHeaders: Cookie,Set-Cookie,Authorization
+  ignoredHeaders:
+    - authorization
+  sensitiveHeaders: Cookie,Set-Cookie
   routes:
     auth-service:
       path: /api/auth/**
@@ -14,9 +16,6 @@ zuul:
     cv-service:
       path: /api/cv/**
       serviceId: cv-service         # Translated as http://localhost:8081/cv-service/api/cv/**
-    auth-server:
-      path: /oauth/**
-      serviceId: auth-server       # Translated as http://localhost:8081/auth-server/oauth/**
 
 ribbon:
   MaxConnectionsPerHost: 1000
