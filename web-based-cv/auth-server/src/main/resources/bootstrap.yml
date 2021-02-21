@@ -1,0 +1,18 @@
+eureka:
+  client:
+    fetchRegistry: true
+    register-with-eureka: true
+    registryFetchIntervalSeconds: 5
+  instance:
+    leaseRenewalIntervalInSeconds: 10
+    prefer-ip-address: true
+    registry-fetch-interval-seconds: 3
+
+management:
+  endpoints:
+    web:
+      exposure:
+        include: "*"
+  endpoint:
+    health:
+      show-details: ALWAYS

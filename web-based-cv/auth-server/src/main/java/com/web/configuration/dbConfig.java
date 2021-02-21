@@ -1,4 +1,4 @@
-package com.web.proxy.configuration;
+package com.web.configuration;
 
 import com.web.common.config.DatabaseConfig;
 import com.zaxxer.hikari.HikariConfig;

@@ -1,6 +1,6 @@
-package com.web.proxy.configuration;
+package com.web.configuration;
 
-import com.web.proxy.service.UserAuthService;
+import com.web.service.UserAuthService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
@@ -30,9 +30,6 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
     protected void configure(HttpSecurity http) throws Exception {
         http
                 .sessionManagement().sessionCreationPolicy(SessionCreationPolicy.NEVER)
-                .and()
-                .authorizeRequests()
-                .antMatchers("/oauth/**").permitAll()
                 .and()
                 .authorizeRequests()
                 .anyRequest()

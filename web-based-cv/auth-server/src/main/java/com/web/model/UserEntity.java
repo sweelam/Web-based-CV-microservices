@@ -1,4 +1,4 @@
-package com.web.proxy.model;
+package com.web.model;
 
 import javax.persistence.*;
 import java.util.Objects;

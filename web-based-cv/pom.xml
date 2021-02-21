@@ -27,6 +27,7 @@
         <module>cv-utils</module>
         <module>logging-service</module>
         <module>cv-common</module>
+        <module>auth-server</module>
         <module>auth-service</module>
         <module>cv-portal</module>
     </modules>

@@ -1,4 +1,4 @@
-package com.web.proxy.model;
+package com.web.model;
 
 import org.springframework.security.core.GrantedAuthority;
 import org.springframework.security.core.authority.SimpleGrantedAuthority;

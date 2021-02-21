@@ -1,9 +1,8 @@
-package com.web.proxy.service;
+package com.web.service;
 
-
-import com.web.proxy.model.UserEntity;
-import com.web.proxy.model.UserPrincipale;
-import com.web.proxy.repositories.UserRepo;
+import com.web.model.UserEntity;
+import com.web.model.UserPrincipale;
+import com.web.repositories.UserRepo;
 import org.springframework.security.core.userdetails.User;
 import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.security.core.userdetails.UserDetailsService;

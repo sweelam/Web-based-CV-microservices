@@ -1,4 +1,4 @@
-package com.web.proxy.model;
+package com.web.model;
 
 import lombok.Data;
 import lombok.NoArgsConstructor;

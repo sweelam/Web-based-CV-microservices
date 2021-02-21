@@ -1,6 +1,6 @@
-package com.web.proxy.repositories;
+package com.web.repositories;
 
-import com.web.proxy.model.UserEntity;
+import com.web.model.UserEntity;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
 
