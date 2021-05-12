@@ -6,7 +6,6 @@ spring:
     name: zuul-proxy
 
 zuul:
-  sensitiveHeaders: Cookie,Set-Cookie,Authorization
   routes:
     auth-service:
       path: /api/auth/**
@@ -17,6 +16,7 @@ zuul:
     auth-server:
       path: /oauth/**
       serviceId: auth-server       # Translated as http://localhost:8081/auth-server/oauth/**
+      sensitiveHeaders: Cookie,Set-Cookie
 
 ribbon:
   MaxConnectionsPerHost: 1000
