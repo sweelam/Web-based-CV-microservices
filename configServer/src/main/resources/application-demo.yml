@@ -1,0 +1,16 @@
+spring:
+  datasource:
+    url: jdbc:mysql://${HOST_IP}:${PORT_IP}/sweprofile?zeroDateTimeBehavior=convertToNull
+    username: sweelam
+    password: sweelam_224466
+    hikari:
+      maximum-pool-size: 10
+      connection-timeout: 5000
+  profiles:
+    active: jdbc
+
+management:
+  endpoints:
+    web:
+      exposure:
+        include: "*"
