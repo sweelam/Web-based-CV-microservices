@@ -17,13 +17,13 @@ The UI (Angular code) is only as Proof of Concept (POC) for the implemented back
 # Setup
  To run the system locally using the same database, you need to do the following:
  ```sql
-   1. CREATE USER in MySql <br>
+   1. CREATE USER in MySql 
       CREATE USER 'sweelam'@'localhost' IDENTIFIED BY 'sweelam_224466';
-   2. CREATE DATABASE <br>
+   2. CREATE DATABASE 
       create database sweprofile;
-   3. GRANT USER ACCESS <br>
+   3. GRANT USER ACCESS 
       GRANT ALL ON `sweprofile`.* TO 'sweelam'@'localhost';
-   4. Execute <strong>db-dump.sql</strong> file in database 
+   4. Execute db-dump.sql file in database 
    5. If you need to change databse credentials, you can update <strong>properties</strong> table details 
  ```
 # Running Steps
