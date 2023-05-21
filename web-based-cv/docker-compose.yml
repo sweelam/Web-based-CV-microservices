@@ -1,0 +1,15 @@
+version: '3.9'
+services:
+  mysql:
+    platform: linux/x86_64
+    image: mysql:8.0.32
+    restart: always
+    ports:
+      - "3306:3306"
+    environment:
+      MYSQL_ROOT_PASSWORD: "root"
+      MYSQL_DATABASE: "sweprofile"
+      MYSQL_USER: "sweelam"
+      MYSQL_PASSWORD: "sweelam_224466"
+    volumes:
+      - "./docker/mysql/dumps:/docker-entrypoint-initdb.d"

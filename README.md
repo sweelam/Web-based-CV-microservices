@@ -18,10 +18,10 @@ The UI (Angular code) is only as Proof of Concept (POC) for the implemented back
  To run the system locally using the same database, you need to do the following:
  ```sql
    1. Run the docker-compose file under web-based-cv directory `docker-compose up` 
-   5. If you need to change databse credentials, you can update <strong>properties</strong> table details 
+   2. If you need to change databse credentials, you can update <strong>properties</strong> table details 
  ```
 # Running Steps
-  To start the application through docker without IDE you need to start server shell file using 
+  To start the application through docker without IDE you need to start server shell file using , make sure you have the DB setup ready if not, execute step 1 in previous section 
   ``` shell-script
   ./server-start.sh
  ```
