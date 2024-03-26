@@ -5,10 +5,8 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="e0441b21-0baf-49cb-b6f4-87bebf6833a1" name="Default" comment="upgrade spring admin server">
-      <change afterPath="$PROJECT_DIR$/configServer/mvnw" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/configServer/mvnw.cmd" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/configServer/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/configServer/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/web-cv-proxy/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/web-cv-proxy/pom.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -32,6 +30,7 @@
       </map>
     </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+    <option name="WARN_ABOUT_CRLF" value="false" />
   </component>
   <component name="KubernetesApiPersistence">
     <option name="context" value="minishift" />
@@ -245,7 +244,7 @@
       <workItem from="1605377290465" duration="54000" />
       <workItem from="1607370721509" duration="1984000" />
       <workItem from="1607454547856" duration="1510000" />
-      <workItem from="1711474905287" duration="1267000" />
+      <workItem from="1711474905287" duration="2091000" />
     </task>
     <task id="LOCAL-00001" summary="update .gitignore">
       <option name="closed" value="true" />
@@ -271,7 +270,15 @@
       <option name="project" value="LOCAL" />
       <updated>1711475792386</updated>
     </task>
-    <option name="localTasksCounter" value="4" />
+    <task id="LOCAL-00004" summary="upgrade spring admin server">
+      <option name="closed" value="true" />
+      <created>1711476192344</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1711476192345</updated>
+    </task>
+    <option name="localTasksCounter" value="5" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
