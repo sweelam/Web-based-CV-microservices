@@ -4,34 +4,12 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="e0441b21-0baf-49cb-b6f4-87bebf6833a1" name="Default" comment="">
-      <change afterPath="$PROJECT_DIR$/web-based-cv/auth-server/.gitignore" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/web-based-cv/auth-server/.mvn/wrapper/MavenWrapperDownloader.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/web-based-cv/auth-server/.mvn/wrapper/maven-wrapper.jar" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/web-based-cv/auth-server/.mvn/wrapper/maven-wrapper.properties" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/web-based-cv/auth-server/pom.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/web-based-cv/auth-server/src/main/java/com/web/AuthServerApplication.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/web-based-cv/auth-server/src/main/java/com/web/configuration/AuthServerConfig.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/web-based-cv/auth-server/src/main/java/com/web/configuration/WebSecurityConfig.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/web-based-cv/auth-server/src/main/java/com/web/configuration/dbConfig.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/web-based-cv/auth-server/src/main/java/com/web/model/UserCredentials.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/web-based-cv/auth-server/src/main/java/com/web/model/UserEntity.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/web-based-cv/auth-server/src/main/java/com/web/model/UserPrincipale.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/web-based-cv/auth-server/src/main/java/com/web/repositories/UserRepo.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/web-based-cv/auth-server/src/main/java/com/web/service/UserAuthService.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/web-based-cv/auth-server/src/main/resources/application.properties" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/web-based-cv/auth-server/src/main/resources/bootstrap.yml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/web-based-cv/auth-server/src/test/java/com/web/AuthApplicationTests.java" afterDir="false" />
+    <list default="true" id="e0441b21-0baf-49cb-b6f4-87bebf6833a1" name="Default" comment="upgrade eureka">
+      <change afterPath="$PROJECT_DIR$/eureka/mvnw" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/eureka/mvnw.cmd" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ang-in-nutshel/src/app/login/login.service.ts" beforeDir="false" afterPath="$PROJECT_DIR$/ang-in-nutshel/src/app/login/login.service.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/web-based-cv/cv-portal/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/web-based-cv/cv-portal/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/web-based-cv/cv-portal/src/main/java/com/web/MyProfileApplication.java" beforeDir="false" afterPath="$PROJECT_DIR$/web-based-cv/cv-portal/src/main/java/com/web/MyProfileApplication.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/web-based-cv/cv-portal/src/main/java/com/web/config/ApplicationInterceptor.java" beforeDir="false" afterPath="$PROJECT_DIR$/web-based-cv/cv-portal/src/main/java/com/web/config/ApplicationInterceptor.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/web-based-cv/cv-portal/src/main/java/com/web/config/WebConfig.java" beforeDir="false" afterPath="$PROJECT_DIR$/web-based-cv/cv-portal/src/main/java/com/web/config/WebConfig.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/web-based-cv/cv-portal/src/main/java/com/web/controller/HomeController.java" beforeDir="false" afterPath="$PROJECT_DIR$/web-based-cv/cv-portal/src/main/java/com/web/controller/HomeController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/web-based-cv/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/web-based-cv/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/web-cv-proxy/src/main/java/com/web/proxy/filters/PortalPreFilter.java" beforeDir="false" afterPath="$PROJECT_DIR$/web-cv-proxy/src/main/java/com/web/proxy/filters/PortalPreFilter.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/web-cv-proxy/src/main/resources/application.yml" beforeDir="false" afterPath="$PROJECT_DIR$/web-cv-proxy/src/main/resources/application.yml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/eureka/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/eureka/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/eureka/src/test/java/com/web/cv/eureka/EurekaApplicationTests.java" beforeDir="false" afterPath="$PROJECT_DIR$/eureka/src/test/java/com/web/cv/eureka/EurekaApplicationTests.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -49,6 +27,11 @@
     </option>
   </component>
   <component name="Git.Settings">
+    <option name="RECENT_BRANCH_BY_REPOSITORY">
+      <map>
+        <entry key="$PROJECT_DIR$" value="add-profiles" />
+      </map>
+    </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
   <component name="KubernetesApiPersistence">
@@ -57,9 +40,15 @@
   <component name="MacroExpansionManager">
     <option name="directoryName" value="slsijoge" />
   </component>
+  <component name="MarkdownSettingsMigration">
+    <option name="stateVersion" value="1" />
+  </component>
   <component name="ProjectCodeStyleSettingsMigration">
     <option name="version" value="1" />
   </component>
+  <component name="ProjectColorInfo"><![CDATA[{
+  "associatedIndex": 3
+}]]></component>
   <component name="ProjectId" id="1a1qPZxwuraXYXw5zYqRoH0QQuj" />
   <component name="ProjectLevelVcsManager">
     <ConfirmationsSetting value="1" id="Add" />
@@ -70,27 +59,32 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">
-    <property name="RequestMappingsPanelOrder0" value="0" />
-    <property name="RequestMappingsPanelOrder1" value="1" />
-    <property name="RequestMappingsPanelWidth0" value="75" />
-    <property name="RequestMappingsPanelWidth1" value="75" />
-    <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
-    <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
-    <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="aspect.path.notification.shown" value="true" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/web-based-cv/auth-server/src/main/resources" />
-    <property name="node.js.detected.package.tslint" value="true" />
-    <property name="node.js.path.for.package.tslint" value="project" />
-    <property name="node.js.selected.package.tslint" value="(autodetect)" />
-    <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
-    <property name="nodejs_npm_path_reset_for_default_project" value="true" />
-    <property name="project.structure.last.edited" value="Modules" />
-    <property name="project.structure.proportion" value="0.15" />
-    <property name="project.structure.side.proportion" value="0.2281668" />
-    <property name="settings.editor.selected.configurable" value="preferences.lookFeel" />
-    <property name="ts.external.directory.path" value="$PROJECT_DIR$/ang-in-nutshel/node_modules/typescript/lib" />
-  </component>
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "Maven.admin-server [clean].executor": "Run",
+    "Maven.auth-server [clean].executor": "Run",
+    "Maven.auth-service [clean].executor": "Run",
+    "Maven.configServer [clean].executor": "Run",
+    "Maven.cv-common [clean].executor": "Run",
+    "Maven.cv-portal [clean].executor": "Run",
+    "Maven.cv-utils [clean].executor": "Run",
+    "Maven.eureka-service [clean].executor": "Run",
+    "RequestMappingsPanelOrder0": "0",
+    "RequestMappingsPanelOrder1": "1",
+    "RequestMappingsPanelWidth0": "75",
+    "RequestMappingsPanelWidth1": "75",
+    "RunOnceActivity.OpenProjectViewOnStart": "true",
+    "git-widget-placeholder": "web-based-cv-upgrade",
+    "kotlin-language-version-configured": "true",
+    "last_opened_file_path": "/home/msweelam/Work/projects/java/Web-based-CV-microservices",
+    "node.js.detected.package.eslint": "true",
+    "node.js.selected.package.eslint": "(autodetect)",
+    "node.js.selected.package.tslint": "(autodetect)",
+    "nodejs_package_manager_path": "npm",
+    "run.configurations.included.in.services": "true",
+    "vue.rearranger.settings.migration": "true"
+  }
+}]]></component>
   <component name="ReactorSettings">
     <option name="notificationShown" value="true" />
   </component>
@@ -103,17 +97,13 @@
     <option name="configurationTypes">
       <set>
         <option value="Application" />
+        <option value="MicronautRunConfigurationType" />
+        <option value="QuarkusRunConfigurationType" />
         <option value="SpringBootApplicationConfigurationType" />
       </set>
     </option>
   </component>
   <component name="RunManager" selected="Spring Boot.AuthApplication">
-    <configuration default="true" type="Application" factoryName="Application">
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
     <configuration default="true" type="ArquillianJUnit" factoryName="" nameIsGenerated="true">
       <option name="arquillianRunConfiguration">
         <value>
@@ -121,6 +111,12 @@
         </value>
       </option>
       <option name="TEST_OBJECT" value="class" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration default="true" type="Application" factoryName="Application">
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
@@ -134,13 +130,6 @@
     </configuration>
     <configuration default="true" type="JetRunConfigurationType">
       <module name="web-cv-microservice" />
-      <option name="VM_PARAMETERS" />
-      <option name="PROGRAM_PARAMETERS" />
-      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
-      <option name="ALTERNATIVE_JRE_PATH" />
-      <option name="PASS_PARENT_ENVS" value="true" />
-      <option name="MAIN_CLASS_NAME" />
-      <option name="WORKING_DIRECTORY" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
@@ -148,33 +137,6 @@
     <configuration default="true" type="KotlinStandaloneScriptRunConfigurationType">
       <module name="web-cv-microservice" />
       <option name="filePath" />
-      <option name="vmParameters" />
-      <option name="alternativeJrePath" />
-      <option name="programParameters" />
-      <option name="passParentEnvs" value="true" />
-      <option name="workingDirectory" />
-      <option name="isAlternativeJrePathEnabled" value="false" />
-      <option name="VM_PARAMETERS" />
-      <option name="PROGRAM_PARAMETERS" />
-      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
-      <option name="ALTERNATIVE_JRE_PATH" />
-      <option name="PASS_PARENT_ENVS" value="true" />
-      <option name="MAIN_CLASS_NAME" />
-      <option name="WORKING_DIRECTORY" />
-      <option name="filePath" />
-      <option name="vmParameters" />
-      <option name="alternativeJrePath" />
-      <option name="programParameters" />
-      <option name="passParentEnvs" value="true" />
-      <option name="workingDirectory" />
-      <option name="isAlternativeJrePathEnabled" value="false" />
-      <option name="VM_PARAMETERS" />
-      <option name="PROGRAM_PARAMETERS" />
-      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
-      <option name="ALTERNATIVE_JRE_PATH" />
-      <option name="PASS_PARENT_ENVS" value="true" />
-      <option name="MAIN_CLASS_NAME" />
-      <option name="WORKING_DIRECTORY" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
@@ -252,6 +214,13 @@
       </method>
     </configuration>
   </component>
+  <component name="SharedIndexes">
+    <attachedChunks>
+      <set>
+        <option value="jdk-17.0.9-azul-17.0.9-4caba194b151-fe01c698" />
+      </set>
+    </attachedChunks>
+  </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="SvnConfiguration">
     <configuration />
@@ -276,7 +245,17 @@
       <workItem from="1605377290465" duration="54000" />
       <workItem from="1607370721509" duration="1984000" />
       <workItem from="1607454547856" duration="1510000" />
+      <workItem from="1711474905287" duration="580000" />
     </task>
+    <task id="LOCAL-00001" summary="update .gitignore">
+      <option name="closed" value="true" />
+      <created>1711475160596</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1711475160596</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -292,7 +271,11 @@
         </entry>
       </map>
     </option>
-    <option name="oldMeFiltersMigrated" value="true" />
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="update .gitignore" />
+    <MESSAGE value="upgrade eureka" />
+    <option name="LAST_COMMIT_MESSAGE" value="upgrade eureka" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -310,5 +293,9 @@
         <PinnedItemInfo parentTag="org.apache.tomcat.util.http.NamesEnumerator" memberName="headers" />
       </pinned-members>
     </pin-to-top-manager>
+  </component>
+  <component name="XSLT-Support.FileAssociations.UIState">
+    <expand />
+    <select />
   </component>
 </project>
