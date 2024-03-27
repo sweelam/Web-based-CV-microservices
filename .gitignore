@@ -3,6 +3,7 @@
 /bin/
 /out/
 /build/
+*.class
 
 # Maven
 !.mvn/wrapper/maven-wrapper.jar
