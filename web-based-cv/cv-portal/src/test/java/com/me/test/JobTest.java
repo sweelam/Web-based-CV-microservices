@@ -3,22 +3,19 @@ package com.me.test;
 import com.web.MyProfileApplication;
 import com.web.service.MyInfoService;
 import com.web.service.MyJobsService;
-import org.junit.Ignore;
-import org.junit.Test;
-import org.junit.runner.RunWith;
+import org.junit.jupiter.api.Disabled;
+import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.test.context.ContextConfiguration;
-import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
 
 import java.util.List;
 
-import static org.junit.Assert.*;
+import static org.junit.jupiter.api.Assertions.*;
 
 
-@RunWith(SpringJUnit4ClassRunner.class)
-@SpringBootTest
-@ContextConfiguration(classes = {MyProfileApplication.class})
+//@SpringBootTest
+//@ContextConfiguration(classes = {MyProfileApplication.class})
 public class JobTest {
     @Autowired
     private MyInfoService myInfoService;
@@ -26,7 +23,7 @@ public class JobTest {
     private MyJobsService jobsService;
 
     @Test
-    @Ignore
+    @Disabled
     public void checkJob() {
         String fullName = myInfoService.getFullName(1);
         assertNotNull(fullName);
@@ -35,7 +32,7 @@ public class JobTest {
     }
 
     @Test
-    @Ignore
+    @Disabled
     public void checkJobs() {
         List jobs = jobsService.getJobInfo(1);
         assertNotNull(jobs);

@@ -4,9 +4,19 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="e0441b21-0baf-49cb-b6f4-87bebf6833a1" name="Default" comment="upgrade spring admin server">
+    <list default="true" id="e0441b21-0baf-49cb-b6f4-87bebf6833a1" name="Default" comment="upgrade spring proxy server">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/web-cv-proxy/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/web-cv-proxy/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/web-based-cv/.mvn/wrapper/maven-wrapper.jar" beforeDir="false" afterPath="$PROJECT_DIR$/web-based-cv/.mvn/wrapper/maven-wrapper.jar" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/web-based-cv/.mvn/wrapper/maven-wrapper.properties" beforeDir="false" afterPath="$PROJECT_DIR$/web-based-cv/.mvn/wrapper/maven-wrapper.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/web-based-cv/auth-server/src/main/resources/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/web-based-cv/auth-server/src/main/resources/application.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/web-based-cv/auth-service/src/main/resources/bootstrap.yml" beforeDir="false" afterPath="$PROJECT_DIR$/web-based-cv/auth-service/src/main/resources/application.yml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/web-based-cv/auth-service/src/test/java/com/auth/test/UserTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/web-based-cv/auth-service/src/test/java/com/auth/test/UserTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/web-based-cv/cv-common/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/web-based-cv/cv-common/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/web-based-cv/cv-portal/src/test/java/com/me/test/JobTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/web-based-cv/cv-portal/src/test/java/com/me/test/JobTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/web-based-cv/cv-portal/src/test/java/com/web/service/AppLoggerServiceTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/web-based-cv/cv-portal/src/test/java/com/web/service/AppLoggerServiceTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/web-based-cv/cv-utils/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/web-based-cv/cv-utils/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/web-based-cv/logging-service/src/test/java/com/web/cv/LoggingServiceApplicationTests.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/web-based-cv/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/web-based-cv/pom.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -44,9 +54,9 @@
   <component name="ProjectCodeStyleSettingsMigration">
     <option name="version" value="1" />
   </component>
-  <component name="ProjectColorInfo"><![CDATA[{
-  "associatedIndex": 3
-}]]></component>
+  <component name="ProjectColorInfo">{
+  &quot;associatedIndex&quot;: 3
+}</component>
   <component name="ProjectId" id="1a1qPZxwuraXYXw5zYqRoH0QQuj" />
   <component name="ProjectLevelVcsManager">
     <ConfirmationsSetting value="1" id="Add" />
@@ -63,6 +73,7 @@
     "Maven.auth-server [clean].executor": "Run",
     "Maven.auth-service [clean].executor": "Run",
     "Maven.configServer [clean].executor": "Run",
+    "Maven.configServer [install].executor": "Run",
     "Maven.cv-common [clean].executor": "Run",
     "Maven.cv-portal [clean].executor": "Run",
     "Maven.cv-utils [clean].executor": "Run",
@@ -72,6 +83,11 @@
     "RequestMappingsPanelWidth0": "75",
     "RequestMappingsPanelWidth1": "75",
     "RunOnceActivity.OpenProjectViewOnStart": "true",
+    "Spring Boot.AdminServerApplication.executor": "Run",
+    "Spring Boot.AuthApplication.executor": "Run",
+    "Spring Boot.AuthServiceApplication.executor": "Run",
+    "Spring Boot.ConfigServerApplication.executor": "Run",
+    "Spring Boot.EurekaApplication.executor": "Run",
     "git-widget-placeholder": "web-based-cv-upgrade",
     "kotlin-language-version-configured": "true",
     "last_opened_file_path": "/home/msweelam/Work/projects/java/Web-based-CV-microservices",
@@ -79,6 +95,9 @@
     "node.js.selected.package.eslint": "(autodetect)",
     "node.js.selected.package.tslint": "(autodetect)",
     "nodejs_package_manager_path": "npm",
+    "project.structure.last.edited": "Project",
+    "project.structure.proportion": "0.10643774",
+    "project.structure.side.proportion": "0.2",
     "run.configurations.included.in.services": "true",
     "settings.editor.selected.configurable": "terminal",
     "vue.rearranger.settings.migration": "true"
@@ -102,7 +121,7 @@
       </set>
     </option>
   </component>
-  <component name="RunManager" selected="Spring Boot.AuthApplication">
+  <component name="RunManager" selected="Spring Boot.ConfigServerApplication">
     <configuration default="true" type="ArquillianJUnit" factoryName="" nameIsGenerated="true">
       <option name="arquillianRunConfiguration">
         <value>
@@ -216,6 +235,7 @@
   <component name="SharedIndexes">
     <attachedChunks>
       <set>
+        <option value="jdk-17.0.10-temurin-17.0.10-4caba194b151-f6707456" />
         <option value="jdk-17.0.9-azul-17.0.9-4caba194b151-fe01c698" />
       </set>
     </attachedChunks>
@@ -244,7 +264,9 @@
       <workItem from="1605377290465" duration="54000" />
       <workItem from="1607370721509" duration="1984000" />
       <workItem from="1607454547856" duration="1510000" />
-      <workItem from="1711474905287" duration="2091000" />
+      <workItem from="1711474905287" duration="2223000" />
+      <workItem from="1711477639499" duration="2745000" />
+      <workItem from="1711521461655" duration="309000" />
     </task>
     <task id="LOCAL-00001" summary="update .gitignore">
       <option name="closed" value="true" />
@@ -278,7 +300,15 @@
       <option name="project" value="LOCAL" />
       <updated>1711476192345</updated>
     </task>
-    <option name="localTasksCounter" value="5" />
+    <task id="LOCAL-00005" summary="upgrade spring proxy server">
+      <option name="closed" value="true" />
+      <created>1711477047494</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1711477047494</updated>
+    </task>
+    <option name="localTasksCounter" value="6" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -299,7 +329,8 @@
     <MESSAGE value="update .gitignore" />
     <MESSAGE value="upgrade eureka" />
     <MESSAGE value="upgrade spring admin server" />
-    <option name="LAST_COMMIT_MESSAGE" value="upgrade spring admin server" />
+    <MESSAGE value="upgrade spring proxy server" />
+    <option name="LAST_COMMIT_MESSAGE" value="upgrade spring proxy server" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
