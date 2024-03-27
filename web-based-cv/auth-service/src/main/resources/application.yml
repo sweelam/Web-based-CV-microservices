@@ -24,6 +24,9 @@ spring:
         service-id: configServer
   config:
     import: optional:configserver:http://configServer:8888
+  mvc:
+    pathmatch:
+      matching-strategy: ant_path_matcher
 
 server:
   servlet:

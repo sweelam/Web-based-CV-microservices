@@ -4,6 +4,8 @@ server:
 spring:
   application:
     name: zuul-proxy
+  main:
+    allow-circular-references: true
 
 zuul:
   routes:
@@ -20,7 +22,7 @@ zuul:
 
 ribbon:
   MaxConnectionsPerHost: 1000
-  MaxTotalConnections: 3000
+  MaxTotalConnections: 3000RELEASE
   ReadTimeout: 10000
   ConnectTimeout: 2000
   MaxAutoRetries: 0

@@ -32,7 +32,7 @@ import com.web.service.MyInfoService;
 import com.web.utils.common.BusinessException;
 import com.web.utils.common.dto.UserInfoVo;
 
-import io.swagger.annotations.ApiOperation;
+//import io.swagger.annotations.ApiOperation;
 
 @RestController
 @CrossOrigin
@@ -51,7 +51,7 @@ public class MyInfoController {
 
     @GetMapping(value = "/fullName")
     @Loggable
-    @ApiOperation(value="Account Name", notes="Account Page Title")
+//    @ApiOperation(value="Account Name", notes="Account Page Title")
     public String getAccountName(@RequestParam(value = "accId", required = true) Integer accId) {
         return infoService.getFullName(accId);
     }
@@ -63,14 +63,14 @@ public class MyInfoController {
     }
 
     @GetMapping(value = "/job/info/{accId}")
-    @ApiOperation(value="Job Information", notes="Display available job information")
+//    @ApiOperation(value="Job Information", notes="Display available job information")
     public List<MyJobsEntity> getJobInfo(@PathVariable(value = "accId") Integer accId) {
         return jobsService.getJobInfo(accId);
     }
 
 
     @RequestMapping(value = "/job/{accId}", method = RequestMethod.PUT)
-    @ApiOperation(value="Job Updater", notes="Update job description")
+//    @ApiOperation(value="Job Updater", notes="Update job description")
     public void updateJob(@PathVariable("accId") int accId, @PathVariable("desc") String jobDesc) {
         jobsService.updateJob(accId, jobDesc);
     }
@@ -82,7 +82,7 @@ public class MyInfoController {
     }
 
     @GetMapping(value = "/info/skills/{accId}")
-    @ApiOperation(value="User Skills", notes="List of user's skills")
+//    @ApiOperation(value="User Skills", notes="List of user's skills")
     @Loggable
     public ResponseEntity<List<Map<String, Object>>> getAllSkills(@PathVariable("accId") int accId) {
         try {

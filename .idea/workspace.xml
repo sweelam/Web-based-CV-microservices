@@ -4,19 +4,17 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="e0441b21-0baf-49cb-b6f4-87bebf6833a1" name="Default" comment="upgrade spring proxy server">
+    <list default="true" id="e0441b21-0baf-49cb-b6f4-87bebf6833a1" name="Default" comment="upgrade others, temporarily disable tests">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/web-based-cv/.mvn/wrapper/maven-wrapper.jar" beforeDir="false" afterPath="$PROJECT_DIR$/web-based-cv/.mvn/wrapper/maven-wrapper.jar" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/web-based-cv/.mvn/wrapper/maven-wrapper.properties" beforeDir="false" afterPath="$PROJECT_DIR$/web-based-cv/.mvn/wrapper/maven-wrapper.properties" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/web-based-cv/auth-server/src/main/resources/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/web-based-cv/auth-server/src/main/resources/application.properties" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/web-based-cv/auth-service/src/main/resources/bootstrap.yml" beforeDir="false" afterPath="$PROJECT_DIR$/web-based-cv/auth-service/src/main/resources/application.yml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/web-based-cv/auth-service/src/test/java/com/auth/test/UserTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/web-based-cv/auth-service/src/test/java/com/auth/test/UserTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/web-based-cv/cv-common/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/web-based-cv/cv-common/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/web-based-cv/cv-portal/src/test/java/com/me/test/JobTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/web-based-cv/cv-portal/src/test/java/com/me/test/JobTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/web-based-cv/cv-portal/src/test/java/com/web/service/AppLoggerServiceTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/web-based-cv/cv-portal/src/test/java/com/web/service/AppLoggerServiceTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/web-based-cv/cv-utils/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/web-based-cv/cv-utils/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/web-based-cv/logging-service/src/test/java/com/web/cv/LoggingServiceApplicationTests.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/web-based-cv/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/web-based-cv/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/db-dump.sql" beforeDir="false" afterPath="$PROJECT_DIR$/database/db-dump.sql" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/web-based-cv/auth-service/src/main/resources/application.yml" beforeDir="false" afterPath="$PROJECT_DIR$/web-based-cv/auth-service/src/main/resources/application.yml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/web-based-cv/cv-portal/src/main/java/com/web/controller/MyInfoController.java" beforeDir="false" afterPath="$PROJECT_DIR$/web-based-cv/cv-portal/src/main/java/com/web/controller/MyInfoController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/web-based-cv/logging-service/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/web-based-cv/logging-service/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/web-based-cv/logging-service/src/main/java/com/web/LoggingServiceApplication.java" beforeDir="false" afterPath="$PROJECT_DIR$/web-based-cv/logging-service/src/main/java/com/web/LoggingServiceApplication.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/web-based-cv/logging-service/src/main/java/com/web/config/SwaggerConfig.java" beforeDir="false" afterPath="$PROJECT_DIR$/web-based-cv/logging-service/src/main/java/com/web/config/SwaggerConfig.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/web-based-cv/logging-service/src/main/resources/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/web-based-cv/logging-service/src/main/resources/application.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/web-cv-proxy/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/web-cv-proxy/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/web-cv-proxy/src/main/resources/application.yml" beforeDir="false" afterPath="$PROJECT_DIR$/web-cv-proxy/src/main/resources/application.yml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -41,6 +39,9 @@
     </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
     <option name="WARN_ABOUT_CRLF" value="false" />
+  </component>
+  <component name="JpbToolWindowState">
+    <option name="isToolWindowVisible" value="false" />
   </component>
   <component name="KubernetesApiPersistence">
     <option name="context" value="minishift" />
@@ -78,6 +79,9 @@
     "Maven.cv-portal [clean].executor": "Run",
     "Maven.cv-utils [clean].executor": "Run",
     "Maven.eureka-service [clean].executor": "Run",
+    "Maven.logging-service [clean].executor": "Run",
+    "Maven.logging-service [install].executor": "Run",
+    "Maven.zuul-service [install].executor": "Run",
     "RequestMappingsPanelOrder0": "0",
     "RequestMappingsPanelOrder1": "1",
     "RequestMappingsPanelWidth0": "75",
@@ -88,6 +92,8 @@
     "Spring Boot.AuthServiceApplication.executor": "Run",
     "Spring Boot.ConfigServerApplication.executor": "Run",
     "Spring Boot.EurekaApplication.executor": "Run",
+    "Spring Boot.MyProfileApplication.executor": "Run",
+    "Spring Boot.WebProxyApplication.executor": "Run",
     "git-widget-placeholder": "web-based-cv-upgrade",
     "kotlin-language-version-configured": "true",
     "last_opened_file_path": "/home/msweelam/Work/projects/java/Web-based-CV-microservices",
@@ -109,6 +115,9 @@
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
       <recent name="$PROJECT_DIR$/web-based-cv/auth-server/src/main/resources" />
+    </key>
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/database" />
     </key>
   </component>
   <component name="RunDashboard">
@@ -266,7 +275,7 @@
       <workItem from="1607454547856" duration="1510000" />
       <workItem from="1711474905287" duration="2223000" />
       <workItem from="1711477639499" duration="2745000" />
-      <workItem from="1711521461655" duration="309000" />
+      <workItem from="1711521461655" duration="4014000" />
     </task>
     <task id="LOCAL-00001" summary="update .gitignore">
       <option name="closed" value="true" />
@@ -308,7 +317,15 @@
       <option name="project" value="LOCAL" />
       <updated>1711477047494</updated>
     </task>
-    <option name="localTasksCounter" value="6" />
+    <task id="LOCAL-00006" summary="upgrade others, temporarily disable tests">
+      <option name="closed" value="true" />
+      <created>1711522041722</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1711522041722</updated>
+    </task>
+    <option name="localTasksCounter" value="7" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -330,7 +347,8 @@
     <MESSAGE value="upgrade eureka" />
     <MESSAGE value="upgrade spring admin server" />
     <MESSAGE value="upgrade spring proxy server" />
-    <option name="LAST_COMMIT_MESSAGE" value="upgrade spring proxy server" />
+    <MESSAGE value="upgrade others, temporarily disable tests" />
+    <option name="LAST_COMMIT_MESSAGE" value="upgrade others, temporarily disable tests" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -339,6 +357,11 @@
           <url>file://$PROJECT_DIR$/web-based-cv/auth-server/src/main/java/com/web/service/UserAuthService.java</url>
           <line>23</line>
           <option name="timeStamp" value="2" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/web-based-cv/auth-service/src/main/java/com/web/cv/auth/config/dbConfig.java</url>
+          <line>15</line>
+          <option name="timeStamp" value="3" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>

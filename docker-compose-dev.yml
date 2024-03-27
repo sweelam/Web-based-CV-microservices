@@ -1,0 +1,26 @@
+version: "3.9"
+
+services:
+
+  mysql:
+    platform: linux/x86_64
+    image: mysql:latest
+    restart: always
+    ports:
+      - "3306:3306"
+    environment:
+      MYSQL_ROOT_PASSWORD: "sweelam@123"
+      MYSQL_DATABASE: "sweprofile"
+      MYSQL_USER: "sweelam"
+      MYSQL_PASSWORD: "sweelam_224466"
+    volumes:
+      - "./database:/docker-entrypoint-initdb.d"
+  redis-dkr:
+    image: "redis"
+    ports:
+      - 6379:6379
+    command: --protected-mode no
+  openzipkn:
+    image: "openzipkin/zipkin"
+    ports:
+      - "9411:9411"

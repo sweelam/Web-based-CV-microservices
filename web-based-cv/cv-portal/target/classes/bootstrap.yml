@@ -1,0 +1,35 @@
+spring:
+  application:
+    name: cv-service
+  cloud:
+    retry:
+      initial-interval: 1500
+      multiplier: 1.5
+      max-attempts: 10000
+      max-interval: 1000
+    config:
+      discovery:
+        enabled: true
+        service-id: configServer
+
+eureka:
+  client:
+    fetchRegistry: true
+    register-with-eureka: true
+    registryFetchIntervalSeconds: 5
+  instance:
+    leaseRenewalIntervalInSeconds: 10
+    prefer-ip-address: true
+    registry-fetch-interval-seconds: 3
+    metadata-map:
+      management:
+        context-path: "/api-cv/actuator"
+
+management:
+  endpoints:
+    web:
+      exposure:
+        include: "*"
+  endpoint:
+    health:
+      show-details: ALWAYS

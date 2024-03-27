@@ -15,31 +15,17 @@
 /*!40101 SET @OLD_SQL_MODE=@@SQL_MODE, SQL_MODE='NO_AUTO_VALUE_ON_ZERO' */;
 /*!40111 SET @OLD_SQL_NOTES=@@SQL_NOTES, SQL_NOTES=0 */;
 
---
--- Table structure for table `app_logger`
---
-
--- Create and grand user
-CREATE USER 'sweelam'@'localhost' IDENTIFIED BY 'sweelam_224466';
-GRANT ALL ON `sweprofile`.* TO 'sweelam'@'localhost';
-
-
--- Database cradentials
-INSERT INTO properties VALUES ('application', 'default', 'master', 'cv.ds.url', 'jdbc:mysql://127.0.0.1:3306/sweprofile?zeroDateTimeBehavior=convertToNull');
-INSERT INTO properties VALUES ('application', 'default', 'master', 'cv.ds.username', 'sweelam');
-INSERT INTO properties VALUES ('application', 'default', 'master', 'cv.ds.password', 'sweelam_224466');
-
 
 DROP TABLE IF EXISTS `app_logger`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
 /*!50503 SET character_set_client = utf8mb4 */;
 CREATE TABLE `app_logger` (
-  `log_id` bigint(20) NOT NULL AUTO_INCREMENT,
-  `request_header` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
-  `request_method` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
-  `request_path` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
-  `request_token` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
-  PRIMARY KEY (`log_id`)
+                              `log_id` bigint(20) NOT NULL AUTO_INCREMENT,
+                              `request_header` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+                              `request_method` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+                              `request_path` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+                              `request_token` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+                              PRIMARY KEY (`log_id`)
 ) ENGINE=InnoDB AUTO_INCREMENT=66 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
@@ -61,7 +47,7 @@ DROP TABLE IF EXISTS `hibernate_sequence`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
 /*!50503 SET character_set_client = utf8mb4 */;
 CREATE TABLE `hibernate_sequence` (
-  `next_val` bigint(20) DEFAULT NULL
+                                      `next_val` bigint(20) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
@@ -82,17 +68,17 @@ DROP TABLE IF EXISTS `my_info`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
 /*!50503 SET character_set_client = utf8mb4 */;
 CREATE TABLE `my_info` (
-  `id` int(11) NOT NULL,
-  `FULL_NAME` varchar(400) COLLATE utf8mb4_unicode_ci NOT NULL,
-  `mobile` varchar(400) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
-  `job_title` varchar(400) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
-  `email` varchar(400) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
-  `date_of_birth` varchar(400) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
-  `job_start_date` varchar(400) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
-  `job_end_date` varchar(400) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
-  `address` varchar(400) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
-  `user_title` varchar(400) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
-  PRIMARY KEY (`id`)
+                           `id` int(11) NOT NULL,
+                           `FULL_NAME` varchar(400) COLLATE utf8mb4_unicode_ci NOT NULL,
+                           `mobile` varchar(400) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+                           `job_title` varchar(400) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+                           `email` varchar(400) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+                           `date_of_birth` varchar(400) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+                           `job_start_date` varchar(400) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+                           `job_end_date` varchar(400) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+                           `address` varchar(400) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+                           `user_title` varchar(400) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+                           PRIMARY KEY (`id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
@@ -114,16 +100,16 @@ DROP TABLE IF EXISTS `my_jobs`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
 /*!50503 SET character_set_client = utf8mb4 */;
 CREATE TABLE `my_jobs` (
-  `id` int(11) NOT NULL,
-  `title` varchar(400) COLLATE utf8mb4_unicode_ci NOT NULL,
-  `start_date` date DEFAULT NULL,
-  `end_date` date DEFAULT NULL,
-  `company` varchar(400) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
-  `job_description` text COLLATE utf8mb4_unicode_ci,
-  `info_ref` int(11) DEFAULT NULL,
-  PRIMARY KEY (`id`),
-  KEY `info_ref` (`info_ref`),
-  CONSTRAINT `my_jobs_ibfk_1` FOREIGN KEY (`info_ref`) REFERENCES `my_info` (`id`)
+                           `id` int(11) NOT NULL,
+                           `title` varchar(400) COLLATE utf8mb4_unicode_ci NOT NULL,
+                           `start_date` date DEFAULT NULL,
+                           `end_date` date DEFAULT NULL,
+                           `company` varchar(400) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+                           `job_description` text COLLATE utf8mb4_unicode_ci,
+                           `info_ref` int(11) DEFAULT NULL,
+                           PRIMARY KEY (`id`),
+                           KEY `info_ref` (`info_ref`),
+                           CONSTRAINT `my_jobs_ibfk_1` FOREIGN KEY (`info_ref`) REFERENCES `my_info` (`id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
@@ -145,11 +131,11 @@ DROP TABLE IF EXISTS `properties`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
 /*!50503 SET character_set_client = utf8mb4 */;
 CREATE TABLE `properties` (
-  `APPLICATION` varchar(400) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
-  `PROFILE` varchar(400) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
-  `LABEL` varchar(400) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
-  `KEY` varchar(400) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
-  `VALUE` varchar(400) COLLATE utf8mb4_unicode_ci DEFAULT NULL
+                              `APPLICATION` varchar(400) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+                              `PROFILE` varchar(400) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+                              `LABEL` varchar(400) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+                              `KEY` varchar(400) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+                              `VALUE` varchar(400) COLLATE utf8mb4_unicode_ci DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
@@ -174,10 +160,10 @@ DROP TABLE IF EXISTS `temp`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
 /*!50503 SET character_set_client = utf8mb4 */;
 CREATE TABLE `temp` (
-  `id` int(11) NOT NULL,
-  `value` varchar(100) COLLATE utf8mb4_unicode_ci NOT NULL,
-  `description` varchar(100) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
-  PRIMARY KEY (`id`)
+                        `id` int(11) NOT NULL,
+                        `value` varchar(100) COLLATE utf8mb4_unicode_ci NOT NULL,
+                        `description` varchar(100) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+                        PRIMARY KEY (`id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
@@ -199,12 +185,12 @@ DROP TABLE IF EXISTS `user_mobile`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
 /*!50503 SET character_set_client = utf8mb4 */;
 CREATE TABLE `user_mobile` (
-  `id` int(11) NOT NULL,
-  `value` varchar(100) COLLATE utf8mb4_unicode_ci NOT NULL,
-  `user_id` int(11) NOT NULL,
-  PRIMARY KEY (`id`),
-  KEY `user_id` (`user_id`),
-  CONSTRAINT `user_mobile_ibfk_1` FOREIGN KEY (`user_id`) REFERENCES `my_info` (`id`)
+                               `id` int(11) NOT NULL,
+                               `value` varchar(100) COLLATE utf8mb4_unicode_ci NOT NULL,
+                               `user_id` int(11) NOT NULL,
+                               PRIMARY KEY (`id`),
+                               KEY `user_id` (`user_id`),
+                               CONSTRAINT `user_mobile_ibfk_1` FOREIGN KEY (`user_id`) REFERENCES `my_info` (`id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
@@ -226,10 +212,10 @@ DROP TABLE IF EXISTS `user_skills`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
 /*!50503 SET character_set_client = utf8mb4 */;
 CREATE TABLE `user_skills` (
-  `user_id` int(11) NOT NULL,
-  `skills` varchar(190) COLLATE utf8mb4_unicode_ci NOT NULL,
-  `id` int(11) NOT NULL AUTO_INCREMENT,
-  PRIMARY KEY (`id`)
+                               `user_id` int(11) NOT NULL,
+                               `skills` varchar(190) COLLATE utf8mb4_unicode_ci NOT NULL,
+                               `id` int(11) NOT NULL AUTO_INCREMENT,
+                               PRIMARY KEY (`id`)
 ) ENGINE=InnoDB AUTO_INCREMENT=5 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
@@ -251,10 +237,10 @@ DROP TABLE IF EXISTS `users`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
 /*!50503 SET character_set_client = utf8mb4 */;
 CREATE TABLE `users` (
-  `user_id` bigint(20) NOT NULL,
-  `password` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
-  `username` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
-  PRIMARY KEY (`user_id`)
+                         `user_id` bigint(20) NOT NULL,
+                         `password` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
+                         `username` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
+                         PRIMARY KEY (`user_id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
