@@ -4,17 +4,14 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="e0441b21-0baf-49cb-b6f4-87bebf6833a1" name="Default" comment="upgrade others, temporarily disable tests">
+    <list default="true" id="e0441b21-0baf-49cb-b6f4-87bebf6833a1" name="Default" comment="update versioning">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/db-dump.sql" beforeDir="false" afterPath="$PROJECT_DIR$/database/db-dump.sql" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/web-based-cv/auth-service/src/main/resources/application.yml" beforeDir="false" afterPath="$PROJECT_DIR$/web-based-cv/auth-service/src/main/resources/application.yml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/web-based-cv/cv-portal/src/main/java/com/web/controller/MyInfoController.java" beforeDir="false" afterPath="$PROJECT_DIR$/web-based-cv/cv-portal/src/main/java/com/web/controller/MyInfoController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/web-based-cv/logging-service/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/web-based-cv/logging-service/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/web-based-cv/logging-service/src/main/java/com/web/LoggingServiceApplication.java" beforeDir="false" afterPath="$PROJECT_DIR$/web-based-cv/logging-service/src/main/java/com/web/LoggingServiceApplication.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/web-based-cv/logging-service/src/main/java/com/web/config/SwaggerConfig.java" beforeDir="false" afterPath="$PROJECT_DIR$/web-based-cv/logging-service/src/main/java/com/web/config/SwaggerConfig.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/web-based-cv/logging-service/src/main/resources/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/web-based-cv/logging-service/src/main/resources/application.properties" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/web-cv-proxy/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/web-cv-proxy/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/web-cv-proxy/src/main/resources/application.yml" beforeDir="false" afterPath="$PROJECT_DIR$/web-cv-proxy/src/main/resources/application.yml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/web-based-cv/cv-portal/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/web-based-cv/cv-portal/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/web-based-cv/cv-portal/src/main/java/com/web/config/dbConfig.java" beforeDir="false" afterPath="$PROJECT_DIR$/web-based-cv/cv-portal/src/main/java/com/web/config/dbConfig.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/web-based-cv/cv-portal/src/main/java/com/web/model/entity/MyInfoEntity.java" beforeDir="false" afterPath="$PROJECT_DIR$/web-based-cv/cv-portal/src/main/java/com/web/model/entity/MyInfoEntity.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/web-based-cv/cv-portal/src/main/java/com/web/service/MyJobsService.java" beforeDir="false" afterPath="$PROJECT_DIR$/web-based-cv/cv-portal/src/main/java/com/web/service/MyJobsService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/web-based-cv/cv-portal/src/test/java/com/me/test/JobTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/web-based-cv/cv-portal/src/test/java/com/me/test/JobTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/web-based-cv/cv-utils/src/main/java/com/web/utils/common/dto/UserInfoVo.java" beforeDir="false" afterPath="$PROJECT_DIR$/web-based-cv/cv-utils/src/main/java/com/web/utils/common/dto/UserInfoVo.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -70,6 +67,8 @@
   </component>
   <component name="PropertiesComponent"><![CDATA[{
   "keyToString": {
+    "JUnit.JobTest.checkJobs.executor": "Debug",
+    "JUnit.JobTest.executor": "Run",
     "Maven.admin-server [clean].executor": "Run",
     "Maven.auth-server [clean].executor": "Run",
     "Maven.auth-service [clean].executor": "Run",
@@ -87,6 +86,7 @@
     "RequestMappingsPanelWidth0": "75",
     "RequestMappingsPanelWidth1": "75",
     "RunOnceActivity.OpenProjectViewOnStart": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
     "Spring Boot.AdminServerApplication.executor": "Run",
     "Spring Boot.AuthApplication.executor": "Run",
     "Spring Boot.AuthServiceApplication.executor": "Run",
@@ -105,7 +105,7 @@
     "project.structure.proportion": "0.10643774",
     "project.structure.side.proportion": "0.2",
     "run.configurations.included.in.services": "true",
-    "settings.editor.selected.configurable": "terminal",
+    "settings.editor.selected.configurable": "editor.preferences.fonts.default",
     "vue.rearranger.settings.migration": "true"
   }
 }]]></component>
@@ -117,6 +117,7 @@
       <recent name="$PROJECT_DIR$/web-based-cv/auth-server/src/main/resources" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/web-based-cv/cv-portal/src/test/resources" />
       <recent name="$PROJECT_DIR$/database" />
     </key>
   </component>
@@ -130,7 +131,7 @@
       </set>
     </option>
   </component>
-  <component name="RunManager" selected="Spring Boot.ConfigServerApplication">
+  <component name="RunManager" selected="JUnit.JobTest.checkJobs">
     <configuration default="true" type="ArquillianJUnit" factoryName="" nameIsGenerated="true">
       <option name="arquillianRunConfiguration">
         <value>
@@ -144,6 +145,39 @@
     </configuration>
     <configuration default="true" type="Application" factoryName="Application">
       <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="JobTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="cv-portal" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.me.test.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="com.me.test" />
+      <option name="MAIN_CLASS_NAME" value="com.me.test.JobTest" />
+      <option name="TEST_OBJECT" value="class" />
+      <option name="WORKING_DIRECTORY" value="%MODULE_WORKING_DIR%" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="JobTest.checkJobs" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="cv-portal" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.me.test.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="com.me.test" />
+      <option name="MAIN_CLASS_NAME" value="com.me.test.JobTest" />
+      <option name="METHOD_NAME" value="checkJobs" />
+      <option name="TEST_OBJECT" value="method" />
+      <option name="WORKING_DIRECTORY" value="%MODULE_WORKING_DIR%" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
@@ -240,6 +274,12 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
+    <recent_temporary>
+      <list>
+        <item itemvalue="JUnit.JobTest.checkJobs" />
+        <item itemvalue="JUnit.JobTest" />
+      </list>
+    </recent_temporary>
   </component>
   <component name="SharedIndexes">
     <attachedChunks>
@@ -275,7 +315,10 @@
       <workItem from="1607454547856" duration="1510000" />
       <workItem from="1711474905287" duration="2223000" />
       <workItem from="1711477639499" duration="2745000" />
-      <workItem from="1711521461655" duration="4014000" />
+      <workItem from="1711521461655" duration="4740000" />
+      <workItem from="1711644182523" duration="808000" />
+      <workItem from="1711645170730" duration="2015000" />
+      <workItem from="1711650562303" duration="6017000" />
     </task>
     <task id="LOCAL-00001" summary="update .gitignore">
       <option name="closed" value="true" />
@@ -325,11 +368,49 @@
       <option name="project" value="LOCAL" />
       <updated>1711522041722</updated>
     </task>
-    <option name="localTasksCounter" value="7" />
+    <task id="LOCAL-00007" summary="update .gitignore">
+      <option name="closed" value="true" />
+      <created>1711526552746</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1711526552746</updated>
+    </task>
+    <task id="LOCAL-00008" summary="update versioning">
+      <option name="closed" value="true" />
+      <created>1711526576166</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1711526576166</updated>
+    </task>
+    <option name="localTasksCounter" value="9" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="3" />
+  </component>
+  <component name="UnknownFeatures">
+    <option featureType="dependencySupport" implementationName="java:org.springframework.security:spring-security-core" />
+    <option featureType="dependencySupport" implementationName="java:org.springframework:spring-core" />
+    <option featureType="dependencySupport" implementationName="java:jakarta.validation:jakarta.validation-api" />
+    <option featureType="dependencySupport" implementationName="java:com.google.protobuf:protobuf-java" />
+    <option featureType="dependencySupport" implementationName="java:io.projectreactor:reactor-core" />
+    <option featureType="dependencySupport" implementationName="java:org.springframework.data:spring-data-commons" />
+    <option featureType="dependencySupport" implementationName="javascript:npm:karma" />
+    <option featureType="dependencySupport" implementationName="java:org.springframework.cloud:spring-cloud-context" />
+    <option featureType="dependencySupport" implementationName="javascript:npm:tslint" />
+    <option featureType="dependencySupport" implementationName="java:org.hibernate.validator:hibernate-validator" />
+    <option featureType="dependencySupport" implementationName="java:javax.validation:validation-api" />
+    <option featureType="dependencySupport" implementationName="java:org.springframework:spring-webmvc" />
+    <option featureType="dependencySupport" implementationName="java:org.projectlombok:lombok" />
+    <option featureType="dependencySupport" implementationName="executable:docker" />
+    <option featureType="dependencySupport" implementationName="java:jakarta.persistence:jakarta.persistence-api" />
+    <option featureType="dependencySupport" implementationName="executable:podman" />
+    <option featureType="dependencySupport" implementationName="javascript:npm:@angular/core" />
+    <option featureType="dependencySupport" implementationName="java:org.thymeleaf:thymeleaf" />
+    <option featureType="dependencySupport" implementationName="java:org.springframework.boot:spring-boot" />
+    <option featureType="dependencySupport" implementationName="java:jakarta.xml.ws:jakarta.xml.ws-api" />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
     <option name="TAB_STATES">
@@ -343,12 +424,13 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="update .gitignore" />
     <MESSAGE value="upgrade eureka" />
     <MESSAGE value="upgrade spring admin server" />
     <MESSAGE value="upgrade spring proxy server" />
     <MESSAGE value="upgrade others, temporarily disable tests" />
-    <option name="LAST_COMMIT_MESSAGE" value="upgrade others, temporarily disable tests" />
+    <MESSAGE value="update .gitignore" />
+    <MESSAGE value="update versioning" />
+    <option name="LAST_COMMIT_MESSAGE" value="update versioning" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -362,6 +444,16 @@
           <url>file://$PROJECT_DIR$/web-based-cv/auth-service/src/main/java/com/web/cv/auth/config/dbConfig.java</url>
           <line>15</line>
           <option name="timeStamp" value="3" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/web-based-cv/cv-portal/src/main/java/com/web/service/MyJobsService.java</url>
+          <line>51</line>
+          <option name="timeStamp" value="9" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/web-based-cv/cv-portal/src/test/java/com/me/test/JobTest.java</url>
+          <line>65</line>
+          <option name="timeStamp" value="10" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>

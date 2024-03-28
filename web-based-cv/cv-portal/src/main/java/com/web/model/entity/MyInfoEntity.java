@@ -1,6 +1,7 @@
 package com.web.model.entity;
 
 import javax.persistence.*;
+import java.util.ArrayList;
 import java.util.List;
 
 @Entity
@@ -13,7 +14,7 @@ public class MyInfoEntity {
     private String dateOfBirth;
     private String address;
     private String userTitle;
-    List<MyJobsEntity> myJobsList;
+    List<MyJobsEntity> myJobsList = new ArrayList<>();
 
     @Id
     @Column(name = "id", nullable = false)

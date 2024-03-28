@@ -2,17 +2,19 @@ package com.web.utils.common.dto;
 
 import java.sql.Date;
 
-import lombok.Data;
-import lombok.NoArgsConstructor;
+import lombok.*;
 
-@Data
+@AllArgsConstructor
 @NoArgsConstructor
+@Builder
+@Getter
+@Setter
 public class UserInfoVo {
     private String fullName;
     private String address;
     private String mobile;
     private String title;
-    private Date age;
+    private Integer age;
     private Date from;
     private Date to;
     private String jobDesc;

@@ -9,6 +9,7 @@ import lombok.extern.slf4j.Slf4j;
 import org.springframework.stereotype.Service;
 
 import java.sql.Date;
+import java.util.Collections;
 import java.util.List;
 import java.util.Optional;
 
@@ -48,7 +49,7 @@ public class MyJobsService {
      */
     public List<MyJobsEntity> getJobInfo(Integer id) {
         Optional<MyInfoEntity> myInfo = myInfoRepo.findById(id);
-        return myInfo.isPresent() ? myInfo.get().getMyJobsList() : null;
+        return myInfo.isPresent() ? myInfo.get().getMyJobsList() : Collections.emptyList();
     }
 
 
@@ -74,19 +75,19 @@ public class MyJobsService {
         return job.isPresent() ? job.get().getEndDate() : null;
     }
 
-    public void saveJobData(UserInfoVo userInfoVo, int infoRef) {
+    public MyJobsEntity saveJobData(UserInfoVo userInfoVo, int infoRef) {
         MyJobsEntity myJobsEntity = new MyJobsEntity();
 
-        String id = myJobsRepo.count() + 1 + "";
+        var id = (int) myJobsRepo.count() + 1;
 
-        myJobsEntity.setId(Integer.parseInt(id));
+        myJobsEntity.setId(id);
         myJobsEntity.setTitle(userInfoVo.getTitle());
         myJobsEntity.setStartDate(userInfoVo.getFrom());
         myJobsEntity.setEndDate(userInfoVo.getTo());
         myJobsEntity.setJobDescription(userInfoVo.getJobDesc());
         myJobsEntity.setInfoRef(infoRef);
 
-        this.myJobsRepo.save(myJobsEntity);
+        return this.myJobsRepo.save(myJobsEntity);
     }
 
     public void updateJobDesc(int id, String jobDesc) {
@@ -101,6 +102,11 @@ public class MyJobsService {
         } catch (Exception e) {
             log.error("Error while updating job desc : ", e);
         }
+    }
+
+
+    public MyInfoEntity addInfo(MyInfoEntity info) {
+        return myInfoRepo.save(info);
     }
 
 }
