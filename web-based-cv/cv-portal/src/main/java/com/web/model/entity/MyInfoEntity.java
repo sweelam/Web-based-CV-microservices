@@ -66,7 +66,9 @@ public class MyInfoEntity {
         this.dateOfBirth = dateOfBirth;
     }
 
-    @OneToMany(mappedBy = "infoRef", targetEntity = MyJobsEntity.class, fetch = FetchType.EAGER)
+    @OneToMany(mappedBy = "infoRef", targetEntity = MyJobsEntity.class,
+            fetch = FetchType.EAGER, cascade = CascadeType.MERGE
+    )
     public List<MyJobsEntity> getMyJobsList() {
         return myJobsList;
     }

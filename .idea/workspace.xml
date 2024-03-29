@@ -6,12 +6,7 @@
   <component name="ChangeListManager">
     <list default="true" id="e0441b21-0baf-49cb-b6f4-87bebf6833a1" name="Default" comment="update versioning">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/web-based-cv/cv-portal/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/web-based-cv/cv-portal/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/web-based-cv/cv-portal/src/main/java/com/web/config/dbConfig.java" beforeDir="false" afterPath="$PROJECT_DIR$/web-based-cv/cv-portal/src/main/java/com/web/config/dbConfig.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/web-based-cv/cv-portal/src/main/java/com/web/model/entity/MyInfoEntity.java" beforeDir="false" afterPath="$PROJECT_DIR$/web-based-cv/cv-portal/src/main/java/com/web/model/entity/MyInfoEntity.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/web-based-cv/cv-portal/src/main/java/com/web/service/MyJobsService.java" beforeDir="false" afterPath="$PROJECT_DIR$/web-based-cv/cv-portal/src/main/java/com/web/service/MyJobsService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/web-based-cv/cv-portal/src/test/java/com/me/test/JobTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/web-based-cv/cv-portal/src/test/java/com/me/test/JobTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/web-based-cv/cv-utils/src/main/java/com/web/utils/common/dto/UserInfoVo.java" beforeDir="false" afterPath="$PROJECT_DIR$/web-based-cv/cv-utils/src/main/java/com/web/utils/common/dto/UserInfoVo.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -131,7 +126,7 @@
       </set>
     </option>
   </component>
-  <component name="RunManager" selected="JUnit.JobTest.checkJobs">
+  <component name="RunManager" selected="JUnit.JobTest">
     <configuration default="true" type="ArquillianJUnit" factoryName="" nameIsGenerated="true">
       <option name="arquillianRunConfiguration">
         <value>
@@ -276,8 +271,8 @@
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="JUnit.JobTest.checkJobs" />
         <item itemvalue="JUnit.JobTest" />
+        <item itemvalue="JUnit.JobTest.checkJobs" />
       </list>
     </recent_temporary>
   </component>
@@ -319,6 +314,8 @@
       <workItem from="1711644182523" duration="808000" />
       <workItem from="1711645170730" duration="2015000" />
       <workItem from="1711650562303" duration="6017000" />
+      <workItem from="1711705756501" duration="5000" />
+      <workItem from="1711706397959" duration="2109000" />
     </task>
     <task id="LOCAL-00001" summary="update .gitignore">
       <option name="closed" value="true" />
@@ -449,11 +446,6 @@
           <url>file://$PROJECT_DIR$/web-based-cv/cv-portal/src/main/java/com/web/service/MyJobsService.java</url>
           <line>51</line>
           <option name="timeStamp" value="9" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/web-based-cv/cv-portal/src/test/java/com/me/test/JobTest.java</url>
-          <line>65</line>
-          <option name="timeStamp" value="10" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>
