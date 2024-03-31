@@ -20,6 +20,7 @@ services:
     ports:
       - 6379:6379
     command: --protected-mode no
+    restart: unless-stopped
   openzipkn:
     image: "openzipkin/zipkin"
     ports:

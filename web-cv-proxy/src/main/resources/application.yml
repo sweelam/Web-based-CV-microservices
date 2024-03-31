@@ -3,38 +3,37 @@ server:
 
 spring:
   application:
-    name: zuul-proxy
+    name: api-gateway
   main:
     allow-circular-references: true
-
-zuul:
-  routes:
-    auth-service:
-      path: /api/auth/**
-      serviceId: auth-service       # Translated as http://localhost:8081/auth-service/api/auth/user/login-form
-    cv-service:
-      path: /api/cv/**
-      serviceId: cv-service         # Translated as http://localhost:8081/cv-service/api/cv/**
-    auth-server:
-      path: /oauth/**
-      serviceId: auth-server       # Translated as http://localhost:8081/auth-server/oauth/**
-      sensitiveHeaders: Cookie,Set-Cookie
-
-ribbon:
-  MaxConnectionsPerHost: 1000
-  MaxTotalConnections: 3000RELEASE
-  ReadTimeout: 10000
-  ConnectTimeout: 2000
-  MaxAutoRetries: 0
-  MaxAutoRetriesNextServer: 0
-  ServerListRefreshInterval: 1000
-  NFLoadBalancerPingInterval: 5
+  cloud:
+    gateway:
+      discovery:
+        locator:
+          enabled: true
+          lower-case-service-id: true
+      routes:
+        - id: auth-service
+          uri: lb://auth-service
+          predicates:
+          - Path=/api/auth/**
+        - id: cv-service
+          uri: lb://cv-service
+          predicates:
+          - Path=/api/cv/**
+        - id: auth-server
+          uri: lb://auth-server
+          predicates:
+          - Path=/oauth/**
+          - Cookie=mycookie,mycookievalue
 
 eureka:
   client:
     fetchRegistry: true
     register-with-eureka: true
     registryFetchIntervalSeconds: 5
+    service-url:
+      defaultZone: http://localhost:8761/eureka/
   instance:
     leaseRenewalIntervalInSeconds: 10
     prefer-ip-address: true
