@@ -21,11 +21,11 @@
     "@angular/platform-browser": "^5.2.0",
     "@angular/platform-browser-dynamic": "^5.2.0",
     "@angular/router": "^5.2.0",
-    "@toverux/ngx-sweetalert2": "^4.0.0",
+    "@sweetalert2/ngx-sweetalert2": "^5.1.0",
     "bootstrap": "^4.5.2",
     "core-js": "^2.4.1",
     "font-awesome": "^4.7.0",
-    "rxjs": "^5.5.6",
+    "rxjs": "^5.1.1",
     "sweetalert2": "^7.26.12",
     "zone.js": "^0.8.19"
   },
